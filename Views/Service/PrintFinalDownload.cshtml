@@ -1,0 +1,362 @@
+﻿@model uttarakhand_project_front.ViewModels.RegistrationViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Untitled Document</title>
+    <base href="~/"/>
+    <link href="CustomCss/Print-4P.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<table width="100%" border="0">
+<tr>
+    <td align="center">
+        <table width="460px" border="0">
+            <tr>
+                <td width="100" align="center">
+                    <img src="Images/Print-Logo.jpg"/>
+                </td>
+                <td width="360" align="left">
+                    <h3>KUMAUN UNIVERSITY, NAINITAL</h3>
+                    Sleepy Hollow, Nanital - 263001<br/>Application Form For B.Ed./M.Ed. Entrance Test - 2020
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td align="center" class="kds-pb">
+        <h3>CONFIRMATION PAGE</h3>
+        (Candidate is requested to retain the printout of confirmation page for future reference)
+    </td>
+</tr>
+<tr align="center">
+    <td>
+        <table width="100%" border="1" class="kds-table">
+            <tr>
+                <td width="31%">
+                    <h4>APPLICATION NUMBER</h4>
+                </td>
+                <td colspan="3">
+                    <strong>@Model.RefNo</strong>
+                </td>
+                <td width="18%" rowsan="5">
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center" cnglass="kds-nopadding">
+                    <h2>PERSONAL DETAILS</h2>
+                </td>
+                <td rowspan="5">
+                    <img src="upload/uploadku/Photos/@Model.PhotoPath" alt="Photo" style="background-color:#000!important;padding:1px !important" alt="Photo" height="120px" width="150px"/>
+                    <br/>
+                    <img src="upload/uploadku/Signature/@Model.SignaturePath" alt="Signature" style="background-color:#000!important;padding:1px !important" height="80px" width="180px"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Candidate's Name </strong>
+                </td>
+                <td colspan="3">@Model.Name</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Father's Name </strong>
+                </td>
+                <td colspan="3">@Model.FatherName</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Mother's Name </strong>
+                </td>
+                <td colspan="3">@Model.MotherName</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Date Of Birth</strong>
+                </td>
+                <td width="23%">@Model.Dob.Value.ToString("dd/MM/yyyy")</td>
+                <td width="12%">
+                    <strong>Gender</strong>
+                </td>
+                <td width="16%">@Model.Gender</td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+        <table width="100%" border="1" class="kds-table">
+            <tr>
+                <td width="31%">
+                    <strong>Domicile of Uttarakhand </strong>
+                </td>
+                <td width="23%">@Model.IsDomicileOfUttarakhand</td>
+                <td width="31%">
+                    <strong>Dependent of Freedom Fighter</strong>
+                </td>
+                <td width="15%">@Model.IsFreedomFighter</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Self ex Defence Personal </strong>
+                </td>
+                <td>@Model.IsDefencePersonal</td>
+                <td colspan="2">
+                    <strong>Category - @Model.Category </strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Physically Challanged (PH) </strong>
+                </td>
+                <td>@Model.IsPhysicallyChallenged</td>
+                <td colspan="2">
+                    <strong>PH Type - @Model.PhysicallyChallengedType </strong>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Nationality </strong>
+                </td>
+                <td>@Model.Nationality</td>
+                <td>
+                    <strong>Married</strong>
+                </td>
+                <td>@Model.MaritalStatus</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <h2>CONTACT DETAILS</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Address</strong>
+                </td>
+                <td>@Model.Address</td>
+                <td>
+                    <strong>State</strong>
+                </td>
+                <td>@Model.StateName</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>City/Village/Post </strong>
+                </td>
+                <td>@Model.City</td>
+                <td>
+                    <strong>Pin Code</strong>
+                </td>
+                <td>@Model.Pincode</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Email Address </strong>
+                </td>
+                <td>@Model.EmailAddress</td>
+                <td>
+                    <strong>Mobile No</strong>
+                </td>
+                <td>@Model.MobileNo</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <h2>CANDIDATES OTHER DETAILS</h2>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>Are you involved in any litigation or punished by court ? -</strong>
+                </td>
+                <td colspan="2">@Model.IsPunishedByCourt</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <strong>Debarred by University for using unfair means till 2018 ? </strong>
+                </td>
+                <td colspan="2">@Model.IsDebarredByUniversity</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <h2>EXAMINATION DETAILS</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Name of Examination </strong>
+                </td>
+                <td colspan="3">@Model.CourseName</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Opted Centres Of Examination </strong>
+                </td>
+                <td colspan="3">@Model.ExamCenter</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <h2>FEE DETAILS</h2>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Examination Fee</strong>
+                </td>
+                <td>@Model.PaymentDetail.Fee</td>
+                <td>
+                    <strong>Portal Charges</strong>
+                </td>
+                <td>@Model.PaymentDetail.ServiceCharge</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Total Fee</strong>
+                </td>
+                <td>@Model.PaymentDetail.TotalFee</td>
+                <td>
+                    <strong>Payment Id</strong>
+                </td>
+                <td>@Model.PaymentDetail.OrderId</td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Tranaction Id</strong>
+                </td>
+                <td>@Model.PaymentDetail.TransactionId</td>
+                <td>
+                    <strong>Payment Date</strong>
+                </td>
+                <td>@Model.PaymentDetail.PaidOn.ToString("dd-MM-yyyy hh:mm tt")</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <h2>Qualifying Examination</h2>
+                </td>
+            </tr>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td>
+        @if (Model.CourseName == "B.Ed")
+        {
+            <table width="100%" border="1" class="kds-table">
+                <tr>
+                    <td>
+                        <strong>Qualifying Exam</strong>
+                    </td>
+                    <td>
+                        <strong>Board/University </strong>
+                    </td>
+                    <td>
+                        <strong>Passing Years </strong>
+                    </td>
+                    <td>
+                        <strong>Marks</strong>
+                    </td>
+                    <td>
+                        <strong>Max Marks</strong>
+                    </td>
+                    <td>
+                        <strong>Total(%) </strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.GradutionName</td>
+                    <td>@Model.GradutionUniversity</td>
+                    <td>@Model.GradutionPassingYear</td>
+                    <td>@Model.GradutionObtMarks</td>
+                    <td>@Model.GradutionMaxMarks</td>
+                    <td>@Model.GradutionPercentageMarks</td>
+                </tr>
+                @if (!string.IsNullOrEmpty(Model.PGradutionMaxMarks) && !string.IsNullOrEmpty(Model.PGradutionObtMarks))
+                {
+                    <tr>
+                        <td>@Model.PostGradutionName</td>
+                        <td>@Model.PGradutionUniversity</td>
+                        <td>@Model.PGradutionPassingYear</td>
+                        <td>@Model.PGradutionObtMarks</td>
+                        <td>@Model.PGradutionMaxMarks</td>
+                        <td>@Model.PGradutionPercentageMarks</td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <table width="100%" border="1" class="kds-table">
+                <tr>
+                    <td>
+                        <strong>Qualifying Exam</strong>
+                    </td>
+                    <td>
+                        <strong>Board/University </strong>
+                    </td>
+                    <td>
+                        <strong>Passing Years </strong>
+                    </td>
+                    <td>
+                        <strong>Marks</strong>
+                    </td>
+                    <td>
+                        <strong>Max Marks</strong>
+                    </td>
+                    <td>
+                        <strong>Total(%) </strong>
+                    </td>
+                </tr>
+                <tr>
+                    <td>@Model.TheoryExamName</td>
+                    <td>@Model.M_EdExamUniversity</td>
+                    <td>@Model.M_EdExamPassingYear</td>
+                    <td>@Model.TheoryExamObtMarks</td>
+                    <td>@Model.TheoryExamMaxMarks</td>
+                    <td rowspan="2">@Model.M_EdTotalPercentage</td>
+                </tr>
+                <tr>
+                    <td>@Model.PracticalExamName</td>
+                    <td>@Model.M_EdExamUniversity</td>
+                    <td>@Model.M_EdExamPassingYear</td>
+                    <td>@Model.PracticalExamObtMarks</td>
+                    <td>@Model.PracticalExamMaxMarks</td>
+                </tr>
+            </table>
+        }
+    </td>
+</tr>
+<tr align="center">
+    <td>&nbsp;</td>
+</tr>
+<tr align="center">
+    <td>
+        <h1>DECLARATION</h1>
+    </td>
+</tr>
+<tr align="center">
+    <td align="left">
+        I hereby declare that all the information given above is correct to the best of my knowledge and belief. If the information given by me is found to be
+        incorrect or false at any stage, my candidature may be cancelled by the University.
+    </td>
+</tr>
+<tr align="center">
+    <td align="left">
+        IMG<br/>
+        <strong>Signature Of Candidate</strong><br/>
+        @* <img src="UploadDocs/Signature/@Model.SignaturePath" style="width: 150px; height: 150px;"/> *@
+    </td>
+</tr>
+</table>
+
+<p style="text-align:center; margin-top: 20px">
+    <br/> <input type="button" value="Print" class="btn" onclick="window.print()"/>
+</p>
+</body>
+</html>

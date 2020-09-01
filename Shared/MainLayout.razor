@@ -1,0 +1,78 @@
+﻿@inherits LayoutComponentBase
+@inject ILoginService LoginService
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <NavMenu />
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+        <!-- Main Content -->
+        <div id="content">
+
+            <TopNavMenu />
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+                @Body
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto" style="margin-bottom: 1px;">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; @DateTime.Now.Year</span><br />
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <button class="btn btn-sm btn-primary" type="button" @onclick="@LogoutUser">
+                            Logout
+                        </button>
+                        &nbsp;<img src="Images/BlockLoader.gif" alt="Loader Image" style="height: 30px; width: 30px; display: @Loader" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- End of Content Wrapper -->
+</div>
+
+@code{
+    public string Loader { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Loader = "none";
+    }
+    
+    public async Task LogoutUser()
+    {
+        Loader = "inline";
+        await LoginService.Logout();
+        NavigationManager.NavigateTo("Login", true);
+    }
+}

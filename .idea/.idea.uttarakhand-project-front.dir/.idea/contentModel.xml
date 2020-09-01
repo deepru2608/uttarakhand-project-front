@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\deepa\.nuget\packages\matblazor\2.6.2\contentFiles\any\netstandard2.1\Properties\launchSettings.json" t="Include" />
+    <e p="C:\Users\deepa\.Rider2019.3\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\deepa\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\deepa\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front" t="IncludeRecursive">
+      <e p="_Imports.razor" t="Include" />
+      <e p="App.razor" t="Include" />
+      <e p="appsettings.Development.json" t="Include" />
+      <e p="appsettings.json" t="Include" />
+      <e p="Auth" t="Include">
+        <e p="DataProtectionPurposeStrings.cs" t="Include" />
+        <e p="ILoginService.cs" t="Include" />
+        <e p="JWTAuthenticationProvider.cs" t="Include" />
+      </e>
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Data" t="Include">
+        <e p="FrontAppDbContext.cs" t="Include" />
+        <e p="ModelBuilderExtension.cs" t="Include" />
+        <e p="Pincode.json" t="Include" />
+        <e p="WeatherForecast.cs" t="Include" />
+        <e p="WeatherForecastService.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20200823083041_initialCreate.cs" t="Include" />
+        <e p="20200823083041_initialCreate.Designer.cs" t="Include" />
+        <e p="20200824100822_AddColumnInRegistration_20200824.cs" t="Include" />
+        <e p="20200824100822_AddColumnInRegistration_20200824.Designer.cs" t="Include" />
+        <e p="20200824113635_AddColumnRef_20200824.cs" t="Include" />
+        <e p="20200824113635_AddColumnRef_20200824.Designer.cs" t="Include" />
+        <e p="20200824193341_StructureChanged_20200824.cs" t="Include" />
+        <e p="20200824193341_StructureChanged_20200824.Designer.cs" t="Include" />
+        <e p="20200825070837_AddMoreColumnInR_20200825.cs" t="Include" />
+        <e p="20200825070837_AddMoreColumnInR_20200825.Designer.cs" t="Include" />
+        <e p="20200825090529_ChangeConstraints.cs" t="Include" />
+        <e p="20200825090529_ChangeConstraints.Designer.cs" t="Include" />
+        <e p="20200826002402_SomeTableMasters_20200826.cs" t="Include" />
+        <e p="20200826002402_SomeTableMasters_20200826.Designer.cs" t="Include" />
+        <e p="20200826010039_UpdateColumnsAndAddTable_20200826.cs" t="Include" />
+        <e p="20200826010039_UpdateColumnsAndAddTable_20200826.Designer.cs" t="Include" />
+        <e p="20200826010907_AddQualifyingTypeTable.cs" t="Include" />
+        <e p="20200826010907_AddQualifyingTypeTable.Designer.cs" t="Include" />
+        <e p="20200826142125_AddColumnsInRegistration_20200826.cs" t="Include" />
+        <e p="20200826142125_AddColumnsInRegistration_20200826.Designer.cs" t="Include" />
+        <e p="20200827050420_PinCodeMaster_20200827.cs" t="Include" />
+        <e p="20200827050420_PinCodeMaster_20200827.Designer.cs" t="Include" />
+        <e p="20200827061009_AddStateTable.cs" t="Include" />
+        <e p="20200827061009_AddStateTable.Designer.cs" t="Include" />
+        <e p="FrontAppDbContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="ApplicationUser.cs" t="Include" />
+        <e p="Course.cs" t="Include" />
+        <e p="ExamCenter.cs" t="Include" />
+        <e p="JwtToken.cs" t="Include" />
+        <e p="Pincode.cs" t="Include" />
+        <e p="QualifyingExam.cs" t="Include" />
+        <e p="QualifyingExamDetails.cs" t="Include" />
+        <e p="QualifyingType.cs" t="Include" />
+        <e p="ReCaptchaVerificationOptions.cs" t="Include" />
+        <e p="ReCaptchaVerificationResponse.cs" t="Include" />
+        <e p="Registration.cs" t="Include" />
+        <e p="SampleApiArgs.cs" t="Include" />
+        <e p="State.cs" t="Include" />
+        <e p="StateData.cs" t="Include" />
+        <e p="UserCredential.cs" t="Include" />
+        <e p="UserInfo.cs" t="Include" />
+        <e p="UserToken.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="uttarakhand-project-front.AssemblyInfo.cs" t="Include" />
+            <e p="uttarakhand-project-front.RazorAssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Pages" t="Include">
+        <e p="_Host.cshtml" t="Include" />
+        <e p="Account" t="Include">
+          <e p="AssignUserRoles.razor" t="Include" />
+          <e p="ChangePassword.razor" t="Include" />
+          <e p="Login.razor" t="Include" />
+          <e p="Register.razor" t="Include" />
+          <e p="Roles.razor" t="Include" />
+          <e p="RolesList.razor" t="Include" />
+        </e>
+        <e p="Counter.razor" t="Include" />
+        <e p="Error.razor" t="Include" />
+        <e p="Index.razor" t="Include" />
+        <e p="Instruction.razor" t="Include" />
+        <e p="ReCAPTCHA.razor" t="Include" />
+        <e p="RegistrationEntranceForm.razor" t="Include" />
+        <e p="RegistrationEntranceFormBase.cs" t="Include" />
+      </e>
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="launchSettings.json" t="Include" />
+        <e p="PublishProfiles" t="Include">
+          <e p="FolderProfile.pubxml" t="Include" />
+        </e>
+      </e>
+      <e p="PublishCode.txt" t="Include" />
+      <e p="Published" t="Include">
+        <e p="api-ms-win-core-console-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-datetime-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-debug-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-errorhandling-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-file-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-file-l1-2-0.dll" t="Include" />
+        <e p="api-ms-win-core-file-l2-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-handle-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-heap-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-interlocked-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-libraryloader-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-localization-l1-2-0.dll" t="Include" />
+        <e p="api-ms-win-core-memory-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-namedpipe-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-processenvironment-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-processthreads-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-processthreads-l1-1-1.dll" t="Include" />
+        <e p="api-ms-win-core-profile-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-rtlsupport-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-string-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-synch-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-synch-l1-2-0.dll" t="Include" />
+        <e p="api-ms-win-core-sysinfo-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-timezone-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-core-util-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-conio-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-convert-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-environment-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-filesystem-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-heap-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-locale-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-math-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-multibyte-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-private-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-process-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-runtime-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-stdio-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-string-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-time-l1-1-0.dll" t="Include" />
+        <e p="api-ms-win-crt-utility-l1-1-0.dll" t="Include" />
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="aspnetcorev2_inprocess.dll" t="Include" />
+        <e p="Blazored.SessionStorage.dll" t="Include" />
+        <e p="clrcompression.dll" t="Include" />
+        <e p="clretwrc.dll" t="Include" />
+        <e p="clrjit.dll" t="Include" />
+        <e p="coreclr.dll" t="Include" />
+        <e p="Dapper.dll" t="Include" />
+        <e p="Data" t="Include">
+          <e p="Pincode.json" t="Include" />
+        </e>
+        <e p="dbgshim.dll" t="Include" />
+        <e p="hostfxr.dll" t="Include" />
+        <e p="hostpolicy.dll" t="Include" />
+        <e p="JWT.dll" t="Include" />
+        <e p="MatBlazor.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Antiforgery.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Authentication.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Authentication.Cookies.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Authentication.Core.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Authentication.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Authentication.JwtBearer.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Authentication.OAuth.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Authorization.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Authorization.Policy.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Components.Authorization.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Components.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Components.Forms.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Components.Server.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Components.Web.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Connections.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.CookiePolicy.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Cors.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Cryptography.Internal.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Cryptography.KeyDerivation.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.DataProtection.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.DataProtection.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.DataProtection.Extensions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Diagnostics.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Diagnostics.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Diagnostics.HealthChecks.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.HostFiltering.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Hosting.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Hosting.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Hosting.Server.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Html.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Http.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Http.Connections.Common.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Http.Connections.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Http.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Http.Extensions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Http.Features.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.HttpOverrides.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.HttpsPolicy.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Identity.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Localization.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Localization.Routing.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Metadata.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.ApiExplorer.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.Core.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.Cors.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.DataAnnotations.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.Formatters.Json.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.Formatters.Xml.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.Localization.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.Razor.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.RazorPages.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.TagHelpers.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Mvc.ViewFeatures.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.ProtectedBrowserStorage.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Razor.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Razor.Runtime.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.ResponseCaching.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.ResponseCaching.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.ResponseCompression.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Rewrite.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Routing.Abstractions.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Routing.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Server.HttpSys.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Server.IIS.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Server.IISIntegration.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Server.Kestrel.Core.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Server.Kestrel.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.Session.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.SignalR.Common.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.SignalR.Core.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.SignalR.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.SignalR.Protocols.Json.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.StaticFiles.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.WebSockets.dll" t="Include" />
+        <e p="Microsoft.AspNetCore.WebUtilities.dll" t="Include" />
+        <e p="Microsoft.Bcl.AsyncInterfaces.dll" t="Include" />
+        <e p="Microsoft.Bcl.HashCode.dll" t="Include" />
+        <e p="Microsoft.CSharp.dll" t="Include" />
+        <e p="Microsoft.Data.SqlClient.dll" t="Include" />
+        <e p="Microsoft.DiaSymReader.Native.amd64.dll" t="Include" />
+        <e p="Microsoft.EntityFrameworkCore.Abstractions.dll" t="Include" />
+        <e p="Microsoft.EntityFrameworkCore.dll" t="Include" />
+        <e p="Microsoft.EntityFrameworkCore.Relational.dll" t="Include" />
+        <e p="Microsoft.EntityFrameworkCore.SqlServer.dll" t="Include" />
+        <e p="Microsoft.Extensions.Caching.Abstractions.dll" t="Include" />
+        <e p="Microsoft.Extensions.Caching.Memory.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.Abstractions.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.Binder.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.CommandLine.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.EnvironmentVariables.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.FileExtensions.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.Ini.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.Json.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.KeyPerFile.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.UserSecrets.dll" t="Include" />
+        <e p="Microsoft.Extensions.Configuration.Xml.dll" t="Include" />
+        <e p="Microsoft.Extensions.DependencyInjection.Abstractions.dll" t="Include" />
+        <e p="Microsoft.Extensions.DependencyInjection.dll" t="Include" />
+        <e p="Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll" t="Include" />
+        <e p="Microsoft.Extensions.Diagnostics.HealthChecks.dll" t="Include" />
+        <e p="Microsoft.Extensions.FileProviders.Abstractions.dll" t="Include" />
+        <e p="Microsoft.Extensions.FileProviders.Composite.dll" t="Include" />
+        <e p="Microsoft.Extensions.FileProviders.Embedded.dll" t="Include" />
+        <e p="Microsoft.Extensions.FileProviders.Physical.dll" t="Include" />
+        <e p="Microsoft.Extensions.FileSystemGlobbing.dll" t="Include" />
+        <e p="Microsoft.Extensions.Hosting.Abstractions.dll" t="Include" />
+        <e p="Microsoft.Extensions.Hosting.dll" t="Include" />
+        <e p="Microsoft.Extensions.Http.dll" t="Include" />
+        <e p="Microsoft.Extensions.Identity.Core.dll" t="Include" />
+        <e p="Microsoft.Extensions.Identity.Stores.dll" t="Include" />
+        <e p="Microsoft.Extensions.Localization.Abstractions.dll" t="Include" />
+        <e p="Microsoft.Extensions.Localization.dll" t="Include" />
+        <e p="Microsoft.Extensions.Logging.Abstractions.dll" t="Include" />
+        <e p="Microsoft.Extensions.Logging.Configuration.dll" t="Include" />
+        <e p="Microsoft.Extensions.Logging.Console.dll" t="Include" />
+        <e p="Microsoft.Extensions.Logging.Debug.dll" t="Include" />
+        <e p="Microsoft.Extensions.Logging.dll" t="Include" />
+        <e p="Microsoft.Extensions.Logging.EventLog.dll" t="Include" />
+        <e p="Microsoft.Extensions.Logging.EventSource.dll" t="Include" />
+        <e p="Microsoft.Extensions.Logging.TraceSource.dll" t="Include" />
+        <e p="Microsoft.Extensions.ObjectPool.dll" t="Include" />
+        <e p="Microsoft.Extensions.Options.ConfigurationExtensions.dll" t="Include" />
+        <e p="Microsoft.Extensions.Options.DataAnnotations.dll" t="Include" />
+        <e p="Microsoft.Extensions.Options.dll" t="Include" />
+        <e p="Microsoft.Extensions.Primitives.dll" t="Include" />
+        <e p="Microsoft.Extensions.WebEncoders.dll" t="Include" />
+        <e p="Microsoft.Identity.Client.dll" t="Include" />
+        <e p="Microsoft.IdentityModel.JsonWebTokens.dll" t="Include" />
+        <e p="Microsoft.IdentityModel.Logging.dll" t="Include" />
+        <e p="Microsoft.IdentityModel.Protocols.dll" t="Include" />
+        <e p="Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" t="Include" />
+        <e p="Microsoft.IdentityModel.Tokens.dll" t="Include" />
+        <e p="Microsoft.JSInterop.dll" t="Include" />
+        <e p="Microsoft.Net.Http.Headers.dll" t="Include" />
+        <e p="Microsoft.VisualBasic.Core.dll" t="Include" />
+        <e p="Microsoft.VisualBasic.dll" t="Include" />
+        <e p="Microsoft.Win32.Primitives.dll" t="Include" />
+        <e p="Microsoft.Win32.Registry.dll" t="Include" />
+        <e p="Microsoft.Win32.SystemEvents.dll" t="Include" />
+        <e p="mscordaccore.dll" t="Include" />
+        <e p="mscordaccore_amd64_amd64_4.700.20.26901.dll" t="Include" />
+        <e p="mscordbi.dll" t="Include" />
+        <e p="mscorlib.dll" t="Include" />
+        <e p="mscorrc.debug.dll" t="Include" />
+        <e p="mscorrc.dll" t="Include" />
+        <e p="netstandard.dll" t="Include" />
+        <e p="Newtonsoft.Json.dll" t="Include" />
+        <e p="reCAPTCHA.AspNetCore.dll" t="Include" />
+        <e p="sni.dll" t="Include" />
+        <e p="SOS_README.md" t="Include" />
+        <e p="Syncfusion.Blazor.dll" t="Include" />
+        <e p="Syncfusion.Blazor.PdfViewerServer.dll" t="Include" />
+        <e p="Syncfusion.Compression.Portable.dll" t="Include" />
+        <e p="Syncfusion.ExcelExport.Net.dll" t="Include" />
+        <e p="Syncfusion.Licensing.dll" t="Include" />
+        <e p="Syncfusion.Pdf.Portable.dll" t="Include" />
+        <e p="Syncfusion.PdfExport.Net.dll" t="Include" />
+        <e p="Syncfusion.PdfViewer.AspNet.Core.dll" t="Include" />
+        <e p="System.AppContext.dll" t="Include" />
+        <e p="System.Buffers.dll" t="Include" />
+        <e p="System.Collections.Concurrent.dll" t="Include" />
+        <e p="System.Collections.dll" t="Include" />
+        <e p="System.Collections.Immutable.dll" t="Include" />
+        <e p="System.Collections.NonGeneric.dll" t="Include" />
+        <e p="System.Collections.Specialized.dll" t="Include" />
+        <e p="System.ComponentModel.Annotations.dll" t="Include" />
+        <e p="System.ComponentModel.DataAnnotations.dll" t="Include" />
+        <e p="System.ComponentModel.dll" t="Include" />
+        <e p="System.ComponentModel.EventBasedAsync.dll" t="Include" />
+        <e p="System.ComponentModel.Primitives.dll" t="Include" />
+        <e p="System.ComponentModel.TypeConverter.dll" t="Include" />
+        <e p="System.Configuration.ConfigurationManager.dll" t="Include" />
+        <e p="System.Configuration.dll" t="Include" />
+        <e p="System.Console.dll" t="Include" />
+        <e p="System.Core.dll" t="Include" />
+        <e p="System.Data.Common.dll" t="Include" />
+        <e p="System.Data.DataSetExtensions.dll" t="Include" />
+        <e p="System.Data.dll" t="Include" />
+        <e p="System.Diagnostics.Contracts.dll" t="Include" />
+        <e p="System.Diagnostics.Debug.dll" t="Include" />
+        <e p="System.Diagnostics.DiagnosticSource.dll" t="Include" />
+        <e p="System.Diagnostics.EventLog.dll" t="Include" />
+        <e p="System.Diagnostics.FileVersionInfo.dll" t="Include" />
+        <e p="System.Diagnostics.Process.dll" t="Include" />
+        <e p="System.Diagnostics.StackTrace.dll" t="Include" />
+        <e p="System.Diagnostics.TextWriterTraceListener.dll" t="Include" />
+        <e p="System.Diagnostics.Tools.dll" t="Include" />
+        <e p="System.Diagnostics.TraceSource.dll" t="Include" />
+        <e p="System.Diagnostics.Tracing.dll" t="Include" />
+        <e p="System.dll" t="Include" />
+        <e p="System.Drawing.Common.dll" t="Include" />
+        <e p="System.Drawing.dll" t="Include" />
+        <e p="System.Drawing.Primitives.dll" t="Include" />
+        <e p="System.Dynamic.Runtime.dll" t="Include" />
+        <e p="System.Globalization.Calendars.dll" t="Include" />
+        <e p="System.Globalization.dll" t="Include" />
+        <e p="System.Globalization.Extensions.dll" t="Include" />
+        <e p="System.IdentityModel.Tokens.Jwt.dll" t="Include" />
+        <e p="System.IO.Compression.Brotli.dll" t="Include" />
+        <e p="System.IO.Compression.dll" t="Include" />
+        <e p="System.IO.Compression.FileSystem.dll" t="Include" />
+        <e p="System.IO.Compression.ZipFile.dll" t="Include" />
+        <e p="System.IO.dll" t="Include" />
+        <e p="System.IO.FileSystem.AccessControl.dll" t="Include" />
+        <e p="System.IO.FileSystem.dll" t="Include" />
+        <e p="System.IO.FileSystem.DriveInfo.dll" t="Include" />
+        <e p="System.IO.FileSystem.Primitives.dll" t="Include" />
+        <e p="System.IO.FileSystem.Watcher.dll" t="Include" />
+        <e p="System.IO.IsolatedStorage.dll" t="Include" />
+        <e p="System.IO.MemoryMappedFiles.dll" t="Include" />
+        <e p="System.IO.Pipelines.dll" t="Include" />
+        <e p="System.IO.Pipes.AccessControl.dll" t="Include" />
+        <e p="System.IO.Pipes.dll" t="Include" />
+        <e p="System.IO.UnmanagedMemoryStream.dll" t="Include" />
+        <e p="System.Linq.dll" t="Include" />
+        <e p="System.Linq.Expressions.dll" t="Include" />
+        <e p="System.Linq.Parallel.dll" t="Include" />
+        <e p="System.Linq.Queryable.dll" t="Include" />
+        <e p="System.Memory.dll" t="Include" />
+        <e p="System.Net.dll" t="Include" />
+        <e p="System.Net.Http.dll" t="Include" />
+        <e p="System.Net.HttpListener.dll" t="Include" />
+        <e p="System.Net.Mail.dll" t="Include" />
+        <e p="System.Net.NameResolution.dll" t="Include" />
+        <e p="System.Net.NetworkInformation.dll" t="Include" />
+        <e p="System.Net.Ping.dll" t="Include" />
+        <e p="System.Net.Primitives.dll" t="Include" />
+        <e p="System.Net.Requests.dll" t="Include" />
+        <e p="System.Net.Security.dll" t="Include" />
+        <e p="System.Net.ServicePoint.dll" t="Include" />
+        <e p="System.Net.Sockets.dll" t="Include" />
+        <e p="System.Net.WebClient.dll" t="Include" />
+        <e p="System.Net.WebHeaderCollection.dll" t="Include" />
+        <e p="System.Net.WebProxy.dll" t="Include" />
+        <e p="System.Net.WebSockets.Client.dll" t="Include" />
+        <e p="System.Net.WebSockets.dll" t="Include" />
+        <e p="System.Numerics.dll" t="Include" />
+        <e p="System.Numerics.Vectors.dll" t="Include" />
+        <e p="System.ObjectModel.dll" t="Include" />
+        <e p="System.Private.CoreLib.dll" t="Include" />
+        <e p="System.Private.DataContractSerialization.dll" t="Include" />
+        <e p="System.Private.Uri.dll" t="Include" />
+        <e p="System.Private.Xml.dll" t="Include" />
+        <e p="System.Private.Xml.Linq.dll" t="Include" />
+        <e p="System.Reflection.DispatchProxy.dll" t="Include" />
+        <e p="System.Reflection.dll" t="Include" />
+        <e p="System.Reflection.Emit.dll" t="Include" />
+        <e p="System.Reflection.Emit.ILGeneration.dll" t="Include" />
+        <e p="System.Reflection.Emit.Lightweight.dll" t="Include" />
+        <e p="System.Reflection.Extensions.dll" t="Include" />
+        <e p="System.Reflection.Metadata.dll" t="Include" />
+        <e p="System.Reflection.Primitives.dll" t="Include" />
+        <e p="System.Reflection.TypeExtensions.dll" t="Include" />
+        <e p="System.Resources.Reader.dll" t="Include" />
+        <e p="System.Resources.ResourceManager.dll" t="Include" />
+        <e p="System.Resources.Writer.dll" t="Include" />
+        <e p="System.Runtime.Caching.dll" t="Include" />
+        <e p="System.Runtime.CompilerServices.Unsafe.dll" t="Include" />
+        <e p="System.Runtime.CompilerServices.VisualC.dll" t="Include" />
+        <e p="System.Runtime.dll" t="Include" />
+        <e p="System.Runtime.Extensions.dll" t="Include" />
+        <e p="System.Runtime.Handles.dll" t="Include" />
+        <e p="System.Runtime.InteropServices.dll" t="Include" />
+        <e p="System.Runtime.InteropServices.RuntimeInformation.dll" t="Include" />
+        <e p="System.Runtime.InteropServices.WindowsRuntime.dll" t="Include" />
+        <e p="System.Runtime.Intrinsics.dll" t="Include" />
+        <e p="System.Runtime.Loader.dll" t="Include" />
+        <e p="System.Runtime.Numerics.dll" t="Include" />
+        <e p="System.Runtime.Serialization.dll" t="Include" />
+        <e p="System.Runtime.Serialization.Formatters.dll" t="Include" />
+        <e p="System.Runtime.Serialization.Json.dll" t="Include" />
+        <e p="System.Runtime.Serialization.Primitives.dll" t="Include" />
+        <e p="System.Runtime.Serialization.Xml.dll" t="Include" />
+        <e p="System.Runtime.WindowsRuntime.dll" t="Include" />
+        <e p="System.Runtime.WindowsRuntime.UI.Xaml.dll" t="Include" />
+        <e p="System.Security.AccessControl.dll" t="Include" />
+        <e p="System.Security.Claims.dll" t="Include" />
+        <e p="System.Security.Cryptography.Algorithms.dll" t="Include" />
+        <e p="System.Security.Cryptography.Cng.dll" t="Include" />
+        <e p="System.Security.Cryptography.Csp.dll" t="Include" />
+        <e p="System.Security.Cryptography.Encoding.dll" t="Include" />
+        <e p="System.Security.Cryptography.OpenSsl.dll" t="Include" />
+        <e p="System.Security.Cryptography.Pkcs.dll" t="Include" />
+        <e p="System.Security.Cryptography.Primitives.dll" t="Include" />
+        <e p="System.Security.Cryptography.ProtectedData.dll" t="Include" />
+        <e p="System.Security.Cryptography.X509Certificates.dll" t="Include" />
+        <e p="System.Security.Cryptography.Xml.dll" t="Include" />
+        <e p="System.Security.dll" t="Include" />
+        <e p="System.Security.Permissions.dll" t="Include" />
+        <e p="System.Security.Principal.dll" t="Include" />
+        <e p="System.Security.Principal.Windows.dll" t="Include" />
+        <e p="System.Security.SecureString.dll" t="Include" />
+        <e p="System.ServiceModel.Web.dll" t="Include" />
+        <e p="System.ServiceProcess.dll" t="Include" />
+        <e p="System.Text.Encoding.CodePages.dll" t="Include" />
+        <e p="System.Text.Encoding.dll" t="Include" />
+        <e p="System.Text.Encoding.Extensions.dll" t="Include" />
+        <e p="System.Text.Encodings.Web.dll" t="Include" />
+        <e p="System.Text.Json.dll" t="Include" />
+        <e p="System.Text.RegularExpressions.dll" t="Include" />
+        <e p="System.Threading.Channels.dll" t="Include" />
+        <e p="System.Threading.dll" t="Include" />
+        <e p="System.Threading.Overlapped.dll" t="Include" />
+        <e p="System.Threading.Tasks.Dataflow.dll" t="Include" />
+        <e p="System.Threading.Tasks.dll" t="Include" />
+        <e p="System.Threading.Tasks.Extensions.dll" t="Include" />
+        <e p="System.Threading.Tasks.Parallel.dll" t="Include" />
+        <e p="System.Threading.Thread.dll" t="Include" />
+        <e p="System.Threading.ThreadPool.dll" t="Include" />
+        <e p="System.Threading.Timer.dll" t="Include" />
+        <e p="System.Transactions.dll" t="Include" />
+        <e p="System.Transactions.Local.dll" t="Include" />
+        <e p="System.ValueTuple.dll" t="Include" />
+        <e p="System.Web.dll" t="Include" />
+        <e p="System.Web.HttpUtility.dll" t="Include" />
+        <e p="System.Windows.dll" t="Include" />
+        <e p="System.Windows.Extensions.dll" t="Include" />
+        <e p="System.Xml.dll" t="Include" />
+        <e p="System.Xml.Linq.dll" t="Include" />
+        <e p="System.Xml.ReaderWriter.dll" t="Include" />
+        <e p="System.Xml.Serialization.dll" t="Include" />
+        <e p="System.Xml.XDocument.dll" t="Include" />
+        <e p="System.Xml.XmlDocument.dll" t="Include" />
+        <e p="System.Xml.XmlSerializer.dll" t="Include" />
+        <e p="System.Xml.XPath.dll" t="Include" />
+        <e p="System.Xml.XPath.XDocument.dll" t="Include" />
+        <e p="ucrtbase.dll" t="Include" />
+        <e p="uttarakhand-project-front.deps.json" t="Include" />
+        <e p="uttarakhand-project-front.dll" t="Include" />
+        <e p="uttarakhand-project-front.exe" t="Include" />
+        <e p="uttarakhand-project-front.pdb" t="Include" />
+        <e p="uttarakhand-project-front.runtimeconfig.json" t="Include" />
+        <e p="uttarakhand-project-front.Views.dll" t="Include" />
+        <e p="uttarakhand-project-front.Views.pdb" t="Include" />
+        <e p="web.config" t="Include" />
+        <e p="WindowsBase.dll" t="Include" />
+        <e p="wwwroot" t="Include">
+          <e p="_content" t="Include">
+            <e p="matblazor" t="Include">
+              <e p="dist" t="Include">
+                <e p="matBlazor.css" t="Include" />
+                <e p="matBlazor.js" t="Include" />
+              </e>
+            </e>
+            <e p="Microsoft.AspNetCore.ProtectedBrowserStorage" t="Include">
+              <e p="protectedBrowserStorage.js" t="Include" />
+            </e>
+            <e p="Syncfusion.Blazor" t="Include">
+              <e p="scripts" t="Include">
+                <e p="accordion-a1eb99.min.js" t="Include" />
+                <e p="accumulationchart-a1eb99.min.js" t="Include" />
+                <e p="autocomplete-a1eb99.min.js" t="Include" />
+                <e p="barcodegenerator-a1eb99.min.js" t="Include" />
+                <e p="bulletchart-a1eb99.min.js" t="Include" />
+                <e p="button-a1eb99.min.js" t="Include" />
+                <e p="buttonsbase-a1eb99.min.js" t="Include" />
+                <e p="calendar-a1eb99.min.js" t="Include" />
+                <e p="chart-a1eb99.min.js" t="Include" />
+                <e p="charts-a1eb99.min.js" t="Include" />
+                <e p="chartsbase-a1eb99.min.js" t="Include" />
+                <e p="checkbox-a1eb99.min.js" t="Include" />
+                <e p="chiplist-a1eb99.min.js" t="Include" />
+                <e p="circulargauge-a1eb99.min.js" t="Include" />
+                <e p="colorpicker-a1eb99.min.js" t="Include" />
+                <e p="combobox-a1eb99.min.js" t="Include" />
+                <e p="compression-a1eb99.min.js" t="Include" />
+                <e p="contextmenu-a1eb99.min.js" t="Include" />
+                <e p="dashboardlayout-a1eb99.min.js" t="Include" />
+                <e p="data-a1eb99.min.js" t="Include" />
+                <e p="datepicker-a1eb99.min.js" t="Include" />
+                <e p="daterangepicker-a1eb99.min.js" t="Include" />
+                <e p="datetimepicker-a1eb99.min.js" t="Include" />
+                <e p="diagrams-a1eb99.min.js" t="Include" />
+                <e p="dialog-a1eb99.min.js" t="Include" />
+                <e p="documenteditor-a1eb99.min.js" t="Include" />
+                <e p="documenteditorbase-a1eb99.min.js" t="Include" />
+                <e p="documenteditorcontainer-a1eb99.min.js" t="Include" />
+                <e p="drawings-a1eb99.min.js" t="Include" />
+                <e p="dropdownbutton-a1eb99.min.js" t="Include" />
+                <e p="dropdownlist-a1eb99.min.js" t="Include" />
+                <e p="dropdownsbase-a1eb99.min.js" t="Include" />
+                <e p="dropdowntree-a1eb99.min.js" t="Include" />
+                <e p="excelexport-a1eb99.min.js" t="Include" />
+                <e p="filemanager-a1eb99.min.js" t="Include" />
+                <e p="fileutils-a1eb99.min.js" t="Include" />
+                <e p="formvalidator-a1eb99.min.js" t="Include" />
+                <e p="gantt-a1eb99.min.js" t="Include" />
+                <e p="grid-a1eb99.min.js" t="Include" />
+                <e p="heatmap-a1eb99.min.js" t="Include" />
+                <e p="inplaceeditor-a1eb99.min.js" t="Include" />
+                <e p="inputsbase-a1eb99.min.js" t="Include" />
+                <e p="kanban-a1eb99.min.js" t="Include" />
+                <e p="lineargauge-a1eb99.min.js" t="Include" />
+                <e p="listbox-a1eb99.min.js" t="Include" />
+                <e p="listsbase-a1eb99.min.js" t="Include" />
+                <e p="listview-a1eb99.min.js" t="Include" />
+                <e p="maps-a1eb99.min.js" t="Include" />
+                <e p="maskedtextbox-a1eb99.min.js" t="Include" />
+                <e p="menu-a1eb99.min.js" t="Include" />
+                <e p="multiselect-a1eb99.min.js" t="Include" />
+                <e p="navigationsbase-a1eb99.min.js" t="Include" />
+                <e p="numerictextbox-a1eb99.min.js" t="Include" />
+                <e p="officechart-a1eb99.min.js" t="Include" />
+                <e p="pager-a1eb99.min.js" t="Include" />
+                <e p="pdfexport-a1eb99.min.js" t="Include" />
+                <e p="pdfviewer-a1eb99.min.js" t="Include" />
+                <e p="pdfviewerbase-a1eb99.min.js" t="Include" />
+                <e p="pivotview-a1eb99.min.js" t="Include" />
+                <e p="popup-a1eb99.min.js" t="Include" />
+                <e p="popupsbase-a1eb99.min.js" t="Include" />
+                <e p="progressbar-a1eb99.min.js" t="Include" />
+                <e p="progressbutton-a1eb99.min.js" t="Include" />
+                <e p="querybuilder-a1eb99.min.js" t="Include" />
+                <e p="radiobutton-a1eb99.min.js" t="Include" />
+                <e p="rangenavigator-a1eb99.min.js" t="Include" />
+                <e p="richtexteditor-a1eb99.min.js" t="Include" />
+                <e p="schedule-a1eb99.min.js" t="Include" />
+                <e p="sf-barcode-a1eb99.min.js" t="Include" />
+                <e p="sf-calendarbase-a1eb99.min.js" t="Include" />
+                <e p="sf-chart-a1eb99.min.js" t="Include" />
+                <e p="sf-contextmenu-a1eb99.min.js" t="Include" />
+                <e p="sf-datepicker-a1eb99.min.js" t="Include" />
+                <e p="sf-dialog-a1eb99.min.js" t="Include" />
+                <e p="sf-drop-down-button-a1eb99.min.js" t="Include" />
+                <e p="sf-grid-a1eb99.min.js" t="Include" />
+                <e p="sf-numerictextbox-a1eb99.min.js" t="Include" />
+                <e p="sf-splitter-a1eb99.min.js" t="Include" />
+                <e p="sf-tab-a1eb99.min.js" t="Include" />
+                <e p="sf-textbox-a1eb99.min.js" t="Include" />
+                <e p="sf-toolbar-a1eb99.min.js" t="Include" />
+                <e p="sf-tooltip-a1eb99.min.js" t="Include" />
+                <e p="sf-treegrid-a1eb99.min.js" t="Include" />
+                <e p="sidebar-a1eb99.min.js" t="Include" />
+                <e p="slider-a1eb99.min.js" t="Include" />
+                <e p="smithchart-a1eb99.min.js" t="Include" />
+                <e p="sparkline-a1eb99.min.js" t="Include" />
+                <e p="spinner-a1eb99.min.js" t="Include" />
+                <e p="splitbutton-a1eb99.min.js" t="Include" />
+                <e p="splitbuttonsbase-a1eb99.min.js" t="Include" />
+                <e p="splitter-a1eb99.min.js" t="Include" />
+                <e p="stockchart-a1eb99.min.js" t="Include" />
+                <e p="svgbase-a1eb99.min.js" t="Include" />
+                <e p="switch-a1eb99.min.js" t="Include" />
+                <e p="syncfusion-blazor.min.js" t="Include" />
+                <e p="tab-a1eb99.min.js" t="Include" />
+                <e p="textbox-a1eb99.min.js" t="Include" />
+                <e p="timepicker-a1eb99.min.js" t="Include" />
+                <e p="toast-a1eb99.min.js" t="Include" />
+                <e p="toolbar-a1eb99.min.js" t="Include" />
+                <e p="tooltip-a1eb99.min.js" t="Include" />
+                <e p="treegrid-a1eb99.min.js" t="Include" />
+                <e p="treemap-a1eb99.min.js" t="Include" />
+                <e p="treeview-a1eb99.min.js" t="Include" />
+                <e p="uploader-a1eb99.min.js" t="Include" />
+              </e>
+              <e p="styles" t="Include">
+                <e p="bootstrap-dark.css" t="Include" />
+                <e p="bootstrap.css" t="Include" />
+                <e p="bootstrap4.css" t="Include" />
+                <e p="fabric-dark.css" t="Include" />
+                <e p="fabric.css" t="Include" />
+                <e p="highcontrast.css" t="Include" />
+                <e p="material-dark.css" t="Include" />
+                <e p="material.css" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="css" t="Include">
+            <e p="bootstrap" t="Include">
+              <e p="bootstrap.min.css" t="Include" />
+              <e p="bootstrap.min.css.map" t="Include" />
+            </e>
+            <e p="open-iconic" t="Include">
+              <e p="font" t="Include">
+                <e p="css" t="Include">
+                  <e p="open-iconic-bootstrap.min.css" t="Include" />
+                </e>
+                <e p="fonts" t="Include">
+                  <e p="open-iconic.eot" t="Include" />
+                  <e p="open-iconic.otf" t="Include" />
+                  <e p="open-iconic.svg" t="Include" />
+                  <e p="open-iconic.ttf" t="Include" />
+                  <e p="open-iconic.woff" t="Include" />
+                </e>
+              </e>
+              <e p="FONT-LICENSE" t="Include" />
+              <e p="ICON-LICENSE" t="Include" />
+              <e p="README.md" t="Include" />
+            </e>
+            <e p="site.css" t="Include" />
+          </e>
+          <e p="CustomCss" t="Include">
+            <e p="bootstrap.min.css" t="Include" />
+            <e p="mainSite.css" t="Include" />
+            <e p="mdb.min.css" t="Include" />
+            <e p="sb-admin-2.css" t="Include" />
+            <e p="sb-admin-2.min.css" t="Include" />
+          </e>
+          <e p="CustomJs" t="Include">
+            <e p="bootstrap.min.js" t="Include" />
+            <e p="jquery.min.js" t="Include" />
+            <e p="mainSite.js" t="Include" />
+            <e p="mdb.min.js" t="Include" />
+            <e p="popper.min.js" t="Include" />
+            <e p="reCaptcha.js" t="Include" />
+            <e p="sb-admin-2.js" t="Include" />
+            <e p="sb-admin-2.min.js" t="Include" />
+          </e>
+          <e p="favicon.ico" t="Include" />
+          <e p="Images" t="Include">
+            <e p="BlockLoader.gif" t="Include" />
+            <e p="Kumaun-University-job.png" t="Include" />
+            <e p="LoginImage.jpg" t="Include" />
+            <e p="stop-animation.gif" t="Include" />
+          </e>
+          <e p="UploadDocs" t="Include">
+            <e p="B_EdFormInstructions.pdf" t="Include" />
+            <e p="M_EdFormInstructions.pdf" t="Include" />
+            <e p="Photos" t="Include">
+              <e p="77700001P.JPG" t="Include" />
+              <e p="77700002P.JPG" t="Include" />
+              <e p="88800001P.JPG" t="Include" />
+              <e p="Temp.txt" t="Include" />
+            </e>
+            <e p="Signature" t="Include">
+              <e p="77700001S.jpg" t="Include" />
+              <e p="77700002S.jpg" t="Include" />
+              <e p="88800001S.jpg" t="Include" />
+              <e p="Temp.txt" t="Include" />
+            </e>
+          </e>
+        </e>
+      </e>
+      <e p="Services" t="Include">
+        <e p="CaptchaService.cs" t="Include" />
+        <e p="CenterService.cs" t="Include" />
+        <e p="DapperService.cs" t="Include" />
+        <e p="ICenterService.cs" t="Include" />
+        <e p="IJSRuntimeExtensions.cs" t="Include" />
+        <e p="ITokenService.cs" t="Include" />
+        <e p="IUserService.cs" t="Include" />
+        <e p="TokenService.cs" t="Include" />
+        <e p="UserService.cs" t="Include" />
+      </e>
+      <e p="Shared" t="Include">
+        <e p="AccountLayout.razor" t="Include" />
+        <e p="CheckAuthorization.razor" t="Include" />
+        <e p="MainLayout.razor" t="Include" />
+        <e p="NavMenu.razor" t="Include" />
+        <e p="RedirectToLogin.razor" t="Include" />
+        <e p="TopNavMenu.razor" t="Include" />
+      </e>
+      <e p="Startup.cs" t="Include" />
+      <e p="uttarakhand-project-front.csproj" t="IncludeRecursive" />
+      <e p="ViewModels" t="Include">
+        <e p="AssignUserRoleViewModel.cs" t="Include" />
+        <e p="ChangePasswordRazorModel.cs" t="Include" />
+        <e p="LoginViewModel.cs" t="Include" />
+        <e p="RegisterViewModel.cs" t="Include" />
+        <e p="RegistrationViewModel.cs" t="Include" />
+        <e p="UsersListAssign.cs" t="Include" />
+      </e>
+      <e p="wwwroot" t="Include">
+        <e p="css" t="Include">
+          <e p="bootstrap" t="Include">
+            <e p="bootstrap.min.css" t="Include" />
+            <e p="bootstrap.min.css.map" t="Include" />
+          </e>
+          <e p="open-iconic" t="Include">
+            <e p="font" t="Include">
+              <e p="css" t="Include">
+                <e p="open-iconic-bootstrap.min.css" t="Include" />
+              </e>
+              <e p="fonts" t="Include">
+                <e p="open-iconic.eot" t="Include" />
+                <e p="open-iconic.otf" t="Include" />
+                <e p="open-iconic.svg" t="Include" />
+                <e p="open-iconic.ttf" t="Include" />
+                <e p="open-iconic.woff" t="Include" />
+              </e>
+            </e>
+            <e p="FONT-LICENSE" t="Include" />
+            <e p="ICON-LICENSE" t="Include" />
+            <e p="README.md" t="Include" />
+          </e>
+          <e p="site.css" t="Include" />
+        </e>
+        <e p="CustomCss" t="Include">
+          <e p="bootstrap.min.css" t="Include" />
+          <e p="mainSite.css" t="Include" />
+          <e p="mdb.min.css" t="Include" />
+          <e p="sb-admin-2.css" t="Include" />
+          <e p="sb-admin-2.min.css" t="Include" />
+        </e>
+        <e p="CustomJs" t="Include">
+          <e p="bootstrap.min.js" t="Include" />
+          <e p="jquery.min.js" t="Include" />
+          <e p="mainSite.js" t="Include" />
+          <e p="mdb.min.js" t="Include" />
+          <e p="popper.min.js" t="Include" />
+          <e p="reCaptcha.js" t="Include" />
+          <e p="sb-admin-2.js" t="Include" />
+          <e p="sb-admin-2.min.js" t="Include" />
+        </e>
+        <e p="favicon.ico" t="Include" />
+        <e p="Images" t="Include">
+          <e p="BlockLoader.gif" t="Include" />
+          <e p="Kumaun-University-job.png" t="Include" />
+          <e p="LoginImage.jpg" t="Include" />
+          <e p="stop-animation.gif" t="Include" />
+        </e>
+        <e p="UploadDocs" t="Include">
+          <e p="B_EdFormInstructions.pdf" t="Include" />
+          <e p="M_EdFormInstructions.pdf" t="Include" />
+          <e p="Photos" t="Include">
+            <e p="77700001P.JPG" t="Include" />
+            <e p="77700002P.JPG" t="Include" />
+            <e p="88800001P.JPG" t="Include" />
+            <e p="Temp.txt" t="Include" />
+          </e>
+          <e p="Signature" t="Include">
+            <e p="77700001S.jpg" t="Include" />
+            <e p="77700002S.jpg" t="Include" />
+            <e p="88800001S.jpg" t="Include" />
+            <e p="Temp.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+    </e>
+  </component>
+</project>

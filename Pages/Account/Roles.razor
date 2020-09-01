@@ -1,0 +1,77 @@
+﻿@page "/Account/Roles"
+@layout MainLayout
+@attribute [Authorize(Roles = "SuperAdmin")]
+
+<div class="card border-left-primary shadow h-100 py-2">
+    <div class="card-body">
+        <EditForm Model="roleName" OnValidSubmit="CreateRole">
+            <DataAnnotationsValidator />
+            <div class="row">
+                <div class="col-sm-12 text-left">
+                    <h4><span class="border-bottom" style="color: #3C40C6">Create New Role</span></h4>
+                </div>
+                <div class="col-sm-12 mt-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="Role Name"
+                               @bind-Value="roleName"></SfTextBox>
+                </div>
+                <div class="col-sm-12 mt-2 text-left">
+                    <SfButton IsPrimary="true"><i class="fas fa-plus-circle"></i>&nbsp;Create Role</SfButton>
+                    &nbsp;<img src="Images/BlockLoader.gif" alt="Loader"
+                               style="height: 30px; width: 30px; display: @Loader" />
+                </div>
+            </div>
+        </EditForm>
+
+        <div class="row mt-4">
+            <div class="col-sm-12 text-left">
+                <h4><span class="border-bottom" style="color: #3C40C6">Roles List</span></h4>
+            </div>
+            <div class="col-sm-12 mt-2">
+                <RolesList />
+            </div>
+        </div>
+    </div>
+</div>
+
+<SfToast @ref="@ToastRolesObj" ID="toast_type">
+    <ToastPosition X="Right"></ToastPosition>
+</SfToast>
+
+@code {
+    SfToast ToastRolesObj;
+    public string Loader { get; set; }
+    public string roleName { get; set; } = string.Empty;
+
+    protected override void OnInitialized()
+    {
+        Loader = "none";
+    }
+
+    async Task CreateRole()
+    {
+        Loader = "inline";
+        if (string.IsNullOrEmpty(roleName))
+        {
+            Loader = "none";
+            await ToastRolesObj.Show(new ToastModel {Title = "Error!", Content = "Please enter the Role Name!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+        }
+        else
+        {
+            var result = await UserService.CreateRoleAsync(roleName);
+            if (result == "success")
+            {
+                Loader = "none";
+                roleName = string.Empty;
+                await ToastRolesObj.Show(new ToastModel {Title = "Success!", Content = "You have created new role successfully.", CssClass = "e-toast-success", Icon = "e-success toast-icons"});
+                NavigationManager.NavigateTo("Account/Roles", true);
+            }
+            else
+            {
+                Loader = "none";
+                roleName = string.Empty;
+                await ToastRolesObj.Show(new ToastModel {Title = "Error!", Content = result, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                NavigationManager.NavigateTo("Account/Roles", true);
+            }
+        }
+    }
+}

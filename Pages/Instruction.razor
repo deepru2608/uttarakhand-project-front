@@ -1,0 +1,112 @@
+@layout MainLayout
+@page "/Instruction/{PdfShowOptions}"
+@attribute [Authorize(Roles = "User")]
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Form Instruction</h1>
+</div>
+
+<div class="card border-left-primary shadow h-100 py-2">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12 mb-2">
+                <SfPdfViewerServer DocumentPath="@DocumentPath" Height="500px" Width="100%" EnableToolbar="false"></SfPdfViewerServer>
+            </div>
+            <div class="col-sm-12 mb-2 text-center">
+                <SfCheckBox @bind-Checked="@isChecked" Label="@($"I have read all the instructions carefully and accept the terms and conditions of {IsM_EdOrB_Ed} Entrance Examination.")"></SfCheckBox>
+            </div>
+            <div class="col-sm-12 mb-2 text-center">
+                <SfButton IsPrimary="true" OnClick="@AgreedToSend"><i class="fas fa-check-circle"></i>&nbsp;Agree</SfButton>
+                &nbsp;<img src="Images/BlockLoader.gif" alt="Loader"
+                    style="height: 30px; width: 30px; display: @Loader" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<SfToast @ref="@ToastObjInstruction" ID="toast_type">
+    <ToastPosition X="Right"></ToastPosition>
+</SfToast>
+
+@code{
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+    SfToast ToastObjInstruction;
+    [Parameter]
+    public string PdfShowOptions { get; set; }
+    public bool isChecked { get; set; }
+    private string DocumentPath { get; set; }
+    public string Loader { get; set; }
+    public string IsM_EdOrB_Ed { get; set; }  
+
+    protected override void OnInitialized()
+    {
+        Loader = "none";
+        if (PdfShowOptions == "B_Ed")
+        {
+            IsM_EdOrB_Ed = "B.Ed";
+            DocumentPath = "wwwroot/UploadDocs/B_EdFormInstructions.pdf";
+        }
+        else if (PdfShowOptions == "M_Ed")
+        {
+            IsM_EdOrB_Ed = "M.Ed";
+            DocumentPath = "wwwroot/UploadDocs/M_EdFormInstructions.pdf";
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/", true);
+        }
+    }
+
+    async Task AgreedToSend()
+    {
+        Loader = "inline";
+        StateHasChanged();
+        if (isChecked)
+        {
+            var refNo = await CheckPaymentStatus();
+            if (!string.IsNullOrEmpty(refNo))
+            {
+                NavigationManager.NavigateTo($"ViewApplication/{refNo}", true);
+            }
+            else
+            {
+                NavigationManager.NavigateTo($"RegistrationForm/{PdfShowOptions}", true);
+            }
+        }
+        else
+        {
+            await ToastObjInstruction.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please agree all the terms & condition first!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            Loader = "none";
+        }
+    }
+
+    async Task<string> CheckPaymentStatus()
+    {
+        string result = string.Empty;
+        var authState = await authenticationStateTask;
+        var user = await UserManager.GetUserAsync(authState.User);
+        if (user != null)
+        {
+            var infoDetails = await CenterService.GetRegistrationDetailsByUserIdAsync(user.Id);
+            if (infoDetails != null)
+            {
+                var payStatus = await dapperService.CheckPaymentPaidAgainstRefNo(infoDetails.RefNo);
+                if (payStatus != null)
+                {
+                    result = payStatus.RefNo;
+                    return result;
+                }
+            }
+        }
+
+        return result;
+    }
+}

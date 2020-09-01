@@ -1,0 +1,142 @@
+﻿@layout MainLayout
+@page "/ViewAllApplication"
+@attribute [Authorize(Roles = "Admin")]
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">All Application Details</h1>
+</div>
+
+<div class="card border-left-primary shadow h-100 py-2">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12 mb-2">
+                @if (registrationList != null)
+                {
+                    @if (registrationList.Any())
+                    {
+                        @*<MatTable Items="@registrationList" class="mat-elevation-z5" UseSortHeaderRow="true">
+                                <MatTableHeader>
+                                    <th style="width: 5%">Id</th>
+                                    <th style="width: 5%">Ref. No</th>
+                                    <th style="width: 15%">Name</th>
+                                    <th style="width: 15%">Dob</th>
+                                    <th style="width: 15%">Year</th>
+                                    <th style="width: 15%">Exam Center</th>
+                                    <th style="width: 15%">Course Name</th>
+                                    <th style="width: 15%">Payment Status</th>
+                                    <th style="width: 15%">Action</th>
+                                </MatTableHeader>
+                                <MatTableRow>
+                                    <td>@context.SerialNo</td>
+                                    <td>@context.RefNo</td>
+                                    <td>@context.Name</td>
+                                    <td>@context.Dob</td>
+                                    <td>@context.Year</td>
+                                    <td>@context.ExamCenter</td>
+                                    <td>@context.CourseName</td>
+                                    <td>
+                                        @if (context.IsPaymentDone == "Yes")
+                                        {
+                                            <label>Payment Done</label>
+                                        }
+                                        else
+                                        {
+                                            <label>Payment Pending</label>
+                                        }
+                                    </td>
+                                    <td>
+                                        <SfButton IsPrimary="true" OnClick="@(e => ViewApplication(context.RefNo))"><i class="fas fa-eye"></i>&nbsp;View</SfButton>
+                                        <SfButton IsPrimary="true" CssClass="mt-1" OnClick="@(e => EditApplication(context.RefNo))"><i class="fas fa-edit"></i>&nbsp;Edit</SfButton>
+                                    </td>
+                                </MatTableRow>
+                            </MatTable>*@
+
+                        <SfGrid DataSource="@registrationList" AllowPaging="true">
+                            <GridColumns>
+                                <GridColumn Field=@nameof(ViewAllApplicationViewModel.SerialNo) HeaderText="Id" TextAlign="@TextAlign.Center" Width="50"></GridColumn>
+                                <GridColumn Field=@nameof(ViewAllApplicationViewModel.RefNo) HeaderText="Ref. No" TextAlign="@TextAlign.Center" Width="100"></GridColumn>
+                                <GridColumn Field=@nameof(ViewAllApplicationViewModel.Name) HeaderText="Name" TextAlign="@TextAlign.Center" Width="120"></GridColumn>
+                                <GridColumn Field=@nameof(ViewAllApplicationViewModel.Dob) HeaderText="Dob" TextAlign="@TextAlign.Center" Width="120" Format="dd/MM/yyyy" Type="ColumnType.Date"></GridColumn>
+                                <GridColumn Field=@nameof(ViewAllApplicationViewModel.Year) HeaderText="Year" TextAlign="@TextAlign.Center" Width="60"></GridColumn>
+                                <GridColumn Field=@nameof(ViewAllApplicationViewModel.ExamCenter) HeaderText="Exam Center" Type="@ColumnType.Date" TextAlign="@TextAlign.Center" Width="120"></GridColumn>
+                                <GridColumn Field=@nameof(ViewAllApplicationViewModel.CourseName) HeaderText="Course Name" TextAlign="@TextAlign.Center" Width="120"></GridColumn>
+                                <GridColumn Field=@nameof(ViewAllApplicationViewModel.IsPaymentDone) HeaderText="Payment Status" Width="100" TextAlign="@TextAlign.Center"></GridColumn>
+                                <GridColumn HeaderText="Action" Width="200">
+                                    <Template>
+                                        @{
+                                            var registrationData = (context as ViewAllApplicationViewModel);
+                                        }
+                                        <SfButton IsPrimary="true" OnClick="@(e => ViewApplication(registrationData.RefNo))"><i class="fas fa-eye"></i>&nbsp;View</SfButton>
+                                        <SfButton IsPrimary="true" OnClick="@(e => EditApplication(registrationData.RefNo))"><i class="fas fa-edit"></i>&nbsp;Edit</SfButton>
+                                    </Template>
+                                </GridColumn>
+                            </GridColumns>
+                        </SfGrid>
+                    }
+                    else
+                    {
+                        <label>No data available.</label>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+@code
+{
+    public IEnumerable<ViewAllApplicationViewModel> registrationList { get; set; }
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        registrationList = new List<ViewAllApplicationViewModel>();
+        await LoadApplications();
+    }
+
+    async Task LoadApplications()
+    {
+        var allList = await dapperService.GetAllRegistrationDetailsAsync();
+        int counter = 0;
+        List<ViewAllApplicationViewModel> liList = new List<ViewAllApplicationViewModel>();
+        foreach (var item in allList)
+        {
+            var model = new ViewAllApplicationViewModel()
+            {
+                SerialNo = ++counter,
+                Name = item.Name,
+                RefNo = item.RefNo,
+                Dob = item.Dob.Value,
+                CourseName = item.CourseName,
+                ExamCenter = item.ExamCenter,
+                IsPaymentDone = item.IsPaymentDone,
+                Year = item.Year
+            };
+
+            if (model.IsPaymentDone == "Yes")
+                model.IsPaymentDone = "Payment Done";
+            else
+                model.IsPaymentDone = "Payment Pending";
+
+            liList.Add(model);
+        }
+
+        registrationList = liList;
+    }
+
+    async Task ViewApplication(string refNo)
+    {
+        var authState = await authenticationStateTask;
+        var user = await UserManager.GetUserAsync(authState.User);
+        if (user != null)
+        {
+            NavigationManager.NavigateTo($"ViewApplication/{refNo}/{user.Id}", true);
+        }
+    }
+
+    void EditApplication(string refNo)
+    {
+        NavigationManager.NavigateTo($"EditRegistration/{refNo}", true);
+    }
+}

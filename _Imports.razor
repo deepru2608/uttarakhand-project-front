@@ -1,0 +1,54 @@
+﻿@using System.IO
+@using System.Threading.Tasks;
+@using System.Net.Http
+@using Microsoft.AspNetCore.Http;
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Components.Routing
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
+@using uttarakhand_project_front
+@using uttarakhand_project_front.Shared
+@using uttarakhand_project_front.Models
+@using uttarakhand_project_front.Services
+@using uttarakhand_project_front.Auth
+@using uttarakhand_project_front.Data
+@using uttarakhand_project_front.ViewModels
+@using Microsoft.AspNetCore.ProtectedBrowserStorage
+@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Hosting
+@using Microsoft.EntityFrameworkCore
+
+
+// Syncfusion Blazor Controls
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Charts
+@using Syncfusion.Blazor.Calendars
+@using Syncfusion.Blazor.Buttons
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Inputs
+@using Syncfusion.Blazor.DropDowns
+@using Syncfusion.Blazor.Navigations
+@using Syncfusion.Blazor.SplitButtons
+@using Syncfusion.Blazor.Lists
+@using Syncfusion.Blazor.Notifications
+@using Syncfusion.Blazor.PdfViewerServer
+
+// Mat Blazor
+@using MatBlazor
+
+// Injected Services
+@inject NavigationManager NavigationManager
+@inject IUserService UserService
+@inject ICenterService CenterService
+@inject UserManager<ApplicationUser> UserManager
+@inject SignInManager<ApplicationUser> SignInManager
+@inject IJSRuntime Js
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject ProtectedSessionStorage ProtectedSessionStorage
+@inject HttpClient httpClient
+@inject IWebHostEnvironment hostingEnvironment
+@inject CaptchaService captchaService
+@inject DapperService dapperService
+@inject IPaymentService paymentService

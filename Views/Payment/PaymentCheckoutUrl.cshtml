@@ -1,0 +1,32 @@
+﻿@using uttarakhand_project_front.Models
+@model PayUViewModel
+
+<form name="payment" id="payment" method="post" action="@Model.CheckoutUrl">
+    @{
+        if (Model.NameValue != null && Model.NameValue.Count > 0)
+        {
+         
+            SortedDictionary<string, string> sortedDict = uttarakhand_project_front.Services.HelperService.SortNameValueCollection(Model.NameValue);
+
+            foreach (KeyValuePair<string, string>    p in sortedDict)
+            {                
+                    <input type="hidden" name="@p.Key" value="@p.Value" />                
+            }
+        }
+        else
+        {
+
+            <h1> Error!</h1>
+            <p> Invalid response </p>
+        }
+    }
+</form>
+<div class="row" style="text-align:center">
+    <div class="small-12 large-12">
+        <h2 class="text-center">Please wait, redirecting to process payment..</h2>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+    $("#payment").submit();
+</script>

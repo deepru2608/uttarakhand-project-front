@@ -1,0 +1,11 @@
+﻿@page "/CheckAuthorization"
+
+@if (IsDoing)
+{
+    <img src="Images/BlockLoader.gif" alt="Page Loader" style="width: 100px; height: 100px" class="spinner" />
+}
+
+@code {
+    [Parameter]
+    public bool IsDoing { get; set; } = false;
+}

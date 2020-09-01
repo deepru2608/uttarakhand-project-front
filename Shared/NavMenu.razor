@@ -1,0 +1,183 @@
+﻿<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Registration Portal</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <AuthorizeView Roles="SuperAdmin">
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Admin Roles
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoAdmin" aria-expanded="true" aria-controls="collapseTwoAdmin">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Super Admin Services</span>
+            </a>
+            <div id="collapseTwoAdmin" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Manage Roles</h6>
+                    <a class="collapse-item" href="Account/Roles">Roles</a>
+                    <a class="collapse-item" href="Account/AssignUserRoles">Assign Roles</a>
+                </div>
+            </div>
+        </li>
+    </AuthorizeView>
+
+    <AuthorizeView Roles="Admin">
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            Admin Roles
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoAdmin" aria-expanded="true" aria-controls="collapseTwoAdmin">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Admin Services</span>
+            </a>
+            <div id="collapseTwoAdmin" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Manage Application</h6>
+                    <a class="collapse-item" href="/ViewAllApplication">View All Application</a>
+                    @* <a class="collapse-item" href="Account/AssignUserRoles">Assign Roles</a> *@
+                </div>
+            </div>
+        </li>
+    </AuthorizeView>
+
+    <AuthorizeView Roles="User">
+        <!-- Heading -->
+        <div class="sidebar-heading">
+            User Activities
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePatient" aria-expanded="true" aria-controls="collapseTwo">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Registration</span>
+            </a>
+            <div id="collapsePatient" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    @if (PaymentStatus)
+                    {
+                        <h6 class="collapse-header">Application Detail</h6>
+                        <a class="collapse-item" href="ViewApplication/@RefNo/@userId">View Application</a>
+                    }
+                    else
+                    {
+                        <h6 class="collapse-header">Manage Registration</h6>
+                        @if (ShowB_Ed)
+                        {
+                            <a class="collapse-item" href="#" @onclick="RouteB_Ed">B.Ed Registration Form</a>
+                        }
+
+                        @if (ShowM_Ed)
+                        {
+                            <a class="collapse-item" href="#" @onclick="RouteM_Ed">M.Ed Registration Form</a>
+                        }
+                    }
+                </div>
+            </div>
+        </li>
+    </AuthorizeView>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
+            <i class="fas fa-sign-out-alt fa-fw"></i>
+            <span>Logout</span>
+        </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle" @onclick="ToggleNavMenu"></button>
+    </div>
+
+</ul>
+<!-- End of Sidebar -->
+
+@code{
+
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    public bool ShowB_Ed { get; set; } = true;
+    public bool ShowM_Ed { get; set; } = true;
+    public bool PaymentStatus { get; set; }
+    public string RefNo { get; set; }
+    public string userId { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        var authState = await authenticationStateTask;
+        var user = await UserManager.GetUserAsync(authState.User);
+        if (user != null)
+        {
+            var userRelatedForm = await CenterService.GetRegistrationDetailsByUserIdAsync(user.Id);
+            if (userRelatedForm.RefNo != null)
+            {
+                if (userRelatedForm.CourseName == "B.Ed")
+                {
+                    ShowB_Ed = true;
+                    ShowM_Ed = false;
+                }
+                else if (userRelatedForm.CourseName == "M.Ed")
+                {
+                    ShowB_Ed = false;
+                    ShowM_Ed = true;
+                }
+
+                RefNo = userRelatedForm.RefNo;
+                userId = user.Id;
+                var paymentDetail = await dapperService.CheckPaymentPaidAgainstRefNo(userRelatedForm.RefNo);
+                if (paymentDetail != null)
+                    PaymentStatus = true;
+                else
+                    PaymentStatus = false;
+            }
+        }
+    }
+
+    private async Task ToggleNavMenu()
+    {
+        await Js.ShowNavMenu();
+    }
+
+    void RouteB_Ed()
+    {
+        NavigationManager.NavigateTo("Instruction/B_Ed", true);
+    }
+
+    void RouteM_Ed()
+    {
+        NavigationManager.NavigateTo("Instruction/M_Ed", true);
+    }
+
+}

@@ -1,0 +1,67 @@
+﻿@model uttarakhand_project_front.Models.PaymentViewModel
+
+@{ Layout = null; }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Payment</title>
+    <base href="~/"/>
+    <link href="CustomCss/Print-4P.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+@{
+    if (Model.paymentList != null)
+    {
+        <table width="100%" border="1" class="kds-table">
+            <tr>
+                <td>
+                    <strong>REFNO </strong>
+                </td>
+                <td>
+                    <strong>Payment Id </strong>
+                </td>
+                <td>
+                    <strong>Transaction Id </strong>
+                </td>
+                <td>
+                    <strong>Amount</strong>
+                </td>
+                <td>
+                    <strong>Pay Mode</strong>
+                </td>
+                <td>
+                    <strong>Pay Date </strong>
+                </td>
+                <td>
+                    <strong>Action</strong>
+                </td>
+            </tr>
+            @foreach (var _List in Model.paymentList)
+            {
+                <tr>
+                    <td>@_List.RefNo</td>
+                    <td>
+                        @_List.OrderId
+                    </td>
+                    <td>@_List.TransactionId</td>
+                    <td>@_List.TotalFee</td>
+                    <td>@_List.PaymentMethod</td>
+                    <td>@_List.PaidOn</td>
+                    <td>
+                        <a target="_blank" title="View Slip" href="Payment/ViewPaymentSlip/@_List.OrderId">Print Slip</a>
+                        &nbsp;
+                        <a target="_blank" title="View Slip" href="Service/PrintFinalDownload/@_List.RefNo">Print Form</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    }
+}
+
+
+</body>
+</html>

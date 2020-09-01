@@ -1,0 +1,2070 @@
+﻿@layout MainLayout
+@page "/RegistrationForm/{ShowOptions}"
+@attribute [Authorize(Roles = "User")]
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Application Form For @HeadingText Entrance Test - 2020-2021</h1>
+</div>
+
+<div class="card border-left-primary shadow h-100 py-2">
+<div class="card-body">
+<EditForm Model="@model" OnSubmit="@RegisterNewFormAsync">
+<DataAnnotationsValidator/>
+<div class="row">
+<div class="col-sm-12 mb-2">
+    <div class="heading">
+        <h5>
+            Registration Form
+        </h5>
+    </div>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Name (as per High School Certificate)" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.Name" Readonly="true">
+    </SfTextBox>
+    <ValidationMessage For="@(() => model.Name)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Father's Name" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.FatherName">
+    </SfTextBox>
+    <ValidationMessage For="@(() => model.FatherName)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Mother's Name" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.MotherName">
+    </SfTextBox>
+    <ValidationMessage For="@(() => model.MotherName)" style="color: red"/>
+</div>
+<div class="col-sm-6">
+    <SfDatePicker TValue="DateTime?" Placeholder="Date of Birth (DD/MM/YYYY)" @bind-Value="model.Dob"
+                  FloatLabelType="@FloatLabelType.Auto" Format="dd/MM/yyyy">
+        <DatePickerEvents TValue="DateTime?" ValueChange="@(e => CheckDob(e.Value.ToString()))"></DatePickerEvents>
+    </SfDatePicker>
+    <ValidationMessage For="@(() => model.Dob)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Mobile No." FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.MobileNo" Readonly="true">
+    </SfTextBox>
+    <ValidationMessage For="@(() => model.MobileNo)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Email Address" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.EmailAddress" Readonly="true">
+    </SfTextBox>
+    <ValidationMessage For="@(() => model.EmailAddress)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" @bind-Value="model.Year" Readonly="true" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Center" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.ExamCenter" DataSource="ExamCenterList">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.ExamCenter)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    @* <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Course" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.CourseName" DataSource="CoursesList">
+                    </SfDropDownList> *@
+    <SfTextBox CssClass="e-outline" Placeholder="Course Name" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.CourseName" Readonly="true">
+    </SfTextBox>
+    <ValidationMessage For="@(() => model.CourseName)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Group" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.StudentGroup" DataSource="GroupList">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.StudentGroup)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Marital Status" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.MaritalStatus" DataSource="MaritalStatusList">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.MaritalStatus)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Nationality" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.Nationality" DataSource="NationalityList">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.Nationality)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Domicile of Uttarakhand" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.IsDomicileOfUttarakhand" DataSource="DomicileUksList">
+        <DropDownListEvents TValue="string" ValueChange="@(e => IsDomicileOfUK(e.Value.ToString()))"></DropDownListEvents>
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.IsDomicileOfUttarakhand)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Category" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.Category" DataSource="CategoryList">
+        <DropDownListEvents TValue="string" ValueChange="@(e => CheckEwsCondition(e.Value.ToString()))"></DropDownListEvents>
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.Category)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Dependent of Freedom Fighter" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.IsFreedomFighter" DataSource="FreedomFightersList">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.IsFreedomFighter)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Self ex Defence Personal" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.IsDefencePersonal" DataSource="DefencePersonalList">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.IsDefencePersonal)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Physically Challenged (PH)" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.IsPhysicallyChallenged" DataSource="PhysicallyChallengesList">        
+        <DropDownListEvents TValue="string" ValueChange="@(e => IsPysicallyChallenge(e.Value.ToString()))"></DropDownListEvents>
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.IsPhysicallyChallenged)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="If PH Yes - Type" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.PhysicallyChallengedType" DataSource="PhysicallyChallengesTypeList" Readonly="@IsPhysically">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.PhysicallyChallengedType)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Gender" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.Gender" DataSource="GendersList">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.Gender)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you Involved in any litigation or punished by court"
+                    @bind-Value="model.IsPunishedByCourt" DataSource="PunishedByCourtList" FloatLabelType="@FloatLabelType.Auto">
+        <DropDownListEvents TValue="string" ValueChange="@(e => CheckCrimicalRecord(e.Value.ToString()))"></DropDownListEvents>
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.IsPunishedByCourt)" style="color: red"/>
+</div>
+@if (IsEwsHideShow)
+{
+    <div class="col-sm-6 mb-2">
+        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Economicallly Weaker Section (EWS)"
+                        @bind-Value="model.IsEconomicallyWeakerSection" DataSource="EWS" FloatLabelType="@FloatLabelType.Auto">
+        </SfDropDownList>
+        <ValidationMessage For="@(() => model.IsEconomicallyWeakerSection)" style="color: red"/>
+    </div>
+}
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Debarred by University for using unfair means till 2020"
+                    @bind-Value="model.IsDebarredByUniversity" DataSource="DabarredCollegeList" FloatLabelType="@FloatLabelType.Auto">
+        <DropDownListEvents TValue="string" ValueChange="@(e => CheckCrimicalRecord(e.Value.ToString()))"></DropDownListEvents>
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.IsDebarredByUniversity)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select State" FloatLabelType="@FloatLabelType.Auto"
+                    @bind-Value="model.StateName" DataSource="StateList" Readonly="@IsStateEnabled">
+    </SfDropDownList>
+    <ValidationMessage For="@(() => model.StateName)" style="color: red"/>
+</div>
+<div class="col-sm-12 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Address" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.Address" Multiline="true">
+    </SfTextBox>
+    <ValidationMessage For="@(() => model.Address)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="City/Village/Post"
+               @bind-Value="model.City">
+    </SfTextBox>
+    <ValidationMessage For="@(() => model.City)" style="color: red"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <InputText type="text" class="e-input e-outline" placeholder="Pincode" @bind-Value="model.Pincode" maxlength="6" minlength="6"
+               onkeypress="return isNumber(event)" oncopy="return false" onpaste="return false" oncut="return false">
+    </InputText>
+    <ValidationMessage For="@(() => model.Pincode)" style="color: red"/>
+</div>
+<div class="col-sm-12 mb-2">
+    <h5>
+        <span class="text-muted border-bottom">Qualifying Exam Details</span>
+    </h5>
+</div>
+
+@if (IsM_Ed == false)
+{
+    <div class="col-sm-6 mb-2">
+        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you student from Kumaun University" FloatLabelType="@FloatLabelType.Auto"
+                        @bind-Value="model.IsKumaunUniversity" DataSource="KUOptions">
+            <DropDownListEvents TValue="string" ValueChange="@(e => CheckUserIsValidInKuTerms(e.Value.ToString()))"></DropDownListEvents>
+        </SfDropDownList>
+    </div>
+    <div class="col-sm-12 mb-2">
+        <table className="table table-responsive">
+            <thead>
+            <tr>
+                <th scope="col">Qualifying Exam</th>
+                <th scope="col">Stream</th>
+                <th scope="col">University</th>
+                <th scope="col">Passing Year</th>
+                <th scope="col">Max. Marks</th>
+                <th scope="col">Obtained Marks</th>
+                <th scope="col">% of Marks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="Graduation" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionName" Readonly="true">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Stream" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.GradutionStream" DataSource="StreamList">
+                    </SfDropDownList>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionUniversity">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.GradutionPassingYear" DataSource="PassingYearList">
+                        <DropDownListEvents TValue="string" ValueChange="@(e => PassingYearGraduChangeEvent(e.Value.ToString()))"></DropDownListEvents>
+                    </SfDropDownList>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionMaxMarks" Readonly="@GraducationReadonly">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionObtMarks" Readonly="@GraducationReadonly"
+                               OnChange="@GraduationPercentageCalc">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionPercentageMarks" Readonly="true">
+                    </SfTextBox>
+                </td>
+            </tr>
+            @if (HidePostGraduation)
+            {
+                <tr>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Post Graduation" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PostGradutionName" Readonly="true">
+                        </SfTextBox>
+                        <ValidationMessage For="@(() => model.PostGradutionName)" style="color: red"/>
+                    </td>
+                    <td>
+                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Stream" FloatLabelType="@FloatLabelType.Auto"
+                                        @bind-Value="model.PGradutionStream" DataSource="StreamList">
+                        </SfDropDownList>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionUniversity">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                                        @bind-Value="model.PGradutionPassingYear" DataSource="PassingYearList">
+                            <DropDownListEvents TValue="string" ValueChange="@(e => PassingYearPostGraduChangeEvent(e.Value.ToString()))"></DropDownListEvents>
+                        </SfDropDownList>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionMaxMarks" Readonly="@PostGraducationReadonly">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionObtMarks" Readonly="@PostGraducationReadonly"
+                                   OnChange="@PostGraduationPercentageCalc">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionPercentageMarks" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="col-sm-12 mb-2">
+        <div class="row">
+            <div class="col-sm-4">
+                <SfCheckBox @bind-Checked="@isChecked" Label="Appearing" @onchange="@M_EdIsAppearing"></SfCheckBox>
+            </div>
+            @if (ShowKUOptions)
+            {
+                <div class="col-sm-8">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you student from Kumaun University?" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.IsKumaunUniversity" DataSource="KUOptions">
+                        <DropDownListEvents TValue="string" ValueChange="@(e => CheckUserIsValidInKuTerms(e.Value.ToString()))"></DropDownListEvents>
+                    </SfDropDownList>
+                </div>
+            }
+        </div>
+    </div>
+    @if (M_EdQualifyingDetailsShowHide)
+    {
+        <div class="col-sm-12 mb-2">
+            <table className="table table-responsive">
+                <thead>
+                <tr>
+                    <th scope="col">Qualifying Exam</th>
+                    <th scope="col">Max. Marks</th>
+                    <th scope="col">Obtained Marks</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Theory Exam" FloatLabelType="@FloatLabelType.Auto"
+                                        @bind-Value="model.TheoryExamName" DataSource="M_EdGraducationTheory">
+                        </SfDropDownList>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.TheoryExamMaxMarks" Readonly="@M_EdExamMarksRealonly">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.TheoryExamObtMarks"
+                                   OnChange="@(e => CheckTheoryMarksValidation(e.Value.ToString()))" Readonly="@M_EdExamMarksRealonly">
+                        </SfTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Practical Exam" FloatLabelType="@FloatLabelType.Auto"
+                                        @bind-Value="model.PracticalExamName" DataSource="M_EdGraducationPractical">
+                        </SfDropDownList>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PracticalExamMaxMarks" Readonly="@M_EdExamMarksRealonly">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PracticalExamObtMarks" Readonly="@M_EdExamMarksRealonly"
+                                   OnChange="@(e => CheckPracticalMarksValidation(e.Value.ToString()))">
+                        </SfTextBox>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                       @bind-Value="model.M_EdExamUniversity" OnChange="M_EdMarksChangeEvent">
+            </SfTextBox>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                            @bind-Value="model.M_EdExamPassingYear" DataSource="PassingYearList">
+                <DropDownListEvents TValue="string" ValueChange="@M_EdMarksChangeEvent"></DropDownListEvents>
+            </SfDropDownList>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
+                       @bind-Value="model.M_EdTotalPercentage" Readonly="true">
+            </SfTextBox>
+        </div>
+    }
+}
+
+<div class="col-sm-3 mb-2">
+    <div className="form-group">
+        <label>Photo</label><br/>
+        <SfUploader ID="UploadPhotos" Multiple="false" DropArea=".control-fluid" AllowedExtensions=".jpg, .png, .jpeg" MinFileSize=1000 MaxFileSize=200000>
+            <UploaderEvents ValueChange="@UploadPhotoAsync"></UploaderEvents>
+        </SfUploader>
+        <br/>
+        <label className="text-danger">Maximum 200KB</label>
+    </div>
+</div>
+@if (IsFormSubmit == false || !string.IsNullOrEmpty(TempPhotoPath))
+{
+    <div class="col-sm-3 mb-2 text-center">
+        <img src="upload/uploadku/TempStorage/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px"/>
+    </div>
+}
+else if (IsFormSubmit)
+{
+    <div class="col-sm-3 mb-2 text-center">
+        <img src="upload/uploadku/Photos/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px"/>
+    </div>
+}
+else
+{
+    <div class="col-sm-3 mb-2 text-center">
+        <img src="upload/uploadku/TempStorage/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px"/>
+    </div>
+}
+
+<div class="col-sm-3 mb-2">
+    <div className="form-group">
+        <label>Signature</label><br/>
+        <SfUploader ID="UploadSignature" Multiple="false" DropArea=".control-fluid" AllowedExtensions=".jpg, .png, .jpeg" MinFileSize=1000 MaxFileSize=200000>
+            <UploaderEvents ValueChange="@UploadSignatureAsync"></UploaderEvents>
+        </SfUploader><br/>
+        <label className="text-danger">Maximum 200KB</label>
+    </div>
+</div>
+@if (IsFormSubmit == false || !string.IsNullOrEmpty(TempSIgnaturePath))
+{
+    <div class="col-sm-3 mb-2">
+        <img src="upload/uploadku/TempStorage/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px"/>
+    </div>
+}
+else if (IsFormSubmit)
+{
+    <div class="col-sm-3 mb-2">
+        <img src="upload/uploadku/Signature/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px"/>
+    </div>
+}
+else
+{
+    <div class="col-sm-3 mb-2">
+        <img src="upload/uploadku/TempStorage/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px"/>
+    </div>
+}
+
+
+<div class="col-sm-12 mb-2 text-center">
+
+    @if (IsFormSubmit == false)
+    {
+        <SfButton IsPrimary="true">
+            <i class="fas fa-plus-circle"></i>&nbsp;Submit Application
+        </SfButton>
+    }
+    &nbsp;
+    <img src="Images/BlockLoader.gif" alt="Loader"
+         style="height: 30px; width: 30px; display: @Loader"/>
+</div>
+
+<div class="col-sm-12 mb-2 text-center">
+    <ValidationSummary class="text-danger"/>
+</div>
+</div>
+</EditForm>
+@if (IsFormSubmit && IsPaymentSubmit == false)
+{
+    <div class="col-sm-12 mb-2 text-center">
+
+        <SfButton IsPrimary="true" OnClick="@UpdateRecordAsync">
+            <i class="fas fa-plus-circle"></i>&nbsp;Update Application
+        </SfButton>
+        <SfButton IsPrimary="true" OnClick="@IsRegistrationConfirmAsync">
+            <i class="fas fa-rupee-sign"></i>&nbsp;Final Submit & Make Payment
+        </SfButton>
+
+        &nbsp;
+        <img src="Images/BlockLoader.gif" alt="Loader"
+             style="height: 30px; width: 30px; display: @UpdateLoader"/>
+
+    </div>
+}
+else if (IsPaymentSubmit == true)
+{
+    <div class="col-sm-12 mb-2 text-center">
+
+        <a href="Service/PrintFinalDownload/@model.RefNo" class="btn btn-primary">
+            <i class="fas fa-plus-circle"></i>&nbsp;Print Application Form
+        </a>
+
+
+        &nbsp;
+        <img src="Images/BlockLoader.gif" alt="Loader"
+             style="height: 30px; width: 30px; display: @UpdateLoader"/>
+
+    </div>
+}
+</div>
+</div>
+
+<SfToast @ref="@ToastObjRegistration" ID="toast_type_registration">
+    <ToastPosition X="Right"></ToastPosition>
+</SfToast>
+
+<div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="modalConfirmDelete"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Message</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h5>Are you sure to do online payment, After that data will be locked for any changes?</h5>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        Examination Fees:
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <span class="text-muted">1200</span>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        Portal Charges:
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <span class="text-muted">50</span>
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        Total Fee:
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <span class="text-muted">1250</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</a>
+                <a href="Payment/RegistrationPayment/@model.RefNo" class="btn btn-sm btn-primary"> <i class="fas fa-key"></i>&nbsp;Make Payment</a>
+                &nbsp;
+                <img src="Images/BlockLoader.gif" alt="Loader"
+                     style="height: 30px; width: 30px; display: @NewLoader"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    SfToast ToastObjRegistration;
+
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    [Parameter]
+    public string ShowOptions { get; set; }
+
+    List<string> liFilesList = new List<string>();
+    public bool M_EdKuCondition { get; set; } = false;
+    public bool IsM_Ed { get; set; } = false;
+    public string HeadingText { get; set; }
+    public RegistrationViewModel model { get; set; }
+    public string Loader { get; set; }
+    public string UpdateLoader { get; set; }
+    public string NewLoader { get; set; }
+    public List<string> ExamCenterList { get; set; }
+    public List<string> GroupList { get; set; }
+    public List<string> MaritalStatusList { get; set; }
+    public List<string> NationalityList { get; set; }
+    public List<string> DomicileUksList { get; set; }
+    public List<string> CategoryList { get; set; }
+    public List<string> FreedomFightersList { get; set; }
+    public List<string> DefencePersonalList { get; set; }
+    public List<string> PhysicallyChallengesList { get; set; }
+    public List<string> PhysicallyChallengesTypeList { get; set; }
+    public List<string> GendersList { get; set; }
+    public List<string> PunishedByCourtList { get; set; }
+    public List<string> DabarredCollegeList { get; set; }
+    public List<string> StateList { get; set; }
+    public List<string> StreamList { get; set; }
+    public List<string> CoursesList { get; set; }
+    public List<string> PassingYearList { get; set; }
+    public List<string> EWS { get; set; } // Economicallly Weaker Section (EWS)
+    public List<string> M_EdGraducationTheory { get; set; }
+    public List<string> M_EdGraducationPractical { get; set; }
+    public bool GraducationReadonly { get; set; } = false;
+    public bool PostGraducationReadonly { get; set; } = false;
+    public bool IsPhysically { get; set; } = false;
+    public bool IsFormSubmit { get; set; } = false;
+    public bool isChecked { get; set; }
+    public List<string> KUOptions { get; set; }
+    public bool ShowKUOptions { get; set; } = false;
+    public bool M_EdExamMarksRealonly { get; set; } = false;
+    public bool M_EdQualifyingDetailsShowHide { get; set; } = true;
+    public bool IsEwsHideShow { get; set; } = true;
+    public bool IsStateEnabled { get; set; } = false;
+    public bool HidePostGraduation { get; set; } = true;
+    public string TempPhotoPath { get; set; }
+    public string TempSIgnaturePath { get; set; }
+
+
+    public bool IsPaymentSubmit { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = new RegistrationViewModel();
+        Loader = "none";
+        NewLoader = "none";
+        UpdateLoader = "none";
+        KUOptions = new List<string>();
+        DomicileUksList = new List<string>();
+        FreedomFightersList = new List<string>();
+        DefencePersonalList = new List<string>();
+        PhysicallyChallengesList = new List<string>();
+        PunishedByCourtList = new List<string>();
+        DabarredCollegeList = new List<string>();
+        ExamCenterList = new List<string>();
+        GroupList = new List<string>();
+        MaritalStatusList = new List<string>();
+        NationalityList = new List<string>();
+        CategoryList = new List<string>();
+        PhysicallyChallengesTypeList = new List<string>();
+        GendersList = new List<string>();
+        StreamList = new List<string>();
+        CoursesList = new List<string>();
+        PassingYearList = new List<string>();
+        StateList = new List<string>();
+        EWS = new List<string>();
+        M_EdGraducationTheory = new List<string>();
+        await LoadDropDownData();
+
+
+        var authState = await authenticationStateTask;
+        var user = await UserManager.GetUserAsync(authState.User);
+        var userRelatedForm = await CenterService.GetRegistrationDetailsByUserIdAsync(user.Id);
+        if (userRelatedForm.UserId != null)
+        {
+            IsFormSubmit = true;
+            model = userRelatedForm;
+            model.Year = DateTime.Now.Year.ToString();
+            await this.CheckPaymentStatus(model.RefNo);
+
+            if (ShowOptions == "B_Ed")
+            {
+                IsM_Ed = false;
+                HeadingText = "B.Ed";
+                model.CourseName = "Bachelor of Education";
+                model.IsKumaunUniversity = userRelatedForm.IsKumaunUniversity;
+                if (model.IsKumaunUniversity == "Yes")
+                {
+                    PassingYearList = GetPassingYears("Yes");
+                }
+                else if (model.IsKumaunUniversity == "No")
+                {
+                    PassingYearList = GetPassingYears("No");
+                }
+
+                if (model.IsPhysicallyChallenged == "No")
+                {
+                    IsPhysically = true;
+                    PhysicallyChallengesTypeList = PHTypeListOnlyNone();
+                    model.PhysicallyChallengedType = "None";
+                }
+                else
+                {
+                    IsPhysically = false;
+                    PhysicallyChallengesTypeList = PHTypeListWithOutNone();
+                }
+
+                if (model.IsDomicileOfUttarakhand == "Yes")
+                {
+                    CategoryList = CastCategoryWithoutUG();
+                    model.Category = userRelatedForm.Category;
+                    IsStateEnabled = true;
+                }
+                else
+                {
+                    CategoryList = CastCategoryWithUG();
+                    model.Category = "Unreserved General";
+                    IsStateEnabled = false;
+                }
+
+                if (model.Category != "Unreserved General")
+                {
+                    IsEwsHideShow = false;
+                    model.Category = "Schedule Cast (SC)";
+                }
+                else
+                {
+                    IsEwsHideShow = true;
+                    model.Category = "Unreserved General";
+                }
+
+                if (model.GradutionPassingYear == "Appearing")
+                {
+                    HidePostGraduation = false;
+                }
+            }
+            else
+            {
+                model.CourseName = "Master of Education";
+                IsM_Ed = true;
+                HeadingText = "M.Ed";
+    //PassingYearList.Remove("Appearing");
+                if (userRelatedForm.IsAppearing)
+                {
+                    model.IsAppearing = userRelatedForm.IsAppearing;
+                    isChecked = userRelatedForm.IsAppearing;
+                    ShowKUOptions = true;
+                    model.IsKumaunUniversity = userRelatedForm.IsKumaunUniversity;
+                }
+
+                if (model.IsPhysicallyChallenged == "No")
+                {
+                    IsPhysically = true;
+                    PhysicallyChallengesTypeList = PHTypeListOnlyNone();
+                    model.PhysicallyChallengedType = "None";
+                }
+                else
+                {
+                    IsPhysically = false;
+                    PhysicallyChallengesTypeList = PHTypeListWithOutNone();
+                }
+
+                if (model.IsDomicileOfUttarakhand == "Yes")
+                {
+                    CategoryList = CastCategoryWithUG();
+                    model.Category = "Unreserved General";
+                    IsStateEnabled = true;
+                }
+                else
+                {
+                    CategoryList = CastCategoryWithoutUG();
+                    model.Category = "Schedule Cast (SC)";
+                    IsStateEnabled = false;
+                }
+
+                if (model.Category != "Unreserved General")
+                {
+                    IsEwsHideShow = false;
+                    model.Category = "Schedule Cast (SC)";
+                }
+                else
+                {
+                    IsEwsHideShow = true;
+                    model.Category = "Unreserved General";
+                }
+            }
+        }
+        else
+        {
+            model.Year = DateTime.Now.Year.ToString();
+            if (ShowOptions == "B_Ed")
+            {
+                model.GradutionName = "Graduation";
+                model.PostGradutionName = "Post Graduation";
+                model.CourseName = "Bachelor of Education";
+                IsM_Ed = false;
+                HeadingText = "B.Ed";
+            }
+            else
+            {
+                model.CourseName = "Master of Education";
+                IsM_Ed = true;
+                HeadingText = "M.Ed";
+    //PassingYearList.Remove("Appearing");
+            }
+    // To get Email and Mobile Number from DB.
+            if (user != null)
+            {
+                model.EmailAddress = user.Email;
+                model.MobileNo = user.PhoneNumber;
+                model.Name = $"{user.FirstName} {user.LastName}";
+            }
+        }
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await ProtectedSessionStorage.SetAsync("gradu", true);
+        await ProtectedSessionStorage.SetAsync("IsValidInKuTerms", true);
+        await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+        await ProtectedSessionStorage.SetAsync("criminal_debarred", true);
+        await ProtectedSessionStorage.DeleteAsync("UniqueSignatureName");
+        await ProtectedSessionStorage.DeleteAsync("UniquePhotoName");
+    }
+
+
+    async Task CheckPaymentStatus(string RefNo)
+    {
+        IsPaymentSubmit = false;
+        Payment checkPayment = await dapperService.CheckPaymentPaidAgainstRefNo(RefNo);
+        if (checkPayment != null)
+        {
+            IsPaymentSubmit = true;
+        }
+    }
+
+    async Task LoadDropDownData()
+    {
+        List<string> liYeaNo = new List<string>();
+        liYeaNo.Add("--Select--");
+        liYeaNo.Add("Yes");
+        liYeaNo.Add("No");
+
+        DomicileUksList = liYeaNo;
+        FreedomFightersList = liYeaNo;
+        DefencePersonalList = liYeaNo;
+        PhysicallyChallengesList = liYeaNo;
+        PunishedByCourtList = liYeaNo;
+        DabarredCollegeList = liYeaNo;
+        EWS = liYeaNo;
+        KUOptions = liYeaNo;
+
+        GroupList.Add("Arts");
+        GroupList.Add("Commerce");
+        GroupList.Add("Science");
+
+        MaritalStatusList.Add("Single");
+        MaritalStatusList.Add("Married");
+
+        NationalityList.Add("Indian");
+        NationalityList.Add("Others");
+
+        CategoryList.Add("--Select--");
+        CategoryList.Add("Unreserved General");
+        CategoryList.Add("Schedule Cast (SC)");
+        CategoryList.Add("Schedule Tribe (ST)");
+        CategoryList.Add("Other Backward Class (OBC) - Creamy");
+        CategoryList.Add("Other Backward Class (OBC) - Non Creamy");
+
+        PhysicallyChallengesTypeList.Add("Physically Challenged");
+        PhysicallyChallengesTypeList.Add("Visually Challenged");
+        PhysicallyChallengesTypeList.Add("None");
+
+        GendersList.Add("Male");
+        GendersList.Add("Female");
+        GendersList.Add("Transgender");
+
+        StreamList.Add("Arts");
+        StreamList.Add("Commerce");
+        StreamList.Add("Science");
+
+        CoursesList.Add("Bachelor of Education");
+        CoursesList.Add("Master of Education");
+
+        PassingYearList = GetPassingYears("No");
+
+        var examCenterData = await dapperService.GetExamCenterList();
+        ExamCenterList = examCenterData.Select(s => s.CenterName).ToList();
+
+        var qualifyingExamDetails = await dapperService.GetAllQualifyingExamDetails();
+        M_EdGraducationTheory = qualifyingExamDetails.Where(w => w.CourseName == "M_Ed_Theory").Select(s => s.Name).ToList();
+        M_EdGraducationPractical = qualifyingExamDetails.Where(w => w.CourseName == "M_Ed_Practical").Select(s => s.Name).ToList();
+
+        var stateData = await dapperService.GetAllStatesListAsync();
+        StateList = stateData.Select(s => s.StateName).ToList();
+    }
+
+    List<string> CastCategoryWithoutUG()
+    {
+        List<string> li = new List<string>();
+        li.Add("--Select--");
+        li.Add("Unreserved General");
+        li.Add("Schedule Cast (SC)");
+        li.Add("Schedule Tribe (ST)");
+        li.Add("Other Backward Class (OBC) - Creamy");
+        li.Add("Other Backward Class (OBC) - Non Creamy");
+        return li;
+    }
+
+    List<string> CastCategoryWithUG()
+    {
+        List<string> li = new List<string>();
+        li.Add("--Select--");
+        li.Add("Unreserved General");
+        return li;
+    }
+
+    List<string> PHTypeListWithOutNone()
+    {
+        List<string> li = new List<string>();
+        li.Add("Physically Challenged");
+        li.Add("Visually Challenged");
+        return li;
+    }
+
+    List<string> PHTypeListOnlyNone()
+    {
+        List<string> li = new List<string>();
+        li.Add("None");
+        return li;
+    }
+
+    void PassingYearGraduChangeEvent(string value)
+    {
+        if (value.ToUpper() == "Appearing".ToUpper())
+        {
+            GraducationReadonly = true;
+            model.GradutionMaxMarks = "0";
+            model.GradutionObtMarks = "0";
+            model.GradutionPercentageMarks = "0";
+            HidePostGraduation = false;
+        }
+        else
+        {
+            GraducationReadonly = false;
+            model.GradutionMaxMarks = "";
+            model.GradutionObtMarks = "";
+            model.GradutionPercentageMarks = "";
+            HidePostGraduation = true;
+        }
+    }
+
+    void PassingYearPostGraduChangeEvent(string value)
+    {
+        if (value.ToUpper() == "Appearing".ToUpper())
+        {
+            PostGraducationReadonly = true;
+            model.PGradutionMaxMarks = "0";
+            model.PGradutionObtMarks = "0";
+            model.PGradutionPercentageMarks = "0";
+        }
+        else
+        {
+            PostGraducationReadonly = false;
+            model.PGradutionMaxMarks = "";
+            model.PGradutionObtMarks = "";
+            model.PGradutionPercentageMarks = "";
+        }
+    }
+
+    async Task BindState()
+    {
+        var stateData = await dapperService.GetAllStatesListAsync();
+        StateList = stateData.Select(s => s.StateName).ToList();
+    }
+
+    async Task GraduationPercentageCalc()
+    {
+        if (model.GradutionObtMarks != "")
+        {
+            if (model.GradutionMaxMarks != "")
+            {
+                if (model.GradutionObtMarks != "0" && model.GradutionMaxMarks != "0")
+                {
+                    if (int.Parse(model.GradutionObtMarks) < int.Parse(model.GradutionMaxMarks))
+                    {
+                        await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+                        double percentage = Convert.ToDouble((Convert.ToInt32(model.GradutionObtMarks) * 100) / Convert.ToInt32(model.GradutionMaxMarks));
+                        model.GradutionPercentageMarks = percentage.ToString();
+                        if (model.Category.ToLower() == "Unreserved General".ToLower())
+                        {
+                            if (percentage > 50)
+                            {
+                                await ProtectedSessionStorage.SetAsync("gradu", true);
+                            }
+                            else
+                            {
+    //await ToastObjRegistration.Show(new ToastModel
+    //{
+    //    Title = "Error!",
+    //    Content = "You are not eligible!",
+    //    CssClass = "e-toast-danger",
+    //    Icon = "e-error toast-icons"
+    //});
+    //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
+                            }
+                        }
+                        else
+                        {
+                            if (percentage > 45)
+                            {
+                                await ProtectedSessionStorage.SetAsync("gradu", true);
+                            }
+                            else
+                            {
+    //await ToastObjRegistration.Show(new ToastModel
+    //{
+    //    Title = "Error!",
+    //    Content = "You are not eligible!",
+    //    CssClass = "e-toast-danger",
+    //    Icon = "e-error toast-icons"
+    //});
+    //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
+                            }
+                        }
+                    }
+                    else
+                    {
+                        await ToastObjRegistration.Show(new ToastModel
+                        {
+                            Title = "Error!",
+                            Content = "Obtained marks should be less than maximum marks in graduation options!",
+                            CssClass = "e-toast-danger",
+                            Icon = "e-error toast-icons"
+                        });
+                        await ProtectedSessionStorage.SetAsync("MarksInvalid", false);
+                    }
+                }
+                else
+                {
+                    await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+                }
+            }
+            else
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Please fill graduation maximum marks!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+            }
+        }
+        else
+        {
+            await ToastObjRegistration.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please fill graduation obtained marks!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+        }
+    }
+
+    async Task PostGraduationPercentageCalc()
+    {
+        if (model.PGradutionObtMarks != "")
+        {
+            if (model.PGradutionMaxMarks != "")
+            {
+                if (model.GradutionObtMarks != "0" && model.GradutionMaxMarks != "0")
+                {
+                    if (int.Parse(model.PGradutionObtMarks) < int.Parse(model.PGradutionMaxMarks))
+                    {
+                        await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+                        double percentage = Convert.ToDouble((Convert.ToInt32(model.PGradutionObtMarks) * 100) / Convert.ToInt32(model.PGradutionMaxMarks));
+                        model.PGradutionPercentageMarks = percentage.ToString();
+                    }
+                    else
+                    {
+                        await ToastObjRegistration.Show(new ToastModel
+                        {
+                            Title = "Error!",
+                            Content = "Obtained marks should be less than maximum marks in post graduation options!",
+                            CssClass = "e-toast-danger",
+                            Icon = "e-error toast-icons"
+                        });
+                        await ProtectedSessionStorage.SetAsync("MarksInvalid", false);
+                    }
+                }
+                else
+                {
+                    await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+                }
+            }
+            else
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Please fill post graduation maximum marks!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+            }
+        }
+        else
+        {
+            await ToastObjRegistration.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please fill post graduation maximum marks!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+        }
+    }
+
+    async Task UploadPhotoAsync(UploadChangeEventArgs args)
+    {
+        if (args.Files.Any())
+        {
+            try
+            {
+                var file = args.Files.FirstOrDefault();
+                if (file != null)
+                {
+                    if (file.FileInfo.Size < 1000 || file.FileInfo.Size > 200000)
+                    {
+                        await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                    }
+                    else
+                    {
+                        var checkifFileHas = await ProtectedSessionStorage.GetAsync<string>("UniquePhotoName");
+                        if (!string.IsNullOrEmpty(checkifFileHas))
+                        {
+                            CenterService.DeleteTempFiles(checkifFileHas);
+                        }
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileInfo.Name;
+                        await ProtectedSessionStorage.SetAsync("UniquePhotoName", uniqueFileName);
+                        model.PhohoFile = file;
+                        model.PhotoPath = uniqueFileName;
+                        TempPhotoPath = uniqueFileName;
+                        CenterService.UploadImagesInTemp(file, uniqueFileName);
+                    }
+                }
+                else
+                {
+                    await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                }
+            }
+            catch (Exception ex)
+            {
+                await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+            }
+        }
+    }
+
+    async Task UploadSignatureAsync(UploadChangeEventArgs args)
+    {
+        if (args.Files.Any())
+        {
+            try
+            {
+                var file = args.Files.FirstOrDefault();
+                if (file != null)
+                {
+                    if (file.FileInfo.Size < 1000 || file.FileInfo.Size > 200000)
+                    {
+                        await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                    }
+                    else
+                    {
+                        var checkifFileHas = await ProtectedSessionStorage.GetAsync<string>("UniqueSignatureName");
+                        if (!string.IsNullOrEmpty(checkifFileHas))
+                        {
+                            CenterService.DeleteTempFiles(checkifFileHas);
+                        }
+                        
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileInfo.Name;
+                        await ProtectedSessionStorage.SetAsync("UniqueSignatureName", uniqueFileName);
+                        model.SignatureFile = file;
+                        model.SignaturePath = uniqueFileName;
+                        TempSIgnaturePath = uniqueFileName;
+                        CenterService.UploadImagesInTemp(file, uniqueFileName);
+                    }
+                }
+                else
+                {
+                    await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                }
+            }
+            catch (Exception ex)
+            {
+                await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+            }
+        }
+    }
+
+    async Task IsRegistrationConfirmAsync()
+    {
+        Loader = "inline";
+        StateHasChanged();
+        var authState = await authenticationStateTask;
+        var user = await UserManager.GetUserAsync(authState.User);
+        Loader = "none";
+        await Js.ShowModel("modalConfirmDelete");
+    }
+
+    async Task RegisterNewFormAsync(EditContext editContext)
+    {
+        Loader = "inline";
+        StateHasChanged();
+        var IsValid = editContext.Validate();
+        if (IsValid)
+        {
+            try
+            {
+                bool IsKuYesNo = true;
+                if (ShowOptions == "M_Ed")
+                {
+                    if (model.IsAppearing)
+                    {
+                        if (string.IsNullOrEmpty(model.IsKumaunUniversity))
+                            IsKuYesNo = false;
+                        else
+                            IsKuYesNo = true;
+                    }
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(model.IsKumaunUniversity))
+                        IsKuYesNo = false;
+                    else
+                        IsKuYesNo = true;
+                }
+                if (IsKuYesNo)
+                {
+                    var criminal_debarred = await ProtectedSessionStorage.GetAsync<bool>("criminal_debarred");
+                    if (criminal_debarred)
+                    {
+                        var IsValidInKuTerms = await ProtectedSessionStorage.GetAsync<bool>("IsValidInKuTerms");
+                        var changeEventValue = await ProtectedSessionStorage.GetAsync<bool>("gradu");
+                        if (changeEventValue && IsValidInKuTerms)
+                        {
+                            var IsMarksValid = await ProtectedSessionStorage.GetAsync<bool>("MarksInvalid");
+                            if (IsMarksValid)
+                            {
+                                var checkEligibility = await MarksEligibilityCheckAgainAsync();
+                                if (checkEligibility)
+                                {
+                                    var authState = await authenticationStateTask;
+                                    var user = await UserManager.GetUserAsync(authState.User);
+                                    var userRelatedForm = await CenterService.GetRegistrationDetailsByUserIdAsync(user.Id);
+                                    if (userRelatedForm.UserId == null)
+                                    {
+                                        var UniqueSignatureName = await ProtectedSessionStorage.GetAsync<string>("UniqueSignatureName");
+                                        var UniquePhotoName = await ProtectedSessionStorage.GetAsync<string>("UniquePhotoName");
+                                        if (!string.IsNullOrEmpty(UniqueSignatureName) && !string.IsNullOrEmpty(UniquePhotoName))
+                                        {
+                                            CenterService.DeleteTempFiles(UniqueSignatureName);
+                                            CenterService.DeleteTempFiles(UniquePhotoName);
+                                            bool checkFormValidation = true;
+                                            if (ShowOptions == "B_Ed")
+                                            {
+                                                checkFormValidation = await B_EdValidateForm();
+                                            }
+                                            else
+                                            {
+                                                checkFormValidation = await M_EdValidateForm();
+                                            }
+
+                                            if (checkFormValidation)
+                                            {
+                                                model.UserId = user.Id;
+                                                var result = await CenterService.InsertRegistrationFormDataAsync(model);
+                                                if (result == "success")
+                                                {
+                                                    await ProtectedSessionStorage.DeleteAsync("UniqueSignatureName");
+                                                    await ProtectedSessionStorage.DeleteAsync("UniquePhotoName");
+                                                    await ToastObjRegistration.Show(new ToastModel
+                                                    {
+                                                        Title = "Success!",
+                                                        Content = "Your details have been saved successfully.",
+                                                        CssClass = "e-toast-success",
+                                                        Icon = "e-success toast-icons"
+                                                    });
+                                                    Loader = "none";
+                                                    await ProtectedSessionStorage.SetAsync("gradu", true);
+                                                    await Task.Delay(2000);
+                                                    NavigationManager.NavigateTo($"RegistrationForm/{ShowOptions}", true);
+                                                }
+                                                else if (result == "failure")
+                                                {
+                                                    Loader = "none";
+                                                    await ToastObjRegistration.Show(new ToastModel
+                                                    {
+                                                        Title = "Error!",
+                                                        Content = "You are sending bad request, please try again later!",
+                                                        CssClass = "e-toast-danger",
+                                                        Icon = "e-error toast-icons"
+                                                    });
+                                                    await Js.CloseModel("modalConfirmDelete");
+                                                }
+                                                else
+                                                {
+                                                    Loader = "none";
+                                                    await ToastObjRegistration.Show(new ToastModel
+                                                    {
+                                                        Title = "Error!",
+                                                        Content = result,
+                                                        CssClass = "e-toast-danger",
+                                                        Icon = "e-error toast-icons"
+                                                    });
+                                                    await Js.CloseModel("modalConfirmDelete");
+                                                }
+                                            }
+                                            else
+                                            {
+                                                Loader = "none";
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Loader = "none";
+                                            await ToastObjRegistration.Show(new ToastModel
+                                            {
+                                                Title = "Error!",
+                                                Content = "Please upload both files then try again!",
+                                                CssClass = "e-toast-danger",
+                                                Icon = "e-error toast-icons"
+                                            });
+                                            await Js.CloseModel("modalConfirmDelete");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Loader = "none";
+                                        await ToastObjRegistration.Show(new ToastModel
+                                        {
+                                            Title = "Error!",
+                                            Content = "You have already submitted your from!!",
+                                            CssClass = "e-toast-danger",
+                                            Icon = "e-error toast-icons"
+                                        });
+                                    }
+                                }
+                                else
+                                {
+                                    Loader = "none";
+                                }
+                            }
+                            else
+                            {
+                                Loader = "none";
+                                await ToastObjRegistration.Show(new ToastModel
+                                {
+                                    Title = "Error!",
+                                    Content = "Please enter the correct marks!",
+                                    CssClass = "e-toast-danger",
+                                    Icon = "e-error toast-icons"
+                                });
+                            }
+                        }
+                        else
+                        {
+                            Loader = "none";
+                            await ToastObjRegistration.Show(new ToastModel
+                            {
+                                Title = "Error!",
+                                Content = "You are not eligible!",
+                                CssClass = "e-toast-danger",
+                                Icon = "e-error toast-icons"
+                            });
+                            await Js.CloseModel("modalConfirmDelete");
+                        }
+                    }
+                    else
+                    {
+                        Loader = "none";
+                    }
+                }
+                else
+                {
+                    Loader = "none";
+                    await ToastObjRegistration.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "Please select Kumaun University option which is near by Is Appear Option!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+                    await Js.CloseModel("modalConfirmDelete");
+                }
+            }
+            catch (Exception ex)
+            {
+                Loader = "none";
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = ex.Message,
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+                await Js.CloseModel("modalConfirmDelete");
+            }
+        }
+        else
+        {
+            Loader = "none";
+        }
+    }
+
+
+    async Task<bool> MarksEligibilityCheckAgainAsync()
+    {
+        bool IsEligible = true;
+        try
+        {
+            if (ShowOptions == "B_Ed")
+            {
+                if (model.GradutionPassingYear != "Appearing")
+                {
+                    if (!string.IsNullOrEmpty(model.GradutionPercentageMarks))
+                    {
+                        if (model.Category.ToLower() == "Unreserved General".ToLower())
+                        {
+                            if (int.Parse(model.GradutionPercentageMarks) >= 50)
+                            {
+                                IsEligible = true;
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(model.PGradutionPercentageMarks))
+                                {
+                                    if (int.Parse(model.PGradutionPercentageMarks) >= 50)
+                                    {
+                                        IsEligible = true;
+                                    }
+                                    else
+                                    {
+                                        IsEligible = false;
+                                        await ToastObjRegistration.Show(new ToastModel
+                                        {
+                                            Title = "Error!",
+                                            Content = "You are not eligible, because your graduation or post graduation marks percentage is less than 50%!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                        });
+                                    }
+                                }
+                                else
+                                {
+                                    IsEligible = false;
+                                    await ToastObjRegistration.Show(new ToastModel
+                                    {
+                                        Title = "Error!",
+                                        Content = "You are not eligible, because your graduation marks percentage is less than 50%!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                    });
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (int.Parse(model.GradutionPercentageMarks) >= 45)
+                            {
+                                IsEligible = true;
+                            }
+                            else
+                            {
+                                if (!string.IsNullOrEmpty(model.PGradutionPercentageMarks))
+                                {
+                                    if (int.Parse(model.PGradutionPercentageMarks) >= 45)
+                                    {
+                                        IsEligible = true;
+                                    }
+                                    else
+                                    {
+                                        IsEligible = false;
+                                        await ToastObjRegistration.Show(new ToastModel
+                                        {
+                                            Title = "Error!",
+                                            Content = "You are not eligible, because your graduation or post graduation marks percentage is less than 45%!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                        });
+                                    }
+                                }
+                                else
+                                {
+                                    IsEligible = false;
+                                    await ToastObjRegistration.Show(new ToastModel
+                                    {
+                                        Title = "Error!",
+                                        Content = "You are not eligible, because your graduation marks percentage is less than 45%!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                    });
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    IsEligible = true;
+                }
+            }
+            else
+            {
+                IsEligible = true;
+            }
+        }
+        catch (Exception ex)
+        {
+            if (ShowOptions == "B_Ed")
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                });
+                NavigationManager.NavigateTo("RegistrationForm/B_Ed", true);
+            }
+            else
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                });
+                NavigationManager.NavigateTo("RegistrationForm/M_Ed", true);
+            }
+        }
+
+        return IsEligible;
+    }
+
+    public async Task<string> FileUploadMethodAsync(IFormFile Photo, string PhotoPath)
+    {
+        string uniqueFileName = null;
+        if (Photo != null)
+        {
+            string folderPath = Path.Combine(hostingEnvironment.WebRootPath, PhotoPath);
+            uniqueFileName = Guid.NewGuid().ToString() + "_" + Photo.FileName;
+            string filePath = Path.Combine(folderPath, uniqueFileName);
+            using (var fileStream = new FileStream(filePath, FileMode.Create))
+            {
+                await Photo.CopyToAsync(fileStream);
+            }
+        }
+
+        return uniqueFileName;
+    }
+
+    void IsPysicallyChallenge(string value)
+    {
+        if (value == "No")
+        {
+            IsPhysically = true;
+            PhysicallyChallengesTypeList = PHTypeListOnlyNone();
+            model.PhysicallyChallengedType = "None";
+        }
+        else
+        {
+            IsPhysically = false;
+            PhysicallyChallengesTypeList = PHTypeListWithOutNone();
+        }
+    }
+
+    async Task CheckCrimicalRecord(string value)
+    {
+        if (value == "Yes")
+        {
+            await ToastObjRegistration.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "You are not eligible due to some litigation and punished by court!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            await ProtectedSessionStorage.SetAsync("criminal_debarred", false);
+        }
+        else
+            await ProtectedSessionStorage.SetAsync("criminal_debarred", true);
+    }
+
+    async Task M_EdMarksChangeEvent()
+    {
+        if (model.TheoryExamMaxMarks != "0" && model.TheoryExamObtMarks != "0")
+        {
+            if (!string.IsNullOrEmpty(model.TheoryExamMaxMarks) && !string.IsNullOrEmpty(model.TheoryExamObtMarks))
+            {
+                if (!string.IsNullOrEmpty(model.PracticalExamMaxMarks) && !string.IsNullOrEmpty(model.PracticalExamObtMarks))
+                {
+                    var totalMaxMarks = Convert.ToDouble(model.TheoryExamMaxMarks) + Convert.ToDouble(model.PracticalExamMaxMarks);
+                    var totalObtMarks = Convert.ToDouble(model.TheoryExamObtMarks) + Convert.ToDouble(model.PracticalExamObtMarks);
+                    double percentage = Convert.ToDouble((totalObtMarks * 100) / totalMaxMarks);
+                    model.M_EdTotalPercentage = Math.Round(percentage, 2).ToString();
+                }
+                else
+                {
+                    await ToastObjRegistration.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "Please fill practical exam marks!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+                }
+            }
+            else
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Please fill theory exam marks!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+            }
+        }
+    }
+
+    async Task M_EdIsAppearing(Microsoft.AspNetCore.Components.ChangeEventArgs args)
+    {
+        var IsAppearing = Convert.ToBoolean(args.Value);
+        if (IsAppearing)
+        {
+            ShowKUOptions = true;
+            model.IsAppearing = true;
+        }
+        else
+        {
+            ShowKUOptions = false;
+            model.IsAppearing = false;
+            model.IsKumaunUniversity = string.Empty;
+            M_EdExamMarksRealonly = false;
+            M_EdQualifyingDetailsShowHide = true;
+            PassingYearList = GetPassingYears("No");
+            await ProtectedSessionStorage.SetAsync("IsValidInKuTerms", true);
+        }
+    }
+
+    List<string> GetPassingYears(string options)
+    {
+        List<string> li = new List<string>();
+        if (options == "Yes")
+        {
+            li.Add("Appearing");
+        }
+
+        for (int i = DateTime.Now.Year; i >= 2010; i--)
+        {
+            li.Add(i.ToString());
+        }
+        return li;
+    }
+
+    async Task CheckUserIsValidInKuTerms(string value)
+    {
+        if (ShowOptions == "B_Ed")
+        {
+            if (value == "Yes")
+            {
+                PassingYearList = GetPassingYears("Yes");
+                model.GradutionUniversity = "Kumaun University";
+            }
+            else
+            {
+                PassingYearList = GetPassingYears("No");
+                model.GradutionUniversity = "";
+            }
+            await ProtectedSessionStorage.SetAsync("IsValidInKuTerms", true);
+        }
+        else
+        {
+            if (value == "Yes")
+            {
+                model.TheoryExamMaxMarks = "0";
+                model.TheoryExamObtMarks = "0";
+                model.PracticalExamMaxMarks = "0";
+                model.PracticalExamObtMarks = "0";
+                model.M_EdTotalPercentage = "0";
+                model.M_EdExamUniversity = "Kumaun University";
+                M_EdExamMarksRealonly = true;
+                M_EdQualifyingDetailsShowHide = true;
+                PassingYearList = GetPassingYears("Yes");
+                await ProtectedSessionStorage.SetAsync("IsValidInKuTerms", true);
+            }
+            else
+            {
+                M_EdExamMarksRealonly = false;
+                M_EdQualifyingDetailsShowHide = false;
+                model.M_EdExamUniversity = "";
+                await ProtectedSessionStorage.SetAsync("IsValidInKuTerms", false);
+                await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "You are not eligible!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+            }
+        }
+    }
+
+    async Task<bool> B_EdValidateForm()
+    {
+        bool value = true;
+        if (string.IsNullOrEmpty(model.GradutionName) || string.IsNullOrEmpty(model.GradutionStream)
+            || string.IsNullOrEmpty(model.GradutionUniversity) || string.IsNullOrEmpty(model.GradutionPassingYear)
+            || string.IsNullOrEmpty(model.GradutionMaxMarks) || string.IsNullOrEmpty(model.GradutionObtMarks)
+            || string.IsNullOrEmpty(model.GradutionPercentageMarks))
+        {
+            await ToastObjRegistration.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please fill the graduation details in qualifying exam section or if you have already filled all the details please check again qualifying exam section!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            value = false;
+        }
+        else
+        {
+            value = true;
+        }
+
+        return value;
+    }
+
+    async Task<bool> M_EdValidateForm()
+    {
+        bool value = true;
+        if (string.IsNullOrEmpty(model.TheoryExamName) || string.IsNullOrEmpty(model.TheoryExamMaxMarks)
+            || string.IsNullOrEmpty(model.TheoryExamObtMarks))
+        {
+            await ToastObjRegistration.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please fill theory marks details in qualifying exam section or if you have already filled all details please check again qualifying exam section!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            value = false;
+        }
+        else
+        {
+            if (string.IsNullOrEmpty(model.PracticalExamName) || string.IsNullOrEmpty(model.PracticalExamMaxMarks)
+                || string.IsNullOrEmpty(model.PracticalExamObtMarks))
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Please fill practical marks details in qualifying exam section or if you have already filled all details please check again qualifying exam section!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+                value = false;
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(model.M_EdExamUniversity) || string.IsNullOrEmpty(model.M_EdExamPassingYear)
+                    || string.IsNullOrEmpty(model.M_EdTotalPercentage))
+                {
+                    await ToastObjRegistration.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "Please fill university and passing years details in qualifying exam section or if you have already filled all details please check again qualifying exam section!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+                    value = false;
+                }
+                else
+                {
+                    value = true;
+                }
+            }
+        }
+
+        return value;
+    }
+
+    async Task IsDomicileOfUK(string value)
+    {
+        if (value == "Yes")
+        {
+            CategoryList = CastCategoryWithoutUG();
+            model.Category = "Schedule Cast (SC)";
+            await BindState();
+            model.StateName = "Uttarakhand";
+            IsStateEnabled = true;
+        }
+        else
+        {
+            CategoryList = CastCategoryWithUG();
+            model.Category = "Unreserved General";
+            await BindState();
+            IsStateEnabled = false;
+        }
+    }
+
+    async Task CheckTheoryMarksValidation(string ObtMarks)
+    {
+        if (model.TheoryExamMaxMarks != "0" && ObtMarks != "0")
+        {
+            if (!string.IsNullOrEmpty(model.TheoryExamMaxMarks) && !string.IsNullOrEmpty(ObtMarks))
+            {
+                if (int.Parse(ObtMarks) > int.Parse(model.TheoryExamMaxMarks))
+                {
+                    await ToastObjRegistration.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "Obtained marks should be less than maximum marks in theory exam options!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+                    await ProtectedSessionStorage.SetAsync("MarksInvalid", false);
+                }
+                else
+                {
+                    await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+                }
+            }
+        }
+        else
+        {
+            await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+        }
+    }
+
+    async Task CheckPracticalMarksValidation(string ObtMarks)
+    {
+        if (model.PracticalExamMaxMarks != "0" && ObtMarks != "0")
+        {
+            if (!string.IsNullOrEmpty(model.PracticalExamMaxMarks) && !string.IsNullOrEmpty(ObtMarks))
+            {
+                if (int.Parse(ObtMarks) > int.Parse(model.PracticalExamMaxMarks))
+                {
+                    await ToastObjRegistration.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "Obtained marks should be less than maximum marks in practical exam options!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+                    await ProtectedSessionStorage.SetAsync("MarksInvalid", false);
+                }
+                else
+                {
+                    await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+                }
+            }
+        }
+        else
+        {
+            await ProtectedSessionStorage.SetAsync("MarksInvalid", true);
+        }
+    }
+
+    void CheckEwsCondition(string value)
+    {
+        if (value != "Unreserved General")
+        {
+            IsEwsHideShow = false;
+            model.IsEconomicallyWeakerSection = "";
+            model.Category = "Schedule Cast (SC)";
+        }
+        else
+        {
+            IsEwsHideShow = true;
+            model.IsEconomicallyWeakerSection = "";
+            model.Category = "Unreserved General";
+        }
+    }
+
+    async Task CheckDob(string value)
+    {
+        if (!string.IsNullOrEmpty(value))
+        {
+            var dob = Convert.ToDateTime(value);
+            var years = CenterService.CalculateYourAge(dob);
+            if (years < 20)
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Please enter correct date of birth!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+            }
+        }
+    }
+
+
+    async Task UpdateRecordAsync()
+    {
+        UpdateLoader = "inline";
+        StateHasChanged();
+        try
+        {
+            bool IsKuYesNo = true;
+            if (ShowOptions == "M_Ed")
+            {
+                if (model.IsAppearing)
+                {
+                    if (string.IsNullOrEmpty(model.IsKumaunUniversity))
+                        IsKuYesNo = false;
+                    else
+                        IsKuYesNo = true;
+                }
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(model.IsKumaunUniversity))
+                    IsKuYesNo = false;
+                else
+                    IsKuYesNo = true;
+            }
+            if (IsKuYesNo)
+            {
+                var criminal_debarred = await ProtectedSessionStorage.GetAsync<bool>("criminal_debarred");
+                if (criminal_debarred)
+                {
+                    var IsValidInKuTerms = await ProtectedSessionStorage.GetAsync<bool>("IsValidInKuTerms");
+                    var changeEventValue = await ProtectedSessionStorage.GetAsync<bool>("gradu");
+                    if (changeEventValue && IsValidInKuTerms)
+                    {
+                        var IsMarksValid = await ProtectedSessionStorage.GetAsync<bool>("MarksInvalid");
+                        if (IsMarksValid)
+                        {
+                            var checkEligibility = await MarksEligibilityCheckAgainAsync();
+                            if (checkEligibility)
+                            {
+                                bool photoFlag = false;
+                                bool signatureFlag = false;
+                                try
+                                {
+                                    string UniqueSignatureName = string.Empty;
+                                    string UniquePhotoName = string.Empty;
+                                    if (!string.IsNullOrEmpty(TempPhotoPath))
+                                    {
+                                        UniquePhotoName = await ProtectedSessionStorage.GetAsync<string>("UniquePhotoName");
+                                        CenterService.DeleteTempFiles(UniquePhotoName);
+                                        photoFlag = true;
+                                    }
+
+                                    if (!string.IsNullOrEmpty(TempSIgnaturePath))
+                                    {
+                                        UniqueSignatureName = await ProtectedSessionStorage.GetAsync<string>("UniqueSignatureName");
+                                        CenterService.DeleteTempFiles(UniqueSignatureName);
+                                        signatureFlag = true;
+                                    }
+                                }
+                                catch (Exception ex)
+                                {
+                                    UpdateLoader = "none";
+                                    if (ShowOptions == "B_Ed")
+                                    {
+                                        await ToastObjRegistration.Show(new ToastModel
+                                        {
+                                            Title = "Error!",
+                                            Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                        });
+                                        NavigationManager.NavigateTo("RegistrationForm/B_Ed", true);
+                                    }
+                                    else
+                                    {
+                                        await ToastObjRegistration.Show(new ToastModel
+                                        {
+                                            Title = "Error!",
+                                            Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                        });
+                                        NavigationManager.NavigateTo("RegistrationForm/M_Ed", true);
+                                    }
+                                }
+
+                                var authState = await authenticationStateTask;
+                                var user = await UserManager.GetUserAsync(authState.User);
+                                bool checkFormValidation = true;
+                                if (ShowOptions == "B_Ed")
+                                {
+                                    checkFormValidation = await B_EdValidateForm();
+                                }
+                                else
+                                {
+                                    checkFormValidation = await M_EdValidateForm();
+                                }
+
+                                if (checkFormValidation)
+                                {
+                                    model.UserId = user.Id;
+                                    var result = await CenterService.UpdateRegistrationDetailsAsync(model, photoFlag, signatureFlag);
+                                    if (result == "success")
+                                    {
+                                        await ProtectedSessionStorage.DeleteAsync("UniqueSignatureName");
+                                        await ProtectedSessionStorage.DeleteAsync("UniquePhotoName");
+                                        await ToastObjRegistration.Show(new ToastModel
+                                        {
+                                            Title = "Success!",
+                                            Content = "Your details have been updated successfully.",
+                                            CssClass = "e-toast-success",
+                                            Icon = "e-success toast-icons"
+                                        });
+                                        UpdateLoader = "none";
+                                        await ProtectedSessionStorage.SetAsync("gradu", true);
+                                        TempPhotoPath = string.Empty;
+                                        TempSIgnaturePath = string.Empty;
+                                        NavigationManager.NavigateTo($"RegistrationForm/{ShowOptions}", true);
+                                    }
+                                    else if (result == "failure")
+                                    {
+                                        UpdateLoader = "none";
+                                        await ToastObjRegistration.Show(new ToastModel
+                                        {
+                                            Title = "Error!",
+                                            Content = "You are sending bad request, please try again later!",
+                                            CssClass = "e-toast-danger",
+                                            Icon = "e-error toast-icons"
+                                        });
+                                        await Js.CloseModel("modalConfirmDelete");
+                                    }
+                                    else
+                                    {
+                                        UpdateLoader = "none";
+                                        await ToastObjRegistration.Show(new ToastModel
+                                        {
+                                            Title = "Error!",
+                                            Content = result,
+                                            CssClass = "e-toast-danger",
+                                            Icon = "e-error toast-icons"
+                                        });
+                                        await Js.CloseModel("modalConfirmDelete");
+                                    }
+                                }
+                                else
+                                {
+                                    UpdateLoader = "none";
+                                }
+                            }
+                            else
+                            {
+                                UpdateLoader = "none";
+                            }
+                        }
+                        else
+                        {
+                            UpdateLoader = "none";
+                            await ToastObjRegistration.Show(new ToastModel
+                            {
+                                Title = "Error!",
+                                Content = "Please enter the correct marks!",
+                                CssClass = "e-toast-danger",
+                                Icon = "e-error toast-icons"
+                            });
+                        }
+                    }
+                    else
+                    {
+                        UpdateLoader = "none";
+                        await ToastObjRegistration.Show(new ToastModel
+                        {
+                            Title = "Error!",
+                            Content = "You are not eligible!",
+                            CssClass = "e-toast-danger",
+                            Icon = "e-error toast-icons"
+                        });
+                        await Js.CloseModel("modalConfirmDelete");
+                    }
+                }
+                else
+                {
+                    UpdateLoader = "none";
+                }
+            }
+            else
+            {
+                UpdateLoader = "none";
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Please select Kumaun University option which is near by Is Appear Option!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+                await Js.CloseModel("modalConfirmDelete");
+            }
+        }
+        catch (Exception ex)
+        {
+            UpdateLoader = "none";
+            if (ShowOptions == "B_Ed")
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                });
+                NavigationManager.NavigateTo("RegistrationForm/B_Ed", true);
+            }
+            else
+            {
+                await ToastObjRegistration.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                });
+                NavigationManager.NavigateTo("RegistrationForm/M_Ed", true);
+            }
+            await Js.CloseModel("modalConfirmDelete");
+        }
+    }
+
+}

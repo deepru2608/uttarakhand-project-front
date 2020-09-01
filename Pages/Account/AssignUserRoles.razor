@@ -1,0 +1,108 @@
+﻿@layout MainLayout
+@page "/Account/AssignUserRoles"
+@attribute [Authorize(Roles = "SuperAdmin")]
+
+<div class="card border-left-primary shadow h-100 py-2">
+    <div class="card-body">
+        @if (usersList == null && rolesList == null)
+        {
+            <div class="row">
+                <div class="col-sm-12 p-5">
+                    <img src="Images/BlockLoader.gif" alt="Loader" style="width: 60px; height:60px; display:@Loader" />
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-sm-12 text-left">
+                    <h4><span class="border-bottom" style="color: #3C40C6">Assign User Roles</span></h4>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <SfAutoComplete TValue="string" TItem="string" Placeholder="e.g. Email" DataSource="usersList" Autofill=true @bind-Value="userData">
+                    </SfAutoComplete>
+                </div>
+                <div class="col-md-6 mt-3">
+                    <SfAutoComplete TValue="string" TItem="string" Placeholder="e.g. Roles" DataSource="rolesList" Autofill=true @bind-Value="roleName">
+                    </SfAutoComplete>
+                </div>
+
+                <div class="col-sm-12 mt-3 text-left">
+                    <SfButton IsPrimary="true" OnClick="@(e => AssignRemoveUserInRole("Assign"))"><i class="fas fa-plus-circle"></i>&nbsp;Assign Role</SfButton>
+                    <SfButton IsPrimary="true" OnClick="@(e => AssignRemoveUserInRole("Remove"))"><i class="fas fa-user-slash"></i>&nbsp;Remove From Role</SfButton>
+                    &nbsp;<img src="Images/BlockLoader.gif" alt="Loader" style="width: 30px; height:30px; display:@Loader" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<SfToast @ref="@ToastAssignObj" ID="toast_type">
+    <ToastPosition X="Right"></ToastPosition>
+</SfToast>
+
+@code {
+    SfToast ToastAssignObj;
+    public IEnumerable<string> usersList { get; set; }
+    public string userData { get; set; }
+    public IEnumerable<string> rolesList { get; set; }
+    public string roleName { get; set; }
+    public string Loader { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        usersList = new List<string>();
+        rolesList = new List<string>();
+        await BindUserRoles();
+        Loader = "none";
+    }
+
+    private async Task BindUserRoles()
+    {
+        var roles = await UserService.GetRolesListAsync();
+        rolesList = roles.Select(s => s.Name).ToList();
+        var users = await UserService.GetAllUsersAsync();
+        usersList = users.Select(s => s.Email).ToList();
+    }
+
+    async Task AssignRemoveUserInRole(string action)
+    {
+        if (!string.IsNullOrEmpty(userData) && !string.IsNullOrEmpty(roleName))
+        {
+            Loader = "inline";
+            AssignUserRoleViewModel model = new AssignUserRoleViewModel
+            {
+                Action = action,
+                RoleName = roleName,
+                Email = userData
+            };
+            var result = await UserService.AssignRemoveUserInRoleAsync(model);
+            if (result == "success")
+            {
+                Loader = "none";
+                string Message = string.Empty;
+                if (action == "Assign")
+                {
+                    Message = $"You have assign {model.RoleName} role to {model.Email} username successfully.";
+                }
+                else if (action == "Remove")
+                {
+                    Message = $"You have Remove {model.RoleName} role to {model.Email} username successfully.";
+                }
+                await ToastAssignObj.Show(new ToastModel {Title = "Success!", Content = Message, CssClass = "e-toast-success", Icon = "e-success toast-icons"});
+                NavigationManager.NavigateTo("Account/AssignUserRoles", true);
+            }
+            else
+            {
+                Loader = "none";
+                await ToastAssignObj.Show(new ToastModel {Title = "Error!", Content = result, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                NavigationManager.NavigateTo("Account/AssignUserRoles", true);
+            }
+        }
+        else
+        {
+            string Message = "Please fill all the fields!";
+            await ToastAssignObj.Show(new ToastModel {Title = "Error!", Content = Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+        }
+    }
+}

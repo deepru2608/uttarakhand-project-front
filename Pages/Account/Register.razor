@@ -1,0 +1,549 @@
+﻿@layout AccountLayout
+@page "/Register"
+@inject ILoginService LoginService
+
+<!-- Card Regular -->
+<div class="card border-left-primary shadow h-100 py-2 cascade-card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-5 d-none d-sm-none d-md-none d-lg-block">
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <div class="card-body card-body-cascade">
+                        <!-- Title -->
+                        <h3 class="card-title text-center">
+                            <strong class="border-bottom">Kumaun University</strong>
+                        </h3>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <img class="card-img-top img-fluid" style="background-size: cover; height: 250px; width: 250px; 
+                                    margin-top: 100px; margin-left: 100px;"
+                                     src="Images/Kumaun-University-job.png" alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-7 col-sm-12">
+                <!-- Card content -->
+                <div class="card-body card-body-cascade">
+                    <!-- Title -->
+                    <h3 class="card-title text-center">
+                        <strong class="border-bottom">Registration Portal</strong>
+                    </h3>
+                    <h4 class="card-title text-center">
+                        <strong class="border-bottom">Sign Up</strong>
+                    </h4>
+
+                    <EditForm Model="registerModel" OnValidSubmit="@ShowOptBox">
+                        <DataAnnotationsValidator/>
+                        <div class="card-body py-1">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        @* <SfTextBox CssClass="e-outline" Placeholder="First Name" *@
+                                        @*            @bind-Value="registerModel.FirstName"> *@
+                                        @* </SfTextBox> *@
+                                        <InputText type="text" class="e-input e-outline" placeholder="First Name" @bind-Value="registerModel.FirstName"
+                                                   onkeypress="return lettersOnly(event)">
+                                        </InputText>
+                                        <ValidationMessage For="@(() => registerModel.FirstName)" style="color: red"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        @* <SfTextBox CssClass="e-outline" Placeholder="Last Name" *@
+                                        @*            @bind-Value="registerModel.LastName"> *@
+                                        @* </SfTextBox> *@
+                                        <InputText type="text" class="e-input e-outline" placeholder="Last Name" @bind-Value="registerModel.LastName"
+                                                   onkeypress="return lettersOnly(event)">
+                                        </InputText>
+                                        <ValidationMessage For="@(() => registerModel.LastName)" style="color: red"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <SfTextBox CssClass="e-outline" Placeholder="Email Address"
+                                                   @bind-Value="registerModel.Email" OnChange="@(e => CheckEmailAsync(e.Value.ToString()))">
+                                        </SfTextBox>
+                                        <ValidationMessage For="@(() => registerModel.Email)" style="color: red"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        @* <SfTextBox CssClass="e-outline" Placeholder="Mobile Number" *@
+                                        @*            @bind-Value="registerModel.MobileNo" OnChange="@(e => CheckMobileAsync(e.Value.ToString()))"> *@
+                                        @* </SfTextBox> *@
+                                        <InputText type="text" class="e-input e-outline" placeholder="Mobile Number" @bind-Value="registerModel.MobileNo"
+                                                   maxlength="10" onkeypress="return isNumber(event)" @onchange="@(e => CheckMobileAsync(e.Value.ToString()))">
+                                        </InputText>
+                                        <ValidationMessage For="@(() => registerModel.MobileNo)" style="color: red"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <SfTextBox CssClass="e-outline" Placeholder="Password"
+                                                   @bind-Value="registerModel.Password" Type="@Syncfusion.Blazor.Inputs.InputType.Password">
+                                        </SfTextBox>
+                                        <ValidationMessage For="@(() => registerModel.Password)" style="color: red"/>
+                                    </div>
+                                </div>
+                                @* <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <ReCAPTCHA @ref="reCAPTCHAComponent" SiteKey="6LeM8eQUAAAAAJXreioI-8xkmuKlGsU_pvvyR4DN"
+                                                    OnSuccess="OnSuccess" OnExpired="OnExpired"/>
+                                    </div>
+                                </div> *@
+                                <div class="col-md-12 text-center mt-4">
+                                    <SfButton IsPrimary="true"><i class="fas fa-sign-in-alt"></i>&nbsp;Sign Up</SfButton>
+                                    &nbsp;
+                                    <img src="Images/BlockLoader.gif" alt="Loader Image"
+                                         style="height: 30px; width: 30px; display: @OtpLoader"/>
+                                    <p class="mt-3">
+                                        Registered User ?
+                                        <strong>
+                                            <a href="Login" style="color: #3C40C6">Sign In Here</a>
+                                        </strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalOtp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Otp Box</h4>
+            </div>
+            <div class="modal-body mx-3">
+                <EditForm Model="@UserOtp">
+                    <div class="row">
+                        <div class="col-sm-12 mb-2">
+                            <SfTextBox CssClass="e-outline" Placeholder="Enter Otp" FloatLabelType="@FloatLabelType.Auto"
+                                       @bind-Value="@UserOtp">
+                            </SfTextBox>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                            <div class="alert alert-primary" role="alert">
+                                Your one time password has been sent on your phone number.
+                            </div>
+                        </div>
+                    </div>
+                </EditForm>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <SfButton IsPrimary="true" OnClick="@ResentOtp">
+                    <i class="fas fa-window-restore"></i>&nbsp;Resend
+                </SfButton>
+                <SfButton IsPrimary="true" Disabled="@IsOtpEnabled" OnClick="@CreateUserAsync">
+                    <i class="fas fa-sign-in-alt"></i>&nbsp;Submit
+                </SfButton>
+                &nbsp;
+                <img src="Images/BlockLoader.gif" alt="Loader Image"
+                     style="height: 30px; width: 30px; display: @Loader"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<SfToast @ref="@ToastObjRegister" ID="toast_type">
+    <ToastPosition X="Right"></ToastPosition>
+</SfToast>
+
+
+@code{
+    SfToast ToastObjRegister;
+    public DateTime dobData { get; set; } = DateTime.Now;
+    public RegisterViewModel registerModel { get; set; }
+    private bool UniqueMobile = true;
+    private bool UniqueEmail = true;
+    public bool IsEnable { get; set; } = false;
+    public string UserOtp { get; set; }
+    public bool IsOtpEnabled { get; set; } = false;
+
+    public string Loader { get; set; }
+    public string OtpLoader { get; set; }
+    public bool IsShowReset { get; set; } = false;
+
+    protected override void OnInitialized()
+    {
+        registerModel = new RegisterViewModel();
+        UserOtp = string.Empty;
+        Loader = "none";
+        OtpLoader = "none";
+    }
+
+    private async Task CreateUserAsync()
+    {
+        Loader = "inline";
+        IsOtpEnabled = true;
+        StateHasChanged();
+        if (UniqueMobile)
+        {
+            if (UniqueEmail)
+            {
+                if (!string.IsNullOrEmpty(UserOtp))
+                {
+                    var allOtpData = await dapperService.GetOtpDetailsAsync();
+                    var otpData = allOtpData.FirstOrDefault(f => f.Email.ToLower() == registerModel.Email.ToLower() && f.IsValid == false);
+                    if (otpData != null)
+                    {
+                        if (otpData.Otp == UserOtp)
+                        {
+                            var otpUpdateResult = await dapperService.UpdateOtpDetailsAsync(otpData.UniqueId);
+                            if (otpUpdateResult == "success")
+                            {
+                                var userToken = await UserService.CreateUserAsync(registerModel);
+                                if (userToken.Status.ToLower() == "success")
+                                {
+                                    string Message = $"Dear Candidate, Your login id: {registerModel.Email} and Pwd: {registerModel.Password}. Regards KU";
+                                    await CenterService.SendSmsAsync(registerModel.MobileNo, Message);
+                                    await LoginService.Login(userToken.Token);
+                                    Loader = "none";
+                                    IsOtpEnabled = false;
+                                    NavigationManager.NavigateTo("/", true);
+                                }
+                                else
+                                {
+                                    await ToastObjRegister.Show(new ToastModel
+                                    {
+                                        Title = "Error!",
+                                        Content = "You are not send proper request, please try again!",
+                                        CssClass = "e-toast-danger",
+                                        Icon = "e-error toast-icons"
+                                    });
+                                    Loader = "none";
+                                    IsOtpEnabled = false;
+                                }
+                            }
+                            else
+                            {
+                                await ToastObjRegister.Show(new ToastModel
+                                {
+                                    Title = "Error!",
+                                    Content = otpUpdateResult,
+                                    CssClass = "e-toast-danger",
+                                    Icon = "e-error toast-icons"
+                                });
+                                Loader = "none";
+                                IsOtpEnabled = false;
+                            }
+                        }
+                        else
+                        {
+                            await ToastObjRegister.Show(new ToastModel
+                            {
+                                Title = "Error!",
+                                Content = "Otp doesn't match, please enter the correct otp or click resend button to receive otp again!",
+                                CssClass = "e-toast-danger",
+                                Icon = "e-error toast-icons"
+                            });
+                            Loader = "none";
+                            IsOtpEnabled = false;
+                        }
+                    }
+                    else
+                    {
+                        await ToastObjRegister.Show(new ToastModel
+                        {
+                            Title = "Error!",
+                            Content = "Otp is not update right now, please reload the page and try again!!",
+                            CssClass = "e-toast-danger",
+                            Icon = "e-error toast-icons"
+                        });
+                        Loader = "none";
+                        IsOtpEnabled = false;
+                    }
+                }
+                else
+                {
+                    await ToastObjRegister.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "Please enter the otp!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+                    Loader = "none";
+                    IsOtpEnabled = false;
+                }
+            }
+            else
+            {
+                await ToastObjRegister.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Email address should be unique!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+                Loader = "none";
+                IsOtpEnabled = false;
+                NavigationManager.NavigateTo("Register", true);
+            }
+        }
+        else
+        {
+            await ToastObjRegister.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Mobile number should be unique!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            Loader = "none";
+            IsOtpEnabled = false;
+            NavigationManager.NavigateTo("Register", true);
+        }
+    }
+
+    async Task CheckMobileAsync(string mobileNumber)
+    {
+        if (mobileNumber.Length == 10)
+        {
+            string mobile = await CenterService.CheckMobileDuplicacyAsync(mobileNumber);
+            if (mobile.ToLower() != "notfound")
+            {
+                await ToastObjRegister.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Mobile number should be unique, please enter unique number!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+                UniqueMobile = false;
+            }
+        }
+        else
+        {
+            await ToastObjRegister.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please enter the correct phone number!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            UniqueMobile = false;
+        }
+    }
+
+    async Task CheckEmailAsync(string emailAddress)
+    {
+        string email = await CenterService.CheckEmailDuplicacyAsync(emailAddress);
+        if (email.ToLower() != "notfound")
+        {
+            await ToastObjRegister.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Email address should be unique, please enter unique email!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            UniqueEmail = false;
+        }
+    }
+
+    async Task ShowOptBox()
+    {
+        OtpLoader = "inline";
+        IsEnable = true;
+        await InvokeAsync(StateHasChanged);
+        if (UniqueMobile)
+        {
+            if (UniqueEmail)
+            {
+                var allOtpData = await dapperService.GetOtpDetailsAsync();
+                var otpData = allOtpData.FirstOrDefault(f => f.Email.ToLower() == registerModel.Email.ToLower() && f.IsValid == false);
+                string otp = string.Empty;
+                if (otpData != null)
+                {
+                    otp = otpData.Otp;
+                }
+                else
+                {
+                    otp = CenterService.GenerateOtp();
+                }
+                if (!string.IsNullOrEmpty(otp))
+                {
+                    string message = $"Your one time password is {otp}";
+                    var result = await CenterService.SendSmsAsync(registerModel.MobileNo, message, registerModel.Email, otp, "sent");
+                    //var result = "success";
+                    if (result == "success")
+                    {
+                        await Js.ShowModel("modalOtp");
+                        IsEnable = false;
+                        OtpLoader = "none";
+                        await ToastObjRegister.Show(new ToastModel
+                        {
+                            Title = "Success!",
+                            Content = "Otp has been sent on your mobile number.",
+                            CssClass = "e-toast-success",
+                            Icon = "e-success toast-icons"
+                        });
+                    }
+                    else
+                    {
+                        await ToastObjRegister.Show(new ToastModel
+                        {
+                            Title = "Error!",
+                            Content = "There is some problem in otp service, please try again after sometimes!",
+                            CssClass = "e-toast-danger",
+                            Icon = "e-error toast-icons"
+                        });
+
+                        await Task.Delay(2000);
+                        OtpLoader = "none";
+                        IsEnable = false;
+                        NavigationManager.NavigateTo("Register", true);
+                    }
+                    await ProtectedSessionStorage.SetAsync("uniqueOtp", otp);
+                }
+                else
+                {
+                    await ToastObjRegister.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "Otp does not generate this time, Please try again!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+
+                    await Task.Delay(2000);
+                    OtpLoader = "none";
+                    IsEnable = false;
+                    NavigationManager.NavigateTo("Register", true);
+                }
+            }
+            else
+            {
+                await ToastObjRegister.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Email address should be unique!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+                await Task.Delay(2000);
+                OtpLoader = "none";
+                IsEnable = false;
+                NavigationManager.NavigateTo("Register", true);
+            }
+        }
+        else
+        {
+            await ToastObjRegister.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Mobile number should be unique!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            await Task.Delay(2000);
+            OtpLoader = "none";
+            IsEnable = false;
+            NavigationManager.NavigateTo("Register", true);
+        }
+    }
+
+    async Task ResentOtp()
+    {
+        var allOtpData = await dapperService.GetOtpDetailsAsync();
+        var otpData = allOtpData.FirstOrDefault(f => f.Email.ToLower() == registerModel.Email.ToLower() && f.IsValid == false);
+        if (otpData != null)
+        {
+            string message = $"Your one time password is {otpData.Otp}";
+            var result = await CenterService.SendSmsAsync(registerModel.MobileNo, message, registerModel.Email, otpData.Otp, "resend");
+            if (result == "success")
+            {
+                await Js.ShowModel("modalOtp");
+                IsEnable = false;
+                OtpLoader = "none";
+                await ToastObjRegister.Show(new ToastModel
+                {
+                    Title = "Success!",
+                    Content = "Otp has been resent on your mobile number.",
+                    CssClass = "e-toast-success",
+                    Icon = "e-success toast-icons"
+                });
+            }
+            else
+            {
+                await ToastObjRegister.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "There is some problem in otp service, please try again after sometimes!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+
+                await Task.Delay(2000);
+                OtpLoader = "none";
+                IsEnable = false;
+                NavigationManager.NavigateTo("Register", true);
+            }
+        }
+        else
+        {
+            var otp = CenterService.GenerateOtp();
+            if (!string.IsNullOrEmpty(otp))
+            {
+                string message = $"Your one time password is {otp}";
+                var result = await CenterService.SendSmsAsync(registerModel.MobileNo, message, registerModel.Email, otp, "sent");
+                if (result == "success")
+                {
+                    await Js.ShowModel("modalOtp");
+                    IsEnable = false;
+                    OtpLoader = "none";
+                    await ToastObjRegister.Show(new ToastModel
+                    {
+                        Title = "Success!",
+                        Content = "Otp has been resent on your mobile number.",
+                        CssClass = "e-toast-success",
+                        Icon = "e-success toast-icons"
+                    });
+                }
+                else
+                {
+                    await ToastObjRegister.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "There is some problem in otp service, please try again after sometimes!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+
+                    await Task.Delay(2000);
+                    OtpLoader = "none";
+                    IsEnable = false;
+                    NavigationManager.NavigateTo("Register", true);
+                }
+            }
+            else
+            {
+                await ToastObjRegister.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Otp does not generate this time, Please try again!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+
+                await Task.Delay(2000);
+                OtpLoader = "none";
+                IsEnable = false;
+                NavigationManager.NavigateTo("Register", true);
+            }
+        }
+    }
+
+}

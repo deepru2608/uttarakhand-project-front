@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\deepa\.nuget\packages\matblazor\2.6.2\contentFiles\any\netstandard2.1\Properties\launchSettings.json" t="Include" />
+    <e p="C:\Users\deepa\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\deepa\.Rider2019.3\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\deepa\.Rider2019.3\config\scratches" t="IncludeRecursive" />
+    <e p="C:\Users\deepa\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\deepa\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_uttarakhand-project-front.-1063802235.00" t="ExcludeRecursive" />
+    <e p="C:\Users\deepa\Desktop\Blazor\KU_Solution_30Aug2020_12AM\KU_Solution_30Aug2020_12AM" t="IncludeRecursive">
+      <e p="_Imports.razor" t="Include" />
+      <e p="App.razor" t="Include" />
+      <e p="appsettings.Development.json" t="Include" />
+      <e p="appsettings.json" t="Include" />
+      <e p="Auth" t="Include">
+        <e p="DataProtectionPurposeStrings.cs" t="Include" />
+        <e p="ILoginService.cs" t="Include" />
+        <e p="JWTAuthenticationProvider.cs" t="Include" />
+      </e>
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Controllers" t="Include">
+        <e p="PaymentController.cs" t="Include" />
+        <e p="ServiceController.cs" t="Include" />
+      </e>
+      <e p="Data" t="Include">
+        <e p="FrontAppDbContext.cs" t="Include" />
+        <e p="ModelBuilderExtension.cs" t="Include" />
+        <e p="Pincode.json" t="Include" />
+        <e p="WeatherForecast.cs" t="Include" />
+        <e p="WeatherForecastService.cs" t="Include" />
+      </e>
+      <e p="Migrations" t="Include">
+        <e p="20200823083041_initialCreate.cs" t="Include" />
+        <e p="20200823083041_initialCreate.Designer.cs" t="Include" />
+        <e p="20200824100822_AddColumnInRegistration_20200824.cs" t="Include" />
+        <e p="20200824100822_AddColumnInRegistration_20200824.Designer.cs" t="Include" />
+        <e p="20200824113635_AddColumnRef_20200824.cs" t="Include" />
+        <e p="20200824113635_AddColumnRef_20200824.Designer.cs" t="Include" />
+        <e p="20200824193341_StructureChanged_20200824.cs" t="Include" />
+        <e p="20200824193341_StructureChanged_20200824.Designer.cs" t="Include" />
+        <e p="20200825070837_AddMoreColumnInR_20200825.cs" t="Include" />
+        <e p="20200825070837_AddMoreColumnInR_20200825.Designer.cs" t="Include" />
+        <e p="20200825090529_ChangeConstraints.cs" t="Include" />
+        <e p="20200825090529_ChangeConstraints.Designer.cs" t="Include" />
+        <e p="20200826002402_SomeTableMasters_20200826.cs" t="Include" />
+        <e p="20200826002402_SomeTableMasters_20200826.Designer.cs" t="Include" />
+        <e p="20200826010039_UpdateColumnsAndAddTable_20200826.cs" t="Include" />
+        <e p="20200826010039_UpdateColumnsAndAddTable_20200826.Designer.cs" t="Include" />
+        <e p="20200826010907_AddQualifyingTypeTable.cs" t="Include" />
+        <e p="20200826010907_AddQualifyingTypeTable.Designer.cs" t="Include" />
+        <e p="20200826142125_AddColumnsInRegistration_20200826.cs" t="Include" />
+        <e p="20200826142125_AddColumnsInRegistration_20200826.Designer.cs" t="Include" />
+        <e p="20200827050420_PinCodeMaster_20200827.cs" t="Include" />
+        <e p="20200827050420_PinCodeMaster_20200827.Designer.cs" t="Include" />
+        <e p="20200827061009_AddStateTable.cs" t="Include" />
+        <e p="20200827061009_AddStateTable.Designer.cs" t="Include" />
+        <e p="20200829071430_AddTablesInDb_20200829.cs" t="Include" />
+        <e p="20200829071430_AddTablesInDb_20200829.Designer.cs" t="Include" />
+        <e p="20200829072513_AddColumnOtpMaster_20200829.cs" t="Include" />
+        <e p="20200829072513_AddColumnOtpMaster_20200829.Designer.cs" t="Include" />
+        <e p="20200829074124_ChangeColumnNameInOtp_20200829.cs" t="Include" />
+        <e p="20200829074124_ChangeColumnNameInOtp_20200829.Designer.cs" t="Include" />
+        <e p="20200829114606_AddPaymentTable_20200829.cs" t="Include" />
+        <e p="20200829114606_AddPaymentTable_20200829.Designer.cs" t="Include" />
+        <e p="FrontAppDbContextModelSnapshot.cs" t="Include" />
+      </e>
+      <e p="Models" t="Include">
+        <e p="ApplicationUser.cs" t="Include" />
+        <e p="Course.cs" t="Include" />
+        <e p="ExamCenter.cs" t="Include" />
+        <e p="JwtToken.cs" t="Include" />
+        <e p="OtpTable.cs" t="Include" />
+        <e p="Payment.cs" t="Include" />
+        <e p="PayUViewModel.cs" t="Include" />
+        <e p="Pincode.cs" t="Include" />
+        <e p="QualifyingExam.cs" t="Include" />
+        <e p="QualifyingExamDetails.cs" t="Include" />
+        <e p="QualifyingType.cs" t="Include" />
+        <e p="ReCaptchaVerificationOptions.cs" t="Include" />
+        <e p="ReCaptchaVerificationResponse.cs" t="Include" />
+        <e p="Registration.cs" t="Include" />
+        <e p="SampleApiArgs.cs" t="Include" />
+        <e p="State.cs" t="Include" />
+        <e p="StateData.cs" t="Include" />
+        <e p="UserCredential.cs" t="Include" />
+        <e p="UserInfo.cs" t="Include" />
+        <e p="UserToken.cs" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="netcoreapp3.1" t="Include">
+            <e p="uttarakhand-project-front.AssemblyInfo.cs" t="Include" />
+            <e p="uttarakhand-project-front.RazorAssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Pages" t="Include">
+        <e p="_Host.cshtml" t="Include" />
+        <e p="Account" t="Include">
+          <e p="AssignUserRoles.razor" t="Include" />
+          <e p="ChangePassword.razor" t="Include" />
+          <e p="Login.razor" t="Include" />
+          <e p="Register.razor" t="Include" />
+          <e p="RegisterBase.cs" t="Include" />
+          <e p="Roles.razor" t="Include" />
+          <e p="RolesList.razor" t="Include" />
+        </e>
+        <e p="Admin" t="Include">
+          <e p="EditApplicationAdmin.razor" t="Include" />
+          <e p="ViewAllApplication.razor" t="Include" />
+          <e p="ViewApplication.razor" t="Include" />
+        </e>
+        <e p="Counter.razor" t="Include" />
+        <e p="Error.razor" t="Include" />
+        <e p="Index.razor" t="Include" />
+        <e p="Instruction.razor" t="Include" />
+        <e p="ReCAPTCHA.razor" t="Include" />
+        <e p="RegistrationEntranceForm.razor" t="Include" />
+        <e p="RegistrationEntranceFormBase.cs" t="Include" />
+      </e>
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="launchSettings.json" t="Include" />
+        <e p="PublishProfiles" t="Include">
+          <e p="FolderProfile.pubxml" t="Include" />
+        </e>
+      </e>
+      <e p="PublishCode.txt" t="Include" />
+      <e p="Services" t="Include">
+        <e p="CaptchaService.cs" t="Include" />
+        <e p="CenterService.cs" t="Include" />
+        <e p="DapperService.cs" t="Include" />
+        <e p="HelperService.cs" t="Include" />
+        <e p="ICenterService.cs" t="Include" />
+        <e p="IJSRuntimeExtensions.cs" t="Include" />
+        <e p="IPaymentService.cs" t="Include" />
+        <e p="ITokenService.cs" t="Include" />
+        <e p="IUserService.cs" t="Include" />
+        <e p="PaymentService.cs" t="Include" />
+        <e p="TokenService.cs" t="Include" />
+        <e p="UserService.cs" t="Include" />
+      </e>
+      <e p="Shared" t="Include">
+        <e p="AccountLayout.razor" t="Include" />
+        <e p="BackToHome.razor" t="Include" />
+        <e p="CheckAuthorization.razor" t="Include" />
+        <e p="MainLayout.razor" t="Include" />
+        <e p="NavMenu.razor" t="Include" />
+        <e p="RedirectToLogin.razor" t="Include" />
+        <e p="TopNavMenu.razor" t="Include" />
+      </e>
+      <e p="Startup.cs" t="Include" />
+      <e p="uttarakhand-project-front.csproj" t="IncludeRecursive" />
+      <e p="uttarakhand-project-front.sln" t="IncludeFlat" />
+      <e p="ViewModels" t="Include">
+        <e p="AssignUserRoleViewModel.cs" t="Include" />
+        <e p="ChangePasswordRazorModel.cs" t="Include" />
+        <e p="LoginViewModel.cs" t="Include" />
+        <e p="RegisterViewModel.cs" t="Include" />
+        <e p="RegistrationViewModel.cs" t="Include" />
+        <e p="UsersListAssign.cs" t="Include" />
+        <e p="ViewAllApplicationViewModel.cs" t="Include" />
+      </e>
+      <e p="VIews" t="Include">
+        <e p="Payment" t="Include">
+          <e p="PaymentCheckoutUrl.cshtml" t="Include" />
+          <e p="PayUPaymentCancel.cshtml" t="Include" />
+          <e p="PayUPaymentResponse.cshtml" t="Include" />
+          <e p="ViewPayment.cshtml" t="Include" />
+          <e p="ViewPaymentSlip.cshtml" t="Include" />
+        </e>
+        <e p="Service" t="Include">
+          <e p="PrintFinalDownload.cshtml" t="Include" />
+        </e>
+      </e>
+      <e p="wwwroot" t="Include">
+        <e p="css" t="Include">
+          <e p="bootstrap" t="Include">
+            <e p="bootstrap.min.css" t="Include" />
+            <e p="bootstrap.min.css.map" t="Include" />
+          </e>
+          <e p="open-iconic" t="Include">
+            <e p="font" t="Include">
+              <e p="css" t="Include">
+                <e p="open-iconic-bootstrap.min.css" t="Include" />
+              </e>
+              <e p="fonts" t="Include">
+                <e p="open-iconic.eot" t="Include" />
+                <e p="open-iconic.otf" t="Include" />
+                <e p="open-iconic.svg" t="Include" />
+                <e p="open-iconic.ttf" t="Include" />
+                <e p="open-iconic.woff" t="Include" />
+              </e>
+            </e>
+            <e p="FONT-LICENSE" t="Include" />
+            <e p="ICON-LICENSE" t="Include" />
+            <e p="README.md" t="Include" />
+          </e>
+          <e p="site.css" t="Include" />
+        </e>
+        <e p="CustomCss" t="Include">
+          <e p="bootstrap.min.css" t="Include" />
+          <e p="datatables.css" t="Include" />
+          <e p="mainSite.css" t="Include" />
+          <e p="mdb.min.css" t="Include" />
+          <e p="Print-4P.css" t="Include" />
+          <e p="sb-admin-2.css" t="Include" />
+          <e p="sb-admin-2.min.css" t="Include" />
+        </e>
+        <e p="CustomJs" t="Include">
+          <e p="bootstrap.min.js" t="Include" />
+          <e p="datatables.js" t="Include" />
+          <e p="jquery.min.js" t="Include" />
+          <e p="mainSite.js" t="Include" />
+          <e p="mdb.min.js" t="Include" />
+          <e p="popper.min.js" t="Include" />
+          <e p="reCaptcha.js" t="Include" />
+          <e p="sb-admin-2.js" t="Include" />
+          <e p="sb-admin-2.min.js" t="Include" />
+        </e>
+        <e p="favicon.ico" t="Include" />
+        <e p="Images" t="Include">
+          <e p="BlockLoader.gif" t="Include" />
+          <e p="Kumaun-University-job.png" t="Include" />
+          <e p="LoginImage.jpg" t="Include" />
+          <e p="Print-Logo.jpg" t="Include" />
+          <e p="stop-animation.gif" t="Include" />
+        </e>
+        <e p="upload" t="Include">
+          <e p="uploadku" t="Include">
+            <e p="Photos" t="Include">
+              <e p="77700012P.JPG" t="Include" />
+            </e>
+            <e p="Signature" t="Include">
+              <e p="77700012S.jpg" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="UploadDocs" t="Include">
+          <e p="B_EdFormInstructions.pdf" t="Include" />
+          <e p="M_EdFormInstructions.pdf" t="Include" />
+          <e p="Photos" t="Include">
+            <e p="77700001P.JPG" t="Include" />
+            <e p="77700002P.JPG" t="Include" />
+            <e p="77700008P.JPG" t="Include" />
+            <e p="88800001P.JPG" t="Include" />
+            <e p="Temp.txt" t="Include" />
+          </e>
+          <e p="Signature" t="Include">
+            <e p="77700001S.jpg" t="Include" />
+            <e p="77700002S.jpg" t="Include" />
+            <e p="77700008S.jpg" t="Include" />
+            <e p="88800001S.jpg" t="Include" />
+            <e p="Temp.txt" t="Include" />
+          </e>
+          <e p="TempStorage" t="Include">
+            <e p="56b7a13b-bfc5-42db-87e2-4aff33f7ef0e_D.JPG" t="Include" />
+            <e p="96bc9a10-69de-4e95-af10-7ca6191e5a4b_ChocolateIce.jpg" t="Include" />
+            <e p="Temp.txt" t="Include" />
+          </e>
+        </e>
+      </e>
+    </e>
+  </component>
+</project>

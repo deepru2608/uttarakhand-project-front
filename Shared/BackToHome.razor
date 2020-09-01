@@ -1,0 +1,11 @@
+@page "/ExceptionPage"
+
+@code {
+    [Parameter]
+    public string RouteToGo { get; set; }
+
+    protected override void OnInitialized()
+    {
+        NavigationManager.NavigateTo($"/{RouteToGo}");
+    }
+}

@@ -1,0 +1,93 @@
+﻿@layout MainLayout
+@page "/"
+@attribute [Authorize(Roles = "User, Admin, SuperAdmin")]
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+</div>
+
+<AuthorizeView Roles="Admin">
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Total Users Registered -->
+        <div class="col-md-4 mb-4 mt-1">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Users Registered</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@TotalUserRegistered</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Forms Submitted -->
+        <div class="col-md-4 mb-4 mt-1">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Forms Submitted</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@TotalFormSubmit</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total Forms Payment -->
+        <div class="col-md-4 mb-4 mt-1">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Forms Payment</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@TotalPaymentDone</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+</AuthorizeView>
+
+@code{
+    public int TotalUserRegistered { get; set; }
+    public int TotalFormSubmit { get; set; }
+    public int TotalPaymentDone { get; set; }
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var users = await dapperService.GetAllUserListAsync();
+        if (users.Any())
+            TotalUserRegistered = users.Count();
+        else
+            TotalUserRegistered = 0;
+        var formsSumit = await dapperService.GetAllRegistrationDetailsAsync();
+        if (formsSumit.Any())
+            TotalFormSubmit = formsSumit.Count();
+        else
+            TotalFormSubmit = 0;
+        var usersCountWithPayment = await dapperService.GetPaymentsDetailsAsync();
+        if (usersCountWithPayment.Any())
+            TotalPaymentDone = formsSumit.Where(w => w.IsPaymentDone == "Yes").Count();
+        else
+            TotalPaymentDone = 0;
+    }
+
+}

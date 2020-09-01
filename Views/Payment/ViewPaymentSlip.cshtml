@@ -1,0 +1,83 @@
+﻿@model uttarakhand_project_front.Models.PaymentSuccessModel
+
+@{
+    ViewBag.Title = "View Slip";
+    //Layout = "~/Views/Shared/_Card_Header.cshtml";
+}
+<style>
+    table {
+        border-collapse: separate;
+    }
+
+    th {
+        background-color: #4287f5;
+        color: white;
+    }
+
+    th,
+    td {
+        width: 150px;
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    h2 {
+        color: #4287f5;
+    }
+</style>
+@{
+
+    if (Model.PaymentStatus.ToString().ToLower() == "success")
+    {
+    <table width="600" align="center" border="1">
+        <tr>
+            <td align="left"><img src="https://kuentrance.co.in/Images/Kumaun-University-job.png" height="75" alt="Kumaun" /></td>
+            <td align="right"><img src="https://kuentrance.co.in/Images/hdfc.jpg" width="200" height="75" alt="HDFC" /></td>
+        </tr>
+        <tr>
+            <td align="center" colspan="2"><h4>Kumaun University</h4></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <h4>Registration</h4>
+                <p>Thank you for your payment with the details below:</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2"><h3>Transaction Acknowledgment Slip</h3></td>
+        </tr>
+        <tr>
+            <td>Payment Status : </td>
+            <td class="text-primary"><b>@Model.PaymentStatus</b></td>
+        </tr>
+        <tr>
+            <td>Payment Id : </td>
+            <td class="text-primary">@Model.OrderId</td>
+        </tr>
+        <tr>
+            <td>Transaction Id : </td>
+            <td class="text-primary">@Model.TransactionId</td>
+        </tr>
+        <tr>
+            <td>Reference Number : </td>
+            <td>@Model.ReferenceNumber</td>
+        </tr>
+        <tr>
+            <td>Payment Date: </td>
+            <td>@Model.PaymentDate</td>
+        </tr>
+        <tr>
+            <td>Payment Amount: </td>
+            <td>@Model.Amount</td>
+        </tr>
+    </table>
+    }
+
+    <p style="text-align:center">
+        <br />  <input type="button" value="Print" class="btn" onclick="window.print()" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        @*<a href="/Home/Index" class="btn">Go Back</a>*@
+    </p>
+}
+

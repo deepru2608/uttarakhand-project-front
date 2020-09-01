@@ -1,0 +1,284 @@
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\appsettings.Development.json
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\appsettings.json
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.StaticWebAssets.xml
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.exe
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.deps.json
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.runtimeconfig.json
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.runtimeconfig.dev.json
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.pdb
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.Views.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\uttarakhand-project-front.Views.pdb
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\MatBlazor.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.ProtectedBrowserStorage.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Microsoft.JSInterop.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Syncfusion.Blazor.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Syncfusion.ExcelExport.Net.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\Syncfusion.PdfExport.Net.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\System.Collections.Immutable.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\System.Runtime.Caching.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.csprojAssemblyReference.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.AssemblyInfoInputs.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.AssemblyInfo.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.csproj.CoreCompileInputs.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorComponent.input.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\AssignUserRoles.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\ChangePassword.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\Login.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\Register.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\Roles.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\RolesList.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Error.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\RegistrationEntranceForm.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\AccountLayout.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\CheckAuthorization.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\RedirectToLogin.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\TopNavMenu.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\RazorDeclaration\uttarakhand-project-front.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.TagHelpers.input.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.TagHelpers.output.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorCoreGenerate.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\App.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Account\AssignUserRoles.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Account\ChangePassword.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Account\Login.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Account\Register.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Account\Roles.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Account\RolesList.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Error.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\RegistrationEntranceForm.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Shared\AccountLayout.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Shared\CheckAuthorization.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Shared\RedirectToLogin.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Shared\TopNavMenu.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorAssemblyInfo.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorAssemblyInfo.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorTargetAssemblyInfo.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorTargetAssemblyInfo.cs
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.Views.pdb
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.csproj.CopyComplete
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\staticwebassets\uttarakhand-project-front.StaticWebAssets.Manifest.cache
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\staticwebassets\uttarakhand-project-front.StaticWebAssets.xml
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.dll
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.pdb
+C:\Users\deepa\Desktop\JavaScript\React\uttarakhand-project\uttarakhand-project-front\obj\Release\netcoreapp3.1\uttarakhand-project-front.genruntimeconfig.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\appsettings.Development.json
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\appsettings.json
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Data\Pincode.json
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Properties\launchSettings.json
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.StaticWebAssets.xml
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.exe
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.deps.json
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.runtimeconfig.json
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.runtimeconfig.dev.json
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.pdb
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.Views.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\uttarakhand-project-front.Views.pdb
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Blazored.SessionStorage.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Dapper.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\JWT.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\MatBlazor.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Authorization.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Components.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Components.Forms.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Components.Web.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.Metadata.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.AspNetCore.ProtectedBrowserStorage.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Options.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.Identity.Client.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Microsoft.JSInterop.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Newtonsoft.Json.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\reCAPTCHA.AspNetCore.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Syncfusion.Blazor.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Syncfusion.Blazor.PdfViewerServer.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Syncfusion.Compression.Portable.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Syncfusion.ExcelExport.Net.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Syncfusion.Licensing.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Syncfusion.PdfExport.Net.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Syncfusion.PdfViewer.AspNet.Core.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\System.Collections.Immutable.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\System.Runtime.Caching.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Westwind.AspnetCore.LiveReload.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\Z.Dapper.Plus.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.AssemblyInfoInputs.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.AssemblyInfo.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.csproj.CoreCompileInputs.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.MvcApplicationPartsAssemblyInfo.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.MvcApplicationPartsAssemblyInfo.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorComponent.input.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\App.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\AssignUserRoles.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\ChangePassword.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\Login.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\Register.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\Roles.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Account\RolesList.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Admin\EditApplicationAdmin.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Admin\ViewAllApplication.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Admin\ViewApplication.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Error.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\Instruction.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\ReCAPTCHA.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Pages\RegistrationEntranceForm.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\AccountLayout.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\BackToHome.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\CheckAuthorization.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\RedirectToLogin.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\Shared\TopNavMenu.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\_Imports.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\RazorDeclaration\uttarakhand-project-front.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.TagHelpers.input.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.TagHelpers.output.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorCoreGenerate.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\App.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Account\AssignUserRoles.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Account\ChangePassword.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Account\Login.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Account\Register.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Account\Roles.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Account\RolesList.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Admin\EditApplicationAdmin.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Admin\ViewAllApplication.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Admin\ViewApplication.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Error.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\Instruction.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\ReCAPTCHA.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\RegistrationEntranceForm.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Shared\AccountLayout.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Shared\BackToHome.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Shared\CheckAuthorization.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Shared\RedirectToLogin.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Shared\TopNavMenu.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\_Imports.razor.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Pages\_Host.cshtml.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Views\Payment\PaymentCheckoutUrl.cshtml.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Views\Payment\PayUPaymentResponse.cshtml.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Views\Payment\ViewPayment.cshtml.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Views\Payment\ViewPaymentSlip.cshtml.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\Razor\Views\Service\PrintFinalDownload.cshtml.g.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorAssemblyInfo.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorAssemblyInfo.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorTargetAssemblyInfo.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.RazorTargetAssemblyInfo.cs
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.Views.pdb
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.csproj.CopyComplete
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\staticwebassets\uttarakhand-project-front.StaticWebAssets.Manifest.cache
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\staticwebassets\uttarakhand-project-front.StaticWebAssets.xml
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.dll
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.pdb
+D:\PSEB Project Live\KuEntrance\uttarakhand-project-front-master\obj\Release\netcoreapp3.1\uttarakhand-project-front.genruntimeconfig.cache

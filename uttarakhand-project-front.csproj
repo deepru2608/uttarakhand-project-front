@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>uttarakhand_project_front</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Account\AssignUserRoles.razor" />
+    <None Include="Pages\Account\ChangePassword.razor" />
+    <None Include="Pages\Account\Login.razor" />
+    <None Include="Pages\Account\Register.razor" />
+    <None Include="Pages\Account\Roles.razor" />
+    <None Include="Pages\Account\RolesList.razor" />
+    <None Include="Pages\Admin\ViewAllApplication.razor" />
+    <None Include="Pages\Counter.razor" />
+    <None Include="Pages\Index.razor" />
+    <None Include="Pages\_Host.cshtml" />
+    <None Include="Shared\MainLayout.razor" />
+    <None Include="Shared\NavMenu.razor" />
+    <None Include="wwwroot\css\bootstrap\bootstrap.min.css.map" />
+    <None Include="wwwroot\css\open-iconic\FONT-LICENSE" />
+    <None Include="wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
+    <None Include="wwwroot\css\open-iconic\ICON-LICENSE" />
+    <None Include="wwwroot\css\open-iconic\README.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Blazored.SessionStorage" Version="1.0.12" />
+    <PackageReference Include="Dapper" Version="2.0.35" />
+    <PackageReference Include="JWT" Version="7.2.1" />
+    <PackageReference Include="MatBlazor" Version="2.6.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.AspNetCore.ProtectedBrowserStorage" Version="0.1.0-alpha.19521.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="reCAPTCHA.AspNetCore" Version="3.0.8" />
+    <PackageReference Include="Syncfusion.Blazor" Version="18.2.0.54" />
+    <PackageReference Include="Syncfusion.Blazor.PdfViewerServer.Windows" Version="18.2.0.54" />
+    <PackageReference Include="Westwind.AspnetCore.LiveReload" Version="0.2.8" />
+    <PackageReference Include="Z.Dapper.Plus" Version="3.0.18" />
+  </ItemGroup>
+
+</Project>

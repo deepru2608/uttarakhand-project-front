@@ -1,0 +1,417 @@
+@layout MainLayout
+@page "/ViewApplication/{referenceNo}/{userId}"
+@attribute [Authorize(Roles = "Admin, User")]
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">View Details</h1>
+</div>
+
+
+<div class="card border-left-primary shadow h-100 py-2">
+<div class="card-body">
+<div class="row">
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Name (as per High School Certificate)" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.Name" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Father's Name" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.FatherName" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Mother's Name" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.MotherName" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6">
+    <SfDatePicker TValue="DateTime?" Placeholder="Date of Birth (DD/MM/YYYY)" @bind-Value="model.Dob"
+                  FloatLabelType="@FloatLabelType.Auto" Format="dd/MM/yyyy" Readonly="true">
+    </SfDatePicker>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Mobile No." FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.MobileNo" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Email Address" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.EmailAddress" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" @bind-Value="model.Year" Readonly="true" FloatLabelType="@FloatLabelType.Auto">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Exam Center" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.ExamCenter" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Course Name" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.CourseName" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Group Name" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.StudentGroup" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Marital Status" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.MaritalStatus" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Nationality" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.Nationality" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Domicile of Uttarakhand" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.IsDomicileOfUttarakhand" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Category" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.Category" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Dependent of Freedom Fighter" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.IsFreedomFighter" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Self ex Defence Personal" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.IsDefencePersonal" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Physically Challenged (PH)" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.IsPhysicallyChallenged" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="If PH Yes - Type" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.PhysicallyChallengedType" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Gender" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.Gender" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Are you Involved in any litigation or punished by court" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.IsPunishedByCourt" Readonly="true">
+    </SfTextBox>
+</div>
+@if (!string.IsNullOrEmpty(model.IsEconomicallyWeakerSection))
+{
+    <div class="col-sm-6 mb-2">
+        <SfTextBox CssClass="e-outline" Placeholder="Economicallly Weaker Section (EWS)" FloatLabelType="@FloatLabelType.Auto"
+                   @bind-Value="model.IsEconomicallyWeakerSection" Readonly="true">
+        </SfTextBox>
+    </div>
+}
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Debarred by University for using unfair means till 2020" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.IsDebarredByUniversity" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="State" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.StateName" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-12 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Address" FloatLabelType="@FloatLabelType.Auto"
+               @bind-Value="model.Address" Multiline="true" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="City/Village/Post"
+               @bind-Value="model.City" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-6 mb-2">
+    <SfTextBox CssClass="e-outline" Placeholder="Pincode" @bind-Value="model.Pincode" Readonly="true">
+    </SfTextBox>
+</div>
+<div class="col-sm-12 mb-2">
+    <h5>
+        <span class="text-muted border-bottom">Qualifying Exam Details</span>
+    </h5>
+</div>
+@if (model.CourseName == "B.Ed")
+{
+    <div class="col-sm-6 mb-2">
+        <SfTextBox CssClass="e-outline" Placeholder="Are you student from Kumaun University" FloatLabelType="@FloatLabelType.Auto"
+                   @bind-Value="model.IsKumaunUniversity" Readonly="true">
+        </SfTextBox>
+    </div>
+    <div class="col-sm-12 mb-2">
+        <table className="table table-responsive">
+            <thead>
+            <tr>
+                <th scope="col">Qualifying Exam</th>
+                <th scope="col">Stream</th>
+                <th scope="col">University</th>
+                <th scope="col">Passing Year</th>
+                <th scope="col">Max. Marks</th>
+                <th scope="col">Obtained Marks</th>
+                <th scope="col">% of Marks</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="Graduation" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionName" Readonly="true">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="Stream" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionStream" Readonly="true">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionUniversity" Readonly="true">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionPassingYear" Readonly="true">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionMaxMarks" Readonly="true">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionObtMarks" Readonly="true">
+                    </SfTextBox>
+                </td>
+                <td>
+                    <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.GradutionPercentageMarks" Readonly="true">
+                    </SfTextBox>
+                </td>
+            </tr>
+            @if (!string.IsNullOrEmpty(model.PGradutionUniversity) && !string.IsNullOrEmpty(model.PGradutionMaxMarks))
+            {
+                <tr>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Post Graduation" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PostGradutionName" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Stream" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionStream" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionUniversity" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionPassingYear" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionMaxMarks" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionObtMarks" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PGradutionPercentageMarks" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="col-sm-12 mb-2">
+        <div class="row">
+            <div class="col-sm-4">
+                <SfCheckBox @bind-Checked="@model.IsAppearing" Label="Appearing" Disabled="true"></SfCheckBox>
+            </div>
+            @if (model.IsAppearing)
+            {
+                <div class="col-sm-8">
+                    <SfTextBox CssClass="e-outline" Placeholder="Are you student from Kumaun University?" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.IsKumaunUniversity" Readonly="true">
+                    </SfTextBox>
+                </div>
+            }
+        </div>
+    </div>
+    @if (model.IsAppearing == false)
+    {
+        <div class="col-sm-12 mb-2">
+            <table className="table table-responsive">
+                <thead>
+                <tr>
+                    <th scope="col">Qualifying Exam</th>
+                    <th scope="col">Max. Marks</th>
+                    <th scope="col">Obtained Marks</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Theory Exam" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.TheoryExamName" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.TheoryExamMaxMarks" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.TheoryExamObtMarks" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Practical Exam" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PracticalExamName" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PracticalExamMaxMarks" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                    <td>
+                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="model.PracticalExamObtMarks" Readonly="true">
+                        </SfTextBox>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                       @bind-Value="model.M_EdExamUniversity" Readonly="true">
+            </SfTextBox>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <SfTextBox CssClass="e-outline" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                       @bind-Value="model.M_EdExamPassingYear" Readonly="true">
+            </SfTextBox>
+        </div>
+        <div class="col-sm-4 mb-2">
+            <SfTextBox CssClass="e-outline" Placeholder="% of Marks (Theory + Practical)" FloatLabelType="@FloatLabelType.Auto"
+                       @bind-Value="model.M_EdTotalPercentage" Readonly="true">
+            </SfTextBox>
+        </div>
+    }
+}
+
+<div class="col-sm-6 mb-2">
+    <img src="upload/uploadku/Photos/@model.PhotoPath" alt="Photo" style="width: 250px; height: 300px"/>
+</div>
+<div class="col-sm-6 mb-2">
+    <img src="upload/uploadku/Signature/@model.SignaturePath" alt="Signature" style="width: 250px; height: 300px"/>
+</div>
+<div class="col-sm-12 mt-2 mb-2 text-center">
+    @* <SfButton IsPrimary="true" OnClick="@BackToAllApplication"> *@
+    @*    <i class="fas fa-backward"></i>&nbsp;Back *@
+    @* </SfButton> *@
+    <button class="btn btn-sm btn-secondary" @onclick="@BackToAllApplication">
+        <i class="fas fa-backward"></i>&nbsp;Back
+    </button>
+    @if (PaymentStatus)
+    {
+@*         <a href="Payment/ViewPayment/@referenceNo" class="btn btn-sm btn-primary" target="_blank"> *@
+@*             <i class="fas fa-print"></i>&nbsp;View Payment Details *@
+@*         </a> *@
+        <a target="_blank" title="View Slip" class="btn btn-sm btn-primary" href="Payment/ViewPaymentSlip/@PaymentDetails.OrderId">Print Payment Slip</a>
+        <span>
+            &nbsp;
+        </span>
+        <a target="_blank" title="View Form" class="btn btn-sm btn-primary" href="Service/PrintFinalDownload/@referenceNo">Print Application Form</a>
+    }
+</div>
+</div>
+</div>
+</div>
+
+
+@code {
+
+    [CascadingParameter]
+    public Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    public string userRole { get; set; }
+
+    [Parameter]
+    public string userId { get; set; }
+
+    [Parameter]
+    public string referenceNo { get; set; }
+
+    public RegistrationViewModel model { get; set; }
+    public bool PaymentStatus { get; set; } = false;
+    public Payment PaymentDetails { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        model = new RegistrationViewModel();
+        model = await LoadDataAsync();
+        await GoforPaymentAsync();
+    }
+
+    async Task<RegistrationViewModel> LoadDataAsync()
+    {
+        userRole = await dapperService.GetUserRolesByUserIdAsync(userId);
+        return await CenterService.GetRegistrationDetailsByRefIdAsync(referenceNo);
+    }
+
+    void BackToAllApplication()
+    {
+        if (userRole == "Admin")
+        {
+            NavigationManager.NavigateTo("ViewAllApplication", true);
+        }
+        else
+        {
+            NavigationManager.NavigateTo("/", true);
+        }
+    }
+
+    async Task GoforPaymentAsync()
+    {
+        PaymentDetails = await dapperService.CheckPaymentPaidAgainstRefNo(referenceNo);
+        if (PaymentDetails != null)
+        {
+            PaymentStatus = true;
+        }
+    }
+
+}

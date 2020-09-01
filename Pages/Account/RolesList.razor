@@ -1,0 +1,81 @@
+﻿@attribute [Authorize(Roles = "SuperAdmin")]
+
+@if (Roles.Any())
+{
+    foreach (var role in Roles)
+    {
+        <div class="card mb-3">
+            <div class="card-header">
+                Role Id : @role.Id
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">@role.Name</h5>
+            </div>
+            <div class="card-footer">
+                <span id="deleteSpan_@role.Id">
+                    <SfButton CssClass="e-danger" OnClick="@(e => DeleteRole(role.Id, true))" Content="Delete"></SfButton>
+                </span>
+                <span id="confirmDeleteSpan_@role.Id" style="display:none">
+                    <span style="line-height: 2px">Are you sure, you want to delete it?&nbsp;</span>
+                    <SfButton IsPrimary="true" Content="Yes" OnClick="@(e => ConfirmDelete(role.Id))"></SfButton>
+                    <SfButton IsPrimary="true" Content="No" OnClick="@(e => DeleteRole(role.Id, false))"></SfButton>
+                </span>
+            </div>
+        </div>
+    }
+}
+else
+{
+    <div class="spinner"></div>
+}
+
+<SfToast @ref="@ToastRolesListObj" ID="toast_type">
+    <ToastPosition X="Right"></ToastPosition>
+</SfToast>
+
+@code {
+    SfToast ToastRolesListObj;
+    public IEnumerable<IdentityRole> Roles { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        Roles = new List<IdentityRole>();
+        await LoadRolesList();
+    }
+
+    private async Task LoadRolesList()
+    {
+        Roles = await UserService.GetRolesListAsync();
+    }
+
+    void RouteToRole()
+    {
+        NavigationManager.NavigateTo("Roles", true);
+    }
+
+    async Task DeleteRole(string roleId, bool visibility)
+    {
+        await Js.InvokeVoidAsync("confirmDelete", roleId, visibility);
+    }
+
+    async Task ConfirmDelete(string roleId)
+    {
+        if (string.IsNullOrEmpty(roleId))
+        {
+            await ToastRolesListObj.Show(new ToastModel {Title = "Error!", Content = "Please send the valid request!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+        }
+        else
+        {
+            var result = await UserService.DeleteRoleAsync(roleId);
+            if (result == "success")
+            {
+                await ToastRolesListObj.Show(new ToastModel {Title = "Success!", Content = "You have deleted this role successfully.", CssClass = "e-toast-success", Icon = "e-success toast-icons"});
+                NavigationManager.NavigateTo("Account/Roles", true);
+            }
+            else
+            {
+                await ToastRolesListObj.Show(new ToastModel {Title = "Error!", Content = result, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                NavigationManager.NavigateTo("Account/Roles", true);
+            }
+        }
+    }
+}

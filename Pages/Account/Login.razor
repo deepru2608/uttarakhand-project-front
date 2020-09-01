@@ -1,0 +1,478 @@
+﻿@layout AccountLayout
+@page "/Login"
+@inject ILoginService LoginService
+<!-- Card Regular -->
+<div class="card border-left-primary shadow h-100 py-2 cascade-card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-5 d-none d-sm-none d-md-none d-lg-block">
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade">
+                        <!-- Title -->
+                        <h3 class="card-title text-center"><strong class="border-bottom">Kumaun University</strong></h3>
+                        <div class="row">
+                            <div class="col-sm-12 text-center">
+                                <img class="card-img-top img-fluid" style="background-size: cover; height: 250px; width: 250px;
+                                    margin-top: 100px; margin-left: 100px;"
+                                     src="Images/Kumaun-University-job.png" alt="Card image cap">
+                            </div>
+                        </div>
+                    </div>
+                    <a>
+                        <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12">
+                <!-- Card content -->
+                <div class="card-body card-body-cascade">
+                    <!-- Title -->
+                    <h3 class="card-title text-center"><strong class="border-bottom">Registration Portal</strong></h3>
+                    <h4 class="card-title text-center"><strong class="border-bottom">Sign In</strong></h4>
+                    <EditForm Model="@LoginModel" OnValidSubmit="@LoginUser">
+                        <DataAnnotationsValidator />
+                        <div class="row">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <SfTextBox CssClass="e-outline" Placeholder="Email" FloatLabelType="@FloatLabelType.Auto"
+                                                   @bind-Value="LoginModel.Email">
+                                        </SfTextBox>
+                                        <ValidationMessage For="@(() => LoginModel.Email)" style="color: red" />
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <SfTextBox CssClass="e-outline" Placeholder="Password" FloatLabelType="@FloatLabelType.Auto"
+                                                   @bind-Value="LoginModel.Password" Type="@Syncfusion.Blazor.Inputs.InputType.Password">
+                                        </SfTextBox>
+                                        <ValidationMessage For="@(() => LoginModel.Password)" style="color: red" />
+                                    </div>
+                                </div>
+                                @* <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <ReCAPTCHA @ref="reCAPTCHAComponent" SiteKey="6LeM8eQUAAAAAJXreioI-8xkmuKlGsU_pvvyR4DN"
+                                                        OnSuccess="OnSuccess" OnExpired="OnExpired"/>
+                                        </div>
+                                    </div> *@
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" id="chk" class="custom-control-input" @bind-value="LoginModel.RememberMe">
+                                            <label class="custom-control-label" for="chk">Remember Me</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 text-center mt-3">
+                                    <div class="pb-3">
+                                        <SfButton IsPrimary="true" Disabled="@IsEnable">
+                                            <i class="fas fa-sign-in-alt"></i>&nbsp;Sign in
+                                        </SfButton>
+                                        &nbsp;<img src="Images/BlockLoader.gif" alt="Loader Image" style="height: 30px; width: 30px; display: @Loader" />
+                                        <br />
+                                    </div>
+                                    <strong>
+                                        <a href="#" data-toggle="modal" data-target="#ForgotModal" style="color: #3C40C6">Forgot Password</a>
+                                    </strong>
+                                </div>
+                                <div class="form-group row text-center mt-3">
+                                    <div class="col-md-6 col-lg-12">
+                                        Don't have an account !
+                                        <strong>
+                                            <a href="Register" style="color: #3C40C6">Sign Up Here</a>
+                                        </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </EditForm>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Card Regular -->
+<!-- Modal -->
+<div class="modal fade" id="ForgotModal" tabindex="-1" role="dialog" aria-labelledby="ForgotModalTitle"
+     aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Forgot Password</h5>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <SfTextBox CssClass="e-outline" Placeholder="Enter Email Address" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="@ForgotEmail">
+                        </SfTextBox>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" @onclick="@VerifyUser">Verify</button>
+                &nbsp;
+                <img src="Images/BlockLoader.gif" alt="Loader Image"
+                     style="height: 30px; width: 30px; display: @OtpLoader" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalOtp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true" data-backdrop="false">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Otp Box</h4>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="row">
+                    <div class="col-sm-12 mb-2">
+                        <SfTextBox CssClass="e-outline" Placeholder="Enter Otp" FloatLabelType="@FloatLabelType.Auto"
+                                   @bind-Value="@UserOtp">
+                        </SfTextBox>
+                    </div>
+                    <div class="col-sm-12 mb-2">
+                        <div class="alert alert-primary" role="alert">
+                            Your one time password has been sent on your phone number.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                @*<SfButton IsPrimary="true" OnClick="@ResentOtpAsync">
+                    <i class="fas fa-window-restore"></i>&nbsp;Resend
+                </SfButton>
+                <SfButton IsPrimary="true" Disabled="@IsOtpEnabled" OnClick="@CheckOtpAsync">
+                    <i class="fas fa-sign-in-alt"></i>&nbsp;Submit
+                </SfButton>*@
+                <button type="button" class="btn btn-secondary" @onclick="@ResentOtpAsync">
+                    <i class="fas fa-window-restore"></i>&nbsp;Resend</button>
+                <button type="button" class="btn btn-primary" @onclick="@CheckOtpAsync">
+                    <i class="fas fa-sign-in-alt"></i>&nbsp;Submit
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<SfToast @ref="@ToastObjLogin" ID="toast_type">
+    <ToastPosition X="Right"></ToastPosition>
+</SfToast>
+
+@code {
+    SfToast ToastObjLogin;
+    public LoginViewModel LoginModel { get; set; }
+    public string Loader { get; set; }
+    public bool IsEnable { get; set; } = false;
+    public string ForgotEmail { get; set; }
+    public string UserOtp { get; set; }
+    public bool IsOtpEnabled { get; set; }
+    public string OtpLoader { get; set; }
+    public string MobileNo { get; set; }
+
+    protected override void OnInitialized()
+    {
+        LoginModel = new LoginViewModel();
+        Loader = "none";
+        OtpLoader = "none";
+    }
+
+    protected async Task LoginUser()
+    {
+        Loader = "inline";
+        IsEnable = true;
+        StateHasChanged();
+        var user = await UserManager.FindByEmailAsync(LoginModel.Email);
+        if (user != null)
+        {
+            var userToken = await UserService.LoginUserAsync(LoginModel);
+            if (userToken.Status.ToLower() == "success")
+            {
+                await LoginService.Login(userToken.Token);
+                Loader = "none";
+                NavigationManager.NavigateTo("/", true);
+            }
+            else
+            {
+                await ToastObjLogin.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = userToken.Status,
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+                Loader = "none";
+                IsEnable = false;
+                await Task.Delay(TimeSpan.FromSeconds(2000));
+                NavigationManager.NavigateTo("Login", true);
+            }
+        }
+        else
+        {
+            await ToastObjLogin.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "You are not registered with us, please sign up and verify your mobile number!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            Loader = "none";
+            IsEnable = false;
+            await Task.Delay(TimeSpan.FromSeconds(2000));
+            NavigationManager.NavigateTo("Login", true);
+        }
+    }
+
+    async Task VerifyUser()
+    {
+        OtpLoader = "inline";
+        if (!string.IsNullOrEmpty(ForgotEmail))
+        {
+            var user = await dapperService.CustomFindByEmailAsync(ForgotEmail);
+            if (user != null)
+            {
+                var phoneNumber = user.PhoneNumber;
+                if (!string.IsNullOrEmpty(phoneNumber))
+                {
+                    MobileNo = phoneNumber;
+                    var allOtpData = await dapperService.GetOtpDetailsAsync();
+                    var otpData = allOtpData.FirstOrDefault(f => f.Email.ToLower() == ForgotEmail.ToLower() && f.IsValid == false);
+                    string otp = string.Empty;
+                    if (otpData != null)
+                    {
+                        otp = otpData.Otp;
+                    }
+                    else
+                    {
+                        otp = CenterService.GenerateOtp();
+                    }
+                    if (!string.IsNullOrEmpty(otp))
+                    {
+                        string message = $"Your one time password is {otp}";
+                        var result = await CenterService.SendSmsAsync(phoneNumber, message, ForgotEmail, otp, "sent");
+                        if (result == "success")
+                        {
+                            await Js.ShowModel("modalOtp");
+                            OtpLoader = "none";
+                            await ToastObjLogin.Show(new ToastModel
+                            {
+                                Title = "Success!",
+                                Content = "Otp has been sent on your mobile number.",
+                                CssClass = "e-toast-success",
+                                Icon = "e-success toast-icons"
+                            });
+                        }
+                        else
+                        {
+                            await ToastObjLogin.Show(new ToastModel
+                            {
+                                Title = "Error!",
+                                Content = "There is some problem in otp service, please try again after sometimes!",
+                                CssClass = "e-toast-danger",
+                                Icon = "e-error toast-icons"
+                            });
+
+                            await Task.Delay(2000);
+                            OtpLoader = "none";
+                        }
+                    }
+                    else
+                    {
+                        await ToastObjLogin.Show(new ToastModel
+                        {
+                            Title = "Error!",
+                            Content = "Otp does not generate this time, Please try again!",
+                            CssClass = "e-toast-danger",
+                            Icon = "e-error toast-icons"
+                        });
+
+                        await Task.Delay(2000);
+                        OtpLoader = "none";
+                    }
+                }
+            }
+            else
+            {
+                await ToastObjLogin.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "You are not registered with us, please sign up and verify your mobile number!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+            }
+        }
+        else
+        {
+            await ToastObjLogin.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please enter your registered email address!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+        }
+    }
+
+    async Task CheckOtpAsync()
+    {
+        var allOtpData = await dapperService.GetOtpDetailsAsync();
+        var otpData = allOtpData.FirstOrDefault(f => f.Email.ToLower() == ForgotEmail.ToLower() && f.IsValid == false);
+        if (otpData != null)
+        {
+            if (otpData.Otp == UserOtp)
+            {
+                var otpUpdateResult = await dapperService.UpdateOtpDetailsAsync(otpData.UniqueId);
+                if (otpUpdateResult == "success")
+                {
+                    var user = await dapperService.CustomFindByEmailAsync(ForgotEmail);
+                    if (user != null)
+                    {
+                        string NewPassword = user.FirstName.Substring(0, 1).ToUpper() + user.FirstName.Substring(1) + "@1234";
+                        var token = await UserManager.GeneratePasswordResetTokenAsync(user);
+                        if (!string.IsNullOrEmpty(token))
+                        {
+                            await Task.Delay(2000);
+                            var resetResult = await UserManager.ResetPasswordAsync(user, token, NewPassword);
+                            if (resetResult.Succeeded)
+                            {
+                                string Message = $"Your new password is {NewPassword}";
+                                var result = await CenterService.SendSmsAsync(MobileNo, Message);
+                            }
+                        }
+                        await ToastObjLogin.Show(new ToastModel
+                        {
+                            Title = "Success!",
+                            Content = "Your new password has been sent on your registered mobile number!",
+                            CssClass = "e-toast-success",
+                            Icon = "e-success toast-icons"
+                        });
+                        await Task.Delay(3000);
+                        NavigationManager.NavigateTo("Login", true);
+                    }
+                }
+                else
+                {
+                    await ToastObjLogin.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = otpUpdateResult,
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+                }
+            }
+            else
+            {
+                await ToastObjLogin.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Otp doesn't match, please enter the correct otp or click resend button to receive otp again!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+            }
+        }
+        else
+        {
+            await ToastObjLogin.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Otp is not update right now, please reload the page and try again!!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+        }
+    }
+
+    async Task ResentOtpAsync()
+    {
+        var allOtpData = await dapperService.GetOtpDetailsAsync();
+        var otpData = allOtpData.FirstOrDefault(f => f.Email.ToLower() == ForgotEmail.ToLower() && f.IsValid == false);
+        if (otpData != null)
+        {
+            string message = $"Your one time password is {otpData.Otp}";
+            var result = await CenterService.SendSmsAsync(MobileNo, message, ForgotEmail, otpData.Otp, "resend");
+            if (result == "success")
+            {
+                await Js.ShowModel("modalOtp");
+                IsEnable = false;
+                OtpLoader = "none";
+                await ToastObjLogin.Show(new ToastModel
+                {
+                    Title = "Success!",
+                    Content = "Otp has been resent on your mobile number.",
+                    CssClass = "e-toast-success",
+                    Icon = "e-success toast-icons"
+                });
+            }
+            else
+            {
+                await ToastObjLogin.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "There is some problem in otp service, please try again after sometimes!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+
+                await Task.Delay(2000);
+                OtpLoader = "none";
+                IsEnable = false;
+            }
+        }
+        else
+        {
+            var otp = CenterService.GenerateOtp();
+            if (!string.IsNullOrEmpty(otp))
+            {
+                string message = $"Your one time password is {otp}";
+                var result = await CenterService.SendSmsAsync(MobileNo, message, ForgotEmail, otpData.Otp, "send");
+                if (result == "success")
+                {
+                    await Js.ShowModel("modalOtp");
+                    OtpLoader = "none";
+                    await ToastObjLogin.Show(new ToastModel
+                    {
+                        Title = "Success!",
+                        Content = "Otp has been resent on your mobile number.",
+                        CssClass = "e-toast-success",
+                        Icon = "e-success toast-icons"
+                    });
+                }
+                else
+                {
+                    await ToastObjLogin.Show(new ToastModel
+                    {
+                        Title = "Error!",
+                        Content = "There is some problem in otp service, please try again after sometimes!",
+                        CssClass = "e-toast-danger",
+                        Icon = "e-error toast-icons"
+                    });
+
+                    await Task.Delay(2000);
+                    OtpLoader = "none";
+                }
+            }
+            else
+            {
+                await ToastObjLogin.Show(new ToastModel
+                {
+                    Title = "Error!",
+                    Content = "Otp does not generate this time, Please try again!",
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
+                });
+
+                await Task.Delay(2000);
+                OtpLoader = "none";
+            }
+        }
+    }
+}
