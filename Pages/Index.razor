@@ -73,6 +73,7 @@
 
     protected override async Task OnInitializedAsync()
     {
+        string Uniqe = Guid.NewGuid().ToString().GetHashCode().ToString("x");
         var users = await dapperService.GetAllUserListAsync();
         if (users.Any())
             TotalUserRegistered = users.Count();

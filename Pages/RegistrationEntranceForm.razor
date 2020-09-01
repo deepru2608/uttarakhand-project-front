@@ -232,7 +232,7 @@
                                     </td>
                                     <td>
                                         <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
-                                                   @bind-Value="model.GradutionMaxMarks" Readonly="@GraducationReadonly">
+                                                   @bind-Value="model.GradutionMaxMarks" Readonly="@GraducationReadonly" OnChange="@GraduationPercentageCalc">
                                         </SfTextBox>
                                     </td>
                                     <td>
@@ -274,7 +274,7 @@
                                         </td>
                                         <td>
                                             <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
-                                                       @bind-Value="model.PGradutionMaxMarks" Readonly="@PostGraducationReadonly">
+                                                       @bind-Value="model.PGradutionMaxMarks" Readonly="@PostGraducationReadonly" OnChange="@PostGraduationPercentageCalc">
                                             </SfTextBox>
                                         </td>
                                         <td>
@@ -332,7 +332,7 @@
                                         </td>
                                         <td>
                                             <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
-                                                       @bind-Value="model.TheoryExamMaxMarks" Readonly="@M_EdExamMarksRealonly">
+                                                       @bind-Value="model.TheoryExamMaxMarks" Readonly="@M_EdExamMarksRealonly" OnChange="M_EdMarksChangeEvent">
                                             </SfTextBox>
                                         </td>
                                         <td>
@@ -350,7 +350,7 @@
                                         </td>
                                         <td>
                                             <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
-                                                       @bind-Value="model.PracticalExamMaxMarks" Readonly="@M_EdExamMarksRealonly">
+                                                       @bind-Value="model.PracticalExamMaxMarks" Readonly="@M_EdExamMarksRealonly" OnChange="M_EdMarksChangeEvent">
                                             </SfTextBox>
                                         </td>
                                         <td>
@@ -709,6 +709,7 @@
                     ShowKUOptions = true;
                     model.IsKumaunUniversity = userRelatedForm.IsKumaunUniversity;
                     PassingYearList = GetPassingYears("Yes");
+                    M_EdExamMarksRealonly = true;
                 }
 
                 if (model.IsPhysicallyChallenged == "No")

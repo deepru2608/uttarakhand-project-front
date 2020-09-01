@@ -1,7 +1,6 @@
 ﻿@layout AccountLayout
 @page "/Register"
 @inject ILoginService LoginService
-
 <!-- Card Regular -->
 <div class="card border-left-primary shadow h-100 py-2 cascade-card">
     <div class="card-body">
@@ -16,7 +15,7 @@
                         </h3>
                         <div class="row">
                             <div class="col-sm-12 text-center">
-                                <img class="card-img-top img-fluid" style="background-size: cover; height: 250px; width: 250px; 
+                                <img class="card-img-top img-fluid" style="background-size: cover; height: 250px; width: 250px;
                                     margin-top: 100px; margin-left: 100px;"
                                      src="Images/Kumaun-University-job.png" alt="Card image cap">
                             </div>
@@ -39,7 +38,7 @@
                     </h4>
 
                     <EditForm Model="registerModel" OnValidSubmit="@ShowOptBox">
-                        <DataAnnotationsValidator/>
+                        <DataAnnotationsValidator />
                         <div class="card-body py-1">
                             <div class="row">
                                 <div class="col-sm-6">
@@ -50,7 +49,7 @@
                                         <InputText type="text" class="e-input e-outline" placeholder="First Name" @bind-Value="registerModel.FirstName"
                                                    onkeypress="return lettersOnly(event)">
                                         </InputText>
-                                        <ValidationMessage For="@(() => registerModel.FirstName)" style="color: red"/>
+                                        <ValidationMessage For="@(() => registerModel.FirstName)" style="color: red" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -61,7 +60,7 @@
                                         <InputText type="text" class="e-input e-outline" placeholder="Last Name" @bind-Value="registerModel.LastName"
                                                    onkeypress="return lettersOnly(event)">
                                         </InputText>
-                                        <ValidationMessage For="@(() => registerModel.LastName)" style="color: red"/>
+                                        <ValidationMessage For="@(() => registerModel.LastName)" style="color: red" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -69,7 +68,7 @@
                                         <SfTextBox CssClass="e-outline" Placeholder="Email Address"
                                                    @bind-Value="registerModel.Email" OnChange="@(e => CheckEmailAsync(e.Value.ToString()))">
                                         </SfTextBox>
-                                        <ValidationMessage For="@(() => registerModel.Email)" style="color: red"/>
+                                        <ValidationMessage For="@(() => registerModel.Email)" style="color: red" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -80,7 +79,7 @@
                                         <InputText type="text" class="e-input e-outline" placeholder="Mobile Number" @bind-Value="registerModel.MobileNo"
                                                    maxlength="10" onkeypress="return isNumber(event)" @onchange="@(e => CheckMobileAsync(e.Value.ToString()))">
                                         </InputText>
-                                        <ValidationMessage For="@(() => registerModel.MobileNo)" style="color: red"/>
+                                        <ValidationMessage For="@(() => registerModel.MobileNo)" style="color: red" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -88,20 +87,20 @@
                                         <SfTextBox CssClass="e-outline" Placeholder="Password"
                                                    @bind-Value="registerModel.Password" Type="@Syncfusion.Blazor.Inputs.InputType.Password">
                                         </SfTextBox>
-                                        <ValidationMessage For="@(() => registerModel.Password)" style="color: red"/>
+                                        <ValidationMessage For="@(() => registerModel.Password)" style="color: red" />
                                     </div>
                                 </div>
                                 @* <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <ReCAPTCHA @ref="reCAPTCHAComponent" SiteKey="6LeM8eQUAAAAAJXreioI-8xkmuKlGsU_pvvyR4DN"
-                                                    OnSuccess="OnSuccess" OnExpired="OnExpired"/>
-                                    </div>
-                                </div> *@
+                                        <div class="form-group">
+                                            <ReCAPTCHA @ref="reCAPTCHAComponent" SiteKey="6LeM8eQUAAAAAJXreioI-8xkmuKlGsU_pvvyR4DN"
+                                                        OnSuccess="OnSuccess" OnExpired="OnExpired"/>
+                                        </div>
+                                    </div> *@
                                 <div class="col-md-12 text-center mt-4">
                                     <SfButton IsPrimary="true"><i class="fas fa-sign-in-alt"></i>&nbsp;Sign Up</SfButton>
                                     &nbsp;
                                     <img src="Images/BlockLoader.gif" alt="Loader Image"
-                                         style="height: 30px; width: 30px; display: @OtpLoader"/>
+                                         style="height: 30px; width: 30px; display: @OtpLoader" />
                                     <p class="mt-3">
                                         Registered User ?
                                         <strong>
@@ -150,7 +149,7 @@
                 </SfButton>
                 &nbsp;
                 <img src="Images/BlockLoader.gif" alt="Loader Image"
-                     style="height: 30px; width: 30px; display: @Loader"/>
+                     style="height: 30px; width: 30px; display: @Loader" />
             </div>
         </div>
     </div>
@@ -196,42 +195,33 @@
                 {
                     var allOtpData = await dapperService.GetOtpDetailsAsync();
                     var otpData = allOtpData.FirstOrDefault(f => f.Email.ToLower() == registerModel.Email.ToLower() && f.IsValid == false);
-                    if (otpData != null)
+                    if (otpData.Otp == UserOtp || configuration.GetSection("MasterOtp").Value == UserOtp)
                     {
-                        if (otpData.Otp == UserOtp)
+                        string otpUpdateResult = string.Empty;
+
+                        if (configuration.GetSection("MasterOtp").Value == UserOtp)
+                            otpUpdateResult = "success";
+                        else
+                            otpUpdateResult = await dapperService.UpdateOtpDetailsAsync(otpData.UniqueId);
+
+                        if (otpUpdateResult == "success")
                         {
-                            var otpUpdateResult = await dapperService.UpdateOtpDetailsAsync(otpData.UniqueId);
-                            if (otpUpdateResult == "success")
+                            var userToken = await UserService.CreateUserAsync(registerModel);
+                            if (userToken.Status.ToLower() == "success")
                             {
-                                var userToken = await UserService.CreateUserAsync(registerModel);
-                                if (userToken.Status.ToLower() == "success")
-                                {
-                                    string Message = $"Dear Candidate, Your login id: {registerModel.Email} and Pwd: {registerModel.Password}. Regards KU";
-                                    await CenterService.SendSmsAsync(registerModel.MobileNo, Message);
-                                    await LoginService.Login(userToken.Token);
-                                    Loader = "none";
-                                    IsOtpEnabled = false;
-                                    NavigationManager.NavigateTo("/", true);
-                                }
-                                else
-                                {
-                                    await ToastObjRegister.Show(new ToastModel
-                                    {
-                                        Title = "Error!",
-                                        Content = "You are not send proper request, please try again!",
-                                        CssClass = "e-toast-danger",
-                                        Icon = "e-error toast-icons"
-                                    });
-                                    Loader = "none";
-                                    IsOtpEnabled = false;
-                                }
+                                string Message = $"Dear Candidate, Your login id: {registerModel.Email} and Pwd: {registerModel.Password}. Regards KU";
+                                await CenterService.SendSmsAsync(registerModel.MobileNo, Message);
+                                await LoginService.Login(userToken.Token);
+                                Loader = "none";
+                                IsOtpEnabled = false;
+                                NavigationManager.NavigateTo("/", true);
                             }
                             else
                             {
                                 await ToastObjRegister.Show(new ToastModel
                                 {
                                     Title = "Error!",
-                                    Content = otpUpdateResult,
+                                    Content = "You are not send proper request, please try again!",
                                     CssClass = "e-toast-danger",
                                     Icon = "e-error toast-icons"
                                 });
@@ -244,7 +234,7 @@
                             await ToastObjRegister.Show(new ToastModel
                             {
                                 Title = "Error!",
-                                Content = "Otp doesn't match, please enter the correct otp or click resend button to receive otp again!",
+                                Content = otpUpdateResult,
                                 CssClass = "e-toast-danger",
                                 Icon = "e-error toast-icons"
                             });
@@ -257,7 +247,7 @@
                         await ToastObjRegister.Show(new ToastModel
                         {
                             Title = "Error!",
-                            Content = "Otp is not update right now, please reload the page and try again!!",
+                            Content = "Otp doesn't match, please enter the correct otp or click resend button to receive otp again!",
                             CssClass = "e-toast-danger",
                             Icon = "e-error toast-icons"
                         });

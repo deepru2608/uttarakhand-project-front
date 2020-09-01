@@ -19,6 +19,7 @@
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.AspNetCore.Hosting
 @using Microsoft.EntityFrameworkCore
+@using Microsoft.Extensions.Configuration;
 
 
 // Syncfusion Blazor Controls
@@ -52,3 +53,4 @@
 @inject CaptchaService captchaService
 @inject DapperService dapperService
 @inject IPaymentService paymentService
+@inject IConfiguration configuration
