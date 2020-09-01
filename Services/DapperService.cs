@@ -205,11 +205,13 @@ namespace uttarakhand_project_front.Services
                                             mMarks = model.GradutionMaxMarks,
                                             obtMarks = model.GradutionObtMarks,
                                             percentage = model.GradutionPercentageMarks,
-                                            refNo = model.RefNo
+                                            refNo = model.RefNo,
+                                            unique = item.UniqueId
                                         };
                                         string query2 =
                                             @"Update QualifyingExamMaster set CourseName=@course, Name=@name, Stream=@stream, University=@university, 
-                                    PassingYear=@pYear, MaxMarks=@mMarks, ObtMarks=@obtMarks, PercentageMarks=@percentage where RefNo=@refNo";
+                                    PassingYear=@pYear, MaxMarks=@mMarks, ObtMarks=@obtMarks, PercentageMarks=@percentage where RefNo=@refNo and QualifyingType = 1 and 
+                                    UniqueId=@unique";
                                         result = await connection.ExecuteAsync(query2, gradutionModel, transaction);
                                     }
                                     else if (item.QualifyingType == "2")
@@ -224,11 +226,13 @@ namespace uttarakhand_project_front.Services
                                             mMarks = model.PGradutionMaxMarks,
                                             obtMarks = model.PGradutionObtMarks,
                                             percentage = model.PGradutionPercentageMarks,
-                                            refNo = model.RefNo
+                                            refNo = model.RefNo,
+                                            unique = item.UniqueId
                                         };
                                         string query3 =
                                             @"Update QualifyingExamMaster set CourseName=@course, Name=@name, Stream=@stream, University=@university, 
-                                    PassingYear=@pYear, MaxMarks=@mMarks, ObtMarks=@obtMarks, PercentageMarks=@percentage where RefNo=@refNo";
+                                    PassingYear=@pYear, MaxMarks=@mMarks, ObtMarks=@obtMarks, PercentageMarks=@percentage where RefNo=@refNo and QualifyingType = 2 and
+                                    UniqueId=@unique";
                                         result = await connection.ExecuteAsync(query3, postGradutionModel, transaction);
                                     }
                                 }
@@ -246,11 +250,13 @@ namespace uttarakhand_project_front.Services
                                             mMarks = model.TheoryExamMaxMarks,
                                             obtMarks = model.TheoryExamObtMarks,
                                             percentage = model.M_EdTotalPercentage,
-                                            refNo = model.RefNo
+                                            refNo = model.RefNo,
+                                            unique = item.UniqueId
                                         };
                                         string query4 =
                                             @"Update QualifyingExamMaster set CourseName=@course, Name=@name, Stream=@stream, University=@university, 
-                                    PassingYear=@pYear, MaxMarks=@mMarks, ObtMarks=@obtMarks, PercentageMarks=@percentage where RefNo=@refNo";
+                                    PassingYear=@pYear, MaxMarks=@mMarks, ObtMarks=@obtMarks, PercentageMarks=@percentage where RefNo=@refNo and QualifyingType = 3 and
+                                    UniqueId=@unique";
                                         result = await connection.ExecuteAsync(query4, m_EdTheoryModel, transaction);
                                     }
                                     else if (item.QualifyingType == "4")
@@ -269,11 +275,13 @@ namespace uttarakhand_project_front.Services
                                             mMarks = model.PracticalExamMaxMarks,
                                             obtMarks = model.PracticalExamObtMarks,
                                             percentage = model.M_EdTotalPercentage,
-                                            refNo = model.RefNo
+                                            refNo = model.RefNo,
+                                            unique = item.UniqueId
                                         };
                                         string query5 =
                                             @"Update QualifyingExamMaster set CourseName=@course, Name=@name, Stream=@stream, University=@university, 
-                                    PassingYear=@pYear, MaxMarks=@mMarks, ObtMarks=@obtMarks, PercentageMarks=@percentage where RefNo=@refNo";
+                                    PassingYear=@pYear, MaxMarks=@mMarks, ObtMarks=@obtMarks, PercentageMarks=@percentage where RefNo=@refNo and QualifyingType = 4 and
+                                    UniqueId=@unique";
                                         result = await connection.ExecuteAsync(query5, m_EdPracticalModel, transaction);
                                     }
                                 }
@@ -408,6 +416,7 @@ namespace uttarakhand_project_front.Services
 
         public async Task<string> GetUserRolesByUserIdAsync(string userId)
         {
+
             string sql = @"Select roles.Name From AspNetRoles roles inner join AspNetUserRoles userRoles 
                             on roles.Id = userRoles.RoleId
                             where userRoles.UserId = @id";
@@ -435,5 +444,7 @@ namespace uttarakhand_project_front.Services
                 return await connection.QueryFirstOrDefaultAsync<Payment>(sql, new {refId = refId});
             }
         }
+
+        //public async Task<ApplicationUser>
     }
 }

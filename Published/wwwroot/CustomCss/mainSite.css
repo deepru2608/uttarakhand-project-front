@@ -1,0 +1,54 @@
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+#blazor-error-ui .dismiss {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 0.5rem;
+}
+
+.cascade-card{
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-top: 20px;
+    max-height: 650px
+}
+
+@media (max-width: 768px){
+    .cascade-card {
+        margin-left: 60px;
+        margin-right: 60px;
+        margin-top: 20px;
+    }
+}
+
+.spinner {
+    top: 50%;
+    left: 45%;
+    position: absolute;
+}
+
+.heading {
+    background-color: #3f51b5;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+    .heading h5 {
+        color: #ffffff;
+        margin: 8px;
+    }
+
+.components-reconnect-show, .components-reconnect-failed, .components-reconnect-rejected {
+    display: none;
+}

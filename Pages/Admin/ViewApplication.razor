@@ -348,9 +348,6 @@ else
     </button>
     @if (PaymentStatus)
     {
-@*         <a href="Payment/ViewPayment/@referenceNo" class="btn btn-sm btn-primary" target="_blank"> *@
-@*             <i class="fas fa-print"></i>&nbsp;View Payment Details *@
-@*         </a> *@
         <a target="_blank" title="View Slip" class="btn btn-sm btn-primary" href="Payment/ViewPaymentSlip/@PaymentDetails.OrderId">Print Payment Slip</a>
         <span>
             &nbsp;

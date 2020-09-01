@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\deepa\\Desktop\\Blazor\\KU_Solution_30Aug2020_12AM\\KU_Solution_30Aug2020_12AM\\uttarakhand-project-front.csproj": {}
+    "D:\\Deepanshu Projects\\KuEntranceProject\\uttarakhand-project-front\\uttarakhand-project-front.csproj": {}
   },
   "projects": {
-    "C:\\Users\\deepa\\Desktop\\Blazor\\KU_Solution_30Aug2020_12AM\\KU_Solution_30Aug2020_12AM\\uttarakhand-project-front.csproj": {
+    "D:\\Deepanshu Projects\\KuEntranceProject\\uttarakhand-project-front\\uttarakhand-project-front.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\deepa\\Desktop\\Blazor\\KU_Solution_30Aug2020_12AM\\KU_Solution_30Aug2020_12AM\\uttarakhand-project-front.csproj",
+        "projectUniqueName": "D:\\Deepanshu Projects\\KuEntranceProject\\uttarakhand-project-front\\uttarakhand-project-front.csproj",
         "projectName": "uttarakhand-project-front",
-        "projectPath": "C:\\Users\\deepa\\Desktop\\Blazor\\KU_Solution_30Aug2020_12AM\\KU_Solution_30Aug2020_12AM\\uttarakhand-project-front.csproj",
-        "packagesPath": "C:\\Users\\deepa\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\deepa\\Desktop\\Blazor\\KU_Solution_30Aug2020_12AM\\KU_Solution_30Aug2020_12AM\\obj\\",
+        "projectPath": "D:\\Deepanshu Projects\\KuEntranceProject\\uttarakhand-project-front\\uttarakhand-project-front.csproj",
+        "packagesPath": "C:\\Users\\EWS Deepanshu\\.nuget\\packages\\",
+        "outputPath": "D:\\Deepanshu Projects\\KuEntranceProject\\uttarakhand-project-front\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\deepa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\EWS Deepanshu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,8 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.devexpress.com/75HPhdhiDjqmNMexUe7a8g3e8DmzweROvIMAg2GvmUcWzpCRHW/api": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
@@ -108,6 +107,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[3.1.7, 3.1.7]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[3.1.7, 3.1.7]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[3.1.7, 3.1.7]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -117,6 +130,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }

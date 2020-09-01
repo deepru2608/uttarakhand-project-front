@@ -320,3 +320,28 @@ C:\Users\deepa\Desktop\Blazor\KU_Solution_30Aug2020_12AM\KU_Solution_30Aug2020_1
 C:\Users\deepa\Desktop\Blazor\KU_Solution_30Aug2020_12AM\KU_Solution_30Aug2020_12AM\obj\Debug\netcoreapp3.1\uttarakhand-project-front.dll
 C:\Users\deepa\Desktop\Blazor\KU_Solution_30Aug2020_12AM\KU_Solution_30Aug2020_12AM\obj\Debug\netcoreapp3.1\uttarakhand-project-front.pdb
 C:\Users\deepa\Desktop\Blazor\KU_Solution_30Aug2020_12AM\KU_Solution_30Aug2020_12AM\obj\Debug\netcoreapp3.1\uttarakhand-project-front.genruntimeconfig.cache
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\uttarakhand-project-front.exe
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\uttarakhand-project-front.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\uttarakhand-project-front.Views.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Dapper.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\JWT.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.ProtectedBrowserStorage.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\reCAPTCHA.AspNetCore.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Syncfusion.Blazor.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\Westwind.AspnetCore.LiveReload.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll

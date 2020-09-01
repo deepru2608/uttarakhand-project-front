@@ -7,493 +7,490 @@
 </div>
 
 <div class="card border-left-primary shadow h-100 py-2">
-<div class="card-body">
-<EditForm Model="@model" OnSubmit="@RegisterNewFormAsync">
-<DataAnnotationsValidator/>
-<div class="row">
-<div class="col-sm-12 mb-2">
-    <div class="heading">
-        <h5>
-            Registration Form
-        </h5>
-    </div>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfTextBox CssClass="e-outline" Placeholder="Name (as per High School Certificate)" FloatLabelType="@FloatLabelType.Auto"
-               @bind-Value="model.Name" Readonly="true">
-    </SfTextBox>
-    <ValidationMessage For="@(() => model.Name)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfTextBox CssClass="e-outline" Placeholder="Father's Name" FloatLabelType="@FloatLabelType.Auto"
-               @bind-Value="model.FatherName">
-    </SfTextBox>
-    <ValidationMessage For="@(() => model.FatherName)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfTextBox CssClass="e-outline" Placeholder="Mother's Name" FloatLabelType="@FloatLabelType.Auto"
-               @bind-Value="model.MotherName">
-    </SfTextBox>
-    <ValidationMessage For="@(() => model.MotherName)" style="color: red"/>
-</div>
-<div class="col-sm-6">
-    <SfDatePicker TValue="DateTime?" Placeholder="Date of Birth (DD/MM/YYYY)" @bind-Value="model.Dob"
-                  FloatLabelType="@FloatLabelType.Auto" Format="dd/MM/yyyy">
-        <DatePickerEvents TValue="DateTime?" ValueChange="@(e => CheckDob(e.Value.ToString()))"></DatePickerEvents>
-    </SfDatePicker>
-    <ValidationMessage For="@(() => model.Dob)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfTextBox CssClass="e-outline" Placeholder="Mobile No." FloatLabelType="@FloatLabelType.Auto"
-               @bind-Value="model.MobileNo" Readonly="true">
-    </SfTextBox>
-    <ValidationMessage For="@(() => model.MobileNo)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfTextBox CssClass="e-outline" Placeholder="Email Address" FloatLabelType="@FloatLabelType.Auto"
-               @bind-Value="model.EmailAddress" Readonly="true">
-    </SfTextBox>
-    <ValidationMessage For="@(() => model.EmailAddress)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfTextBox CssClass="e-outline" @bind-Value="model.Year" Readonly="true" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Center" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.ExamCenter" DataSource="ExamCenterList">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.ExamCenter)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    @* <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Course" FloatLabelType="@FloatLabelType.Auto"
-                                    @bind-Value="model.CourseName" DataSource="CoursesList">
-                    </SfDropDownList> *@
-    <SfTextBox CssClass="e-outline" Placeholder="Course Name" FloatLabelType="@FloatLabelType.Auto"
-               @bind-Value="model.CourseName" Readonly="true">
-    </SfTextBox>
-    <ValidationMessage For="@(() => model.CourseName)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Group" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.StudentGroup" DataSource="GroupList">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.StudentGroup)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Marital Status" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.MaritalStatus" DataSource="MaritalStatusList">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.MaritalStatus)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Nationality" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.Nationality" DataSource="NationalityList">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.Nationality)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Domicile of Uttarakhand" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.IsDomicileOfUttarakhand" DataSource="DomicileUksList">
-        <DropDownListEvents TValue="string" ValueChange="@(e => IsDomicileOfUK(e.Value.ToString()))"></DropDownListEvents>
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.IsDomicileOfUttarakhand)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Category" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.Category" DataSource="CategoryList">
-        <DropDownListEvents TValue="string" ValueChange="@(e => CheckEwsCondition(e.Value.ToString()))"></DropDownListEvents>
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.Category)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Dependent of Freedom Fighter" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.IsFreedomFighter" DataSource="FreedomFightersList">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.IsFreedomFighter)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Self ex Defence Personal" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.IsDefencePersonal" DataSource="DefencePersonalList">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.IsDefencePersonal)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Physically Challenged (PH)" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.IsPhysicallyChallenged" DataSource="PhysicallyChallengesList">        
-        <DropDownListEvents TValue="string" ValueChange="@(e => IsPysicallyChallenge(e.Value.ToString()))"></DropDownListEvents>
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.IsPhysicallyChallenged)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="If PH Yes - Type" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.PhysicallyChallengedType" DataSource="PhysicallyChallengesTypeList" Readonly="@IsPhysically">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.PhysicallyChallengedType)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Gender" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.Gender" DataSource="GendersList">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.Gender)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you Involved in any litigation or punished by court"
-                    @bind-Value="model.IsPunishedByCourt" DataSource="PunishedByCourtList" FloatLabelType="@FloatLabelType.Auto">
-        <DropDownListEvents TValue="string" ValueChange="@(e => CheckCrimicalRecord(e.Value.ToString()))"></DropDownListEvents>
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.IsPunishedByCourt)" style="color: red"/>
-</div>
-@if (IsEwsHideShow)
-{
-    <div class="col-sm-6 mb-2">
-        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Economicallly Weaker Section (EWS)"
-                        @bind-Value="model.IsEconomicallyWeakerSection" DataSource="EWS" FloatLabelType="@FloatLabelType.Auto">
-        </SfDropDownList>
-        <ValidationMessage For="@(() => model.IsEconomicallyWeakerSection)" style="color: red"/>
-    </div>
-}
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Debarred by University for using unfair means till 2020"
-                    @bind-Value="model.IsDebarredByUniversity" DataSource="DabarredCollegeList" FloatLabelType="@FloatLabelType.Auto">
-        <DropDownListEvents TValue="string" ValueChange="@(e => CheckCrimicalRecord(e.Value.ToString()))"></DropDownListEvents>
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.IsDebarredByUniversity)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select State" FloatLabelType="@FloatLabelType.Auto"
-                    @bind-Value="model.StateName" DataSource="StateList" Readonly="@IsStateEnabled">
-    </SfDropDownList>
-    <ValidationMessage For="@(() => model.StateName)" style="color: red"/>
-</div>
-<div class="col-sm-12 mb-2">
-    <SfTextBox CssClass="e-outline" Placeholder="Address" FloatLabelType="@FloatLabelType.Auto"
-               @bind-Value="model.Address" Multiline="true">
-    </SfTextBox>
-    <ValidationMessage For="@(() => model.Address)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <SfTextBox CssClass="e-outline" Placeholder="City/Village/Post"
-               @bind-Value="model.City">
-    </SfTextBox>
-    <ValidationMessage For="@(() => model.City)" style="color: red"/>
-</div>
-<div class="col-sm-6 mb-2">
-    <InputText type="text" class="e-input e-outline" placeholder="Pincode" @bind-Value="model.Pincode" maxlength="6" minlength="6"
-               onkeypress="return isNumber(event)" oncopy="return false" onpaste="return false" oncut="return false">
-    </InputText>
-    <ValidationMessage For="@(() => model.Pincode)" style="color: red"/>
-</div>
-<div class="col-sm-12 mb-2">
-    <h5>
-        <span class="text-muted border-bottom">Qualifying Exam Details</span>
-    </h5>
-</div>
-
-@if (IsM_Ed == false)
-{
-    <div class="col-sm-6 mb-2">
-        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you student from Kumaun University" FloatLabelType="@FloatLabelType.Auto"
-                        @bind-Value="model.IsKumaunUniversity" DataSource="KUOptions">
-            <DropDownListEvents TValue="string" ValueChange="@(e => CheckUserIsValidInKuTerms(e.Value.ToString()))"></DropDownListEvents>
-        </SfDropDownList>
-    </div>
-    <div class="col-sm-12 mb-2">
-        <table className="table table-responsive">
-            <thead>
-            <tr>
-                <th scope="col">Qualifying Exam</th>
-                <th scope="col">Stream</th>
-                <th scope="col">University</th>
-                <th scope="col">Passing Year</th>
-                <th scope="col">Max. Marks</th>
-                <th scope="col">Obtained Marks</th>
-                <th scope="col">% of Marks</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <SfTextBox CssClass="e-outline" Placeholder="Graduation" FloatLabelType="@FloatLabelType.Auto"
-                               @bind-Value="model.GradutionName" Readonly="true">
-                    </SfTextBox>
-                </td>
-                <td>
-                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Stream" FloatLabelType="@FloatLabelType.Auto"
-                                    @bind-Value="model.GradutionStream" DataSource="StreamList">
-                    </SfDropDownList>
-                </td>
-                <td>
-                    <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
-                               @bind-Value="model.GradutionUniversity">
-                    </SfTextBox>
-                </td>
-                <td>
-                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
-                                    @bind-Value="model.GradutionPassingYear" DataSource="PassingYearList">
-                        <DropDownListEvents TValue="string" ValueChange="@(e => PassingYearGraduChangeEvent(e.Value.ToString()))"></DropDownListEvents>
-                    </SfDropDownList>
-                </td>
-                <td>
-                    <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
-                               @bind-Value="model.GradutionMaxMarks" Readonly="@GraducationReadonly">
-                    </SfTextBox>
-                </td>
-                <td>
-                    <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
-                               @bind-Value="model.GradutionObtMarks" Readonly="@GraducationReadonly"
-                               OnChange="@GraduationPercentageCalc">
-                    </SfTextBox>
-                </td>
-                <td>
-                    <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
-                               @bind-Value="model.GradutionPercentageMarks" Readonly="true">
-                    </SfTextBox>
-                </td>
-            </tr>
-            @if (HidePostGraduation)
-            {
-                <tr>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="Post Graduation" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.PostGradutionName" Readonly="true">
-                        </SfTextBox>
-                        <ValidationMessage For="@(() => model.PostGradutionName)" style="color: red"/>
-                    </td>
-                    <td>
-                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Stream" FloatLabelType="@FloatLabelType.Auto"
-                                        @bind-Value="model.PGradutionStream" DataSource="StreamList">
-                        </SfDropDownList>
-                    </td>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.PGradutionUniversity">
-                        </SfTextBox>
-                    </td>
-                    <td>
-                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
-                                        @bind-Value="model.PGradutionPassingYear" DataSource="PassingYearList">
-                            <DropDownListEvents TValue="string" ValueChange="@(e => PassingYearPostGraduChangeEvent(e.Value.ToString()))"></DropDownListEvents>
-                        </SfDropDownList>
-                    </td>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.PGradutionMaxMarks" Readonly="@PostGraducationReadonly">
-                        </SfTextBox>
-                    </td>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.PGradutionObtMarks" Readonly="@PostGraducationReadonly"
-                                   OnChange="@PostGraduationPercentageCalc">
-                        </SfTextBox>
-                    </td>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.PGradutionPercentageMarks" Readonly="true">
-                        </SfTextBox>
-                    </td>
-                </tr>
-            }
-            </tbody>
-        </table>
-    </div>
-}
-else
-{
-    <div class="col-sm-12 mb-2">
-        <div class="row">
-            <div class="col-sm-4">
-                <SfCheckBox @bind-Checked="@isChecked" Label="Appearing" @onchange="@M_EdIsAppearing"></SfCheckBox>
-            </div>
-            @if (ShowKUOptions)
-            {
-                <div class="col-sm-8">
-                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you student from Kumaun University?" FloatLabelType="@FloatLabelType.Auto"
-                                    @bind-Value="model.IsKumaunUniversity" DataSource="KUOptions">
-                        <DropDownListEvents TValue="string" ValueChange="@(e => CheckUserIsValidInKuTerms(e.Value.ToString()))"></DropDownListEvents>
-                    </SfDropDownList>
+    <div class="card-body">
+        <EditForm Model="@model" OnSubmit="@RegisterNewFormAsync">
+            <DataAnnotationsValidator />
+            <div class="row">
+                <div class="col-sm-12 mb-2">
+                    <div class="heading">
+                        <h5>
+                            Registration Form
+                        </h5>
+                    </div>
                 </div>
-            }
-        </div>
-    </div>
-    @if (M_EdQualifyingDetailsShowHide)
-    {
-        <div class="col-sm-12 mb-2">
-            <table className="table table-responsive">
-                <thead>
-                <tr>
-                    <th scope="col">Qualifying Exam</th>
-                    <th scope="col">Max. Marks</th>
-                    <th scope="col">Obtained Marks</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>
-                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Theory Exam" FloatLabelType="@FloatLabelType.Auto"
-                                        @bind-Value="model.TheoryExamName" DataSource="M_EdGraducationTheory">
+                <div class="col-sm-6 mb-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="Name (as per High School Certificate)" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.Name" Readonly="true">
+                    </SfTextBox>
+                    <ValidationMessage For="@(() => model.Name)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="Father's Name" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.FatherName">
+                    </SfTextBox>
+                    <ValidationMessage For="@(() => model.FatherName)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="Mother's Name" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.MotherName">
+                    </SfTextBox>
+                    <ValidationMessage For="@(() => model.MotherName)" style="color: red" />
+                </div>
+                <div class="col-sm-6">
+                    <SfDatePicker TValue="DateTime?" Placeholder="Date of Birth (DD/MM/YYYY)" @bind-Value="model.Dob"
+                                  FloatLabelType="@FloatLabelType.Auto" Format="dd/MM/yyyy" Min="@MinDate" Max="@MaxDate">
+                        <DatePickerEvents TValue="DateTime?" ValueChange="@(e => CheckDob(e.Value.ToString()))"></DatePickerEvents>
+                    </SfDatePicker>
+                    <ValidationMessage For="@(() => model.Dob)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="Mobile No." FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.MobileNo" Readonly="true">
+                    </SfTextBox>
+                    <ValidationMessage For="@(() => model.MobileNo)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="Email Address" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.EmailAddress" Readonly="true">
+                    </SfTextBox>
+                    <ValidationMessage For="@(() => model.EmailAddress)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfTextBox CssClass="e-outline" @bind-Value="model.Year" Readonly="true" FloatLabelType="@FloatLabelType.Auto"></SfTextBox>
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Center" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.ExamCenter" DataSource="ExamCenterList">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.ExamCenter)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="Course Name" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.CourseName" Readonly="true">
+                    </SfTextBox>
+                    <ValidationMessage For="@(() => model.CourseName)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Group" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.StudentGroup" DataSource="GroupList">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.StudentGroup)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Marital Status" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.MaritalStatus" DataSource="MaritalStatusList">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.MaritalStatus)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Nationality" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.Nationality" DataSource="NationalityList">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.Nationality)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Domicile of Uttarakhand" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.IsDomicileOfUttarakhand" DataSource="DomicileUksList">
+                        <DropDownListEvents TValue="string" ValueChange="@(e => IsDomicileOfUK(e.Value.ToString()))"></DropDownListEvents>
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.IsDomicileOfUttarakhand)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Category" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.Category" DataSource="CategoryList">
+                        <DropDownListEvents TValue="string" ValueChange="@(e => CheckEwsCondition(e.Value.ToString()))"></DropDownListEvents>
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.Category)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Dependent of Freedom Fighter" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.IsFreedomFighter" DataSource="FreedomFightersList">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.IsFreedomFighter)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Self ex Defence Personal" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.IsDefencePersonal" DataSource="DefencePersonalList">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.IsDefencePersonal)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Physically Challenged (PH)" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.IsPhysicallyChallenged" DataSource="PhysicallyChallengesList">
+                        <DropDownListEvents TValue="string" ValueChange="@(e => IsPysicallyChallenge(e.Value.ToString()))"></DropDownListEvents>
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.IsPhysicallyChallenged)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="If PH Yes - Type" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.PhysicallyChallengedType" DataSource="PhysicallyChallengesTypeList" Readonly="@IsPhysically">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.PhysicallyChallengedType)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Gender" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.Gender" DataSource="GendersList">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.Gender)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you Involved in any litigation or punished by court"
+                                    @bind-Value="model.IsPunishedByCourt" DataSource="PunishedByCourtList" FloatLabelType="@FloatLabelType.Auto">
+                        <DropDownListEvents TValue="string" ValueChange="@(e => CheckCrimicalRecord(e.Value.ToString()))"></DropDownListEvents>
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.IsPunishedByCourt)" style="color: red" />
+                </div>
+                @if (IsEwsHideShow)
+                {
+                    <div class="col-sm-6 mb-2">
+                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Economicallly Weaker Section (EWS)"
+                                        @bind-Value="model.IsEconomicallyWeakerSection" DataSource="EWS" FloatLabelType="@FloatLabelType.Auto">
                         </SfDropDownList>
-                    </td>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.TheoryExamMaxMarks" Readonly="@M_EdExamMarksRealonly">
-                        </SfTextBox>
-                    </td>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.TheoryExamObtMarks"
-                                   OnChange="@(e => CheckTheoryMarksValidation(e.Value.ToString()))" Readonly="@M_EdExamMarksRealonly">
-                        </SfTextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Practical Exam" FloatLabelType="@FloatLabelType.Auto"
-                                        @bind-Value="model.PracticalExamName" DataSource="M_EdGraducationPractical">
+                        <ValidationMessage For="@(() => model.IsEconomicallyWeakerSection)" style="color: red" />
+                    </div>
+                }
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Debarred by University for using unfair means till 2020"
+                                    @bind-Value="model.IsDebarredByUniversity" DataSource="DabarredCollegeList" FloatLabelType="@FloatLabelType.Auto">
+                        <DropDownListEvents TValue="string" ValueChange="@(e => CheckCrimicalRecord(e.Value.ToString()))"></DropDownListEvents>
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.IsDebarredByUniversity)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select State" FloatLabelType="@FloatLabelType.Auto"
+                                    @bind-Value="model.StateName" DataSource="StateList" Readonly="@IsStateEnabled">
+                    </SfDropDownList>
+                    <ValidationMessage For="@(() => model.StateName)" style="color: red" />
+                </div>
+                <div class="col-sm-12 mb-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="Address" FloatLabelType="@FloatLabelType.Auto"
+                               @bind-Value="model.Address" Multiline="true">
+                    </SfTextBox>
+                    <ValidationMessage For="@(() => model.Address)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <SfTextBox CssClass="e-outline" Placeholder="City/Village/Post"
+                               @bind-Value="model.City">
+                    </SfTextBox>
+                    <ValidationMessage For="@(() => model.City)" style="color: red" />
+                </div>
+                <div class="col-sm-6 mb-2">
+                    <InputText type="text" class="e-input e-outline" placeholder="Pincode" @bind-Value="model.Pincode" maxlength="6" minlength="6"
+                               onkeypress="return isNumber(event)" oncopy="return false" onpaste="return false" oncut="return false">
+                    </InputText>
+                    <ValidationMessage For="@(() => model.Pincode)" style="color: red" />
+                </div>
+                <div class="col-sm-12 mb-2">
+                    <h5>
+                        <span class="text-muted border-bottom">Qualifying Exam Details</span>
+                    </h5>
+                </div>
+
+                @if (IsM_Ed == false)
+                {
+                    <div class="col-sm-6 mb-2">
+                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you student from Kumaun University" FloatLabelType="@FloatLabelType.Auto"
+                                        @bind-Value="model.IsKumaunUniversity" DataSource="KUOptions">
+                            <DropDownListEvents TValue="string" ValueChange="@(e => CheckUserIsValidInKuTerms(e.Value.ToString()))"></DropDownListEvents>
                         </SfDropDownList>
-                    </td>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.PracticalExamMaxMarks" Readonly="@M_EdExamMarksRealonly">
-                        </SfTextBox>
-                    </td>
-                    <td>
-                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
-                                   @bind-Value="model.PracticalExamObtMarks" Readonly="@M_EdExamMarksRealonly"
-                                   OnChange="@(e => CheckPracticalMarksValidation(e.Value.ToString()))">
-                        </SfTextBox>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="col-sm-4 mb-2">
-            <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
-                       @bind-Value="model.M_EdExamUniversity" OnChange="M_EdMarksChangeEvent">
-            </SfTextBox>
-        </div>
-        <div class="col-sm-4 mb-2">
-            <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
-                            @bind-Value="model.M_EdExamPassingYear" DataSource="PassingYearList">
-                <DropDownListEvents TValue="string" ValueChange="@M_EdMarksChangeEvent"></DropDownListEvents>
-            </SfDropDownList>
-        </div>
-        <div class="col-sm-4 mb-2">
-            <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
-                       @bind-Value="model.M_EdTotalPercentage" Readonly="true">
-            </SfTextBox>
-        </div>
-    }
-}
+                    </div>
+                    <div class="col-sm-12 mb-2">
+                        <table className="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Qualifying Exam</th>
+                                    <th scope="col">Stream</th>
+                                    <th scope="col">University</th>
+                                    <th scope="col">Passing Year</th>
+                                    <th scope="col">Max. Marks</th>
+                                    <th scope="col">Obtained Marks</th>
+                                    <th scope="col">% of Marks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <SfTextBox CssClass="e-outline" Placeholder="Graduation" FloatLabelType="@FloatLabelType.Auto"
+                                                   @bind-Value="model.GradutionName" Readonly="true">
+                                        </SfTextBox>
+                                    </td>
+                                    <td>
+                                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Stream" FloatLabelType="@FloatLabelType.Auto"
+                                                        @bind-Value="model.GradutionStream" DataSource="StreamList">
+                                        </SfDropDownList>
+                                    </td>
+                                    <td>
+                                        <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                                                   @bind-Value="model.GradutionUniversity">
+                                        </SfTextBox>
+                                    </td>
+                                    <td>
+                                        <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                                                        @bind-Value="model.GradutionPassingYear" DataSource="PassingYearList">
+                                            <DropDownListEvents TValue="string" ValueChange="@(e => PassingYearGraduChangeEvent(e.Value.ToString()))"></DropDownListEvents>
+                                        </SfDropDownList>
+                                    </td>
+                                    <td>
+                                        <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                   @bind-Value="model.GradutionMaxMarks" Readonly="@GraducationReadonly">
+                                        </SfTextBox>
+                                    </td>
+                                    <td>
+                                        <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                   @bind-Value="model.GradutionObtMarks" Readonly="@GraducationReadonly"
+                                                   OnChange="@GraduationPercentageCalc">
+                                        </SfTextBox>
+                                    </td>
+                                    <td>
+                                        <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                   @bind-Value="model.GradutionPercentageMarks" Readonly="true">
+                                        </SfTextBox>
+                                    </td>
+                                </tr>
+                                @if (HidePostGraduation)
+                                {
+                                    <tr>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="Post Graduation" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.PostGradutionName" Readonly="true">
+                                            </SfTextBox>
+                                            <ValidationMessage For="@(() => model.PostGradutionName)" style="color: red" />
+                                        </td>
+                                        <td>
+                                            <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Stream" FloatLabelType="@FloatLabelType.Auto"
+                                                            @bind-Value="model.PGradutionStream" DataSource="StreamList">
+                                            </SfDropDownList>
+                                        </td>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.PGradutionUniversity">
+                                            </SfTextBox>
+                                        </td>
+                                        <td>
+                                            <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                                                            @bind-Value="model.PGradutionPassingYear" DataSource="PassingYearList">
+                                                <DropDownListEvents TValue="string" ValueChange="@(e => PassingYearPostGraduChangeEvent(e.Value.ToString()))"></DropDownListEvents>
+                                            </SfDropDownList>
+                                        </td>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.PGradutionMaxMarks" Readonly="@PostGraducationReadonly">
+                                            </SfTextBox>
+                                        </td>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.PGradutionObtMarks" Readonly="@PostGraducationReadonly"
+                                                       OnChange="@PostGraduationPercentageCalc">
+                                            </SfTextBox>
+                                        </td>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.PGradutionPercentageMarks" Readonly="true">
+                                            </SfTextBox>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-sm-12 mb-2">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <SfCheckBox @bind-Checked="@isChecked" Label="Appearing" @onchange="@M_EdIsAppearing"></SfCheckBox>
+                            </div>
+                            @if (ShowKUOptions)
+                            {
+                                <div class="col-sm-8">
+                                    <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Are you student from Kumaun University?" FloatLabelType="@FloatLabelType.Auto"
+                                                    @bind-Value="model.IsKumaunUniversity" DataSource="KUOptions">
+                                        <DropDownListEvents TValue="string" ValueChange="@(e => CheckUserIsValidInKuTerms(e.Value.ToString()))"></DropDownListEvents>
+                                    </SfDropDownList>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    @if (M_EdQualifyingDetailsShowHide)
+                    {
+                        <div class="col-sm-12 mb-2">
+                            <table className="table table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Qualifying Exam</th>
+                                        <th scope="col">Max. Marks</th>
+                                        <th scope="col">Obtained Marks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Theory Exam" FloatLabelType="@FloatLabelType.Auto"
+                                                            @bind-Value="model.TheoryExamName" DataSource="M_EdGraducationTheory">
+                                            </SfDropDownList>
+                                        </td>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.TheoryExamMaxMarks" Readonly="@M_EdExamMarksRealonly">
+                                            </SfTextBox>
+                                        </td>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.TheoryExamObtMarks"
+                                                       OnChange="@(e => CheckTheoryMarksValidation(e.Value.ToString()))" Readonly="@M_EdExamMarksRealonly">
+                                            </SfTextBox>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Select Practical Exam" FloatLabelType="@FloatLabelType.Auto"
+                                                            @bind-Value="model.PracticalExamName" DataSource="M_EdGraducationPractical">
+                                            </SfDropDownList>
+                                        </td>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="Maximum Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.PracticalExamMaxMarks" Readonly="@M_EdExamMarksRealonly">
+                                            </SfTextBox>
+                                        </td>
+                                        <td>
+                                            <SfTextBox CssClass="e-outline" Placeholder="Obtained Marks" FloatLabelType="@FloatLabelType.Auto"
+                                                       @bind-Value="model.PracticalExamObtMarks" Readonly="@M_EdExamMarksRealonly"
+                                                       OnChange="@(e => CheckPracticalMarksValidation(e.Value.ToString()))">
+                                            </SfTextBox>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                            <SfTextBox CssClass="e-outline" Placeholder="University" FloatLabelType="@FloatLabelType.Auto"
+                                       @bind-Value="model.M_EdExamUniversity" OnChange="M_EdMarksChangeEvent">
+                            </SfTextBox>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                            <SfDropDownList TItem="string" TValue="string" PopupHeight="230px" Placeholder="Passing Year" FloatLabelType="@FloatLabelType.Auto"
+                                            @bind-Value="model.M_EdExamPassingYear" DataSource="PassingYearList">
+                                <DropDownListEvents TValue="string" ValueChange="@M_EdMarksChangeEvent"></DropDownListEvents>
+                            </SfDropDownList>
+                        </div>
+                        <div class="col-sm-4 mb-2">
+                            <SfTextBox CssClass="e-outline" Placeholder="% of Marks" FloatLabelType="@FloatLabelType.Auto"
+                                       @bind-Value="model.M_EdTotalPercentage" Readonly="true">
+                            </SfTextBox>
+                        </div>
+                    }
+                }
 
-<div class="col-sm-3 mb-2">
-    <div className="form-group">
-        <label>Photo</label><br/>
-        <SfUploader ID="UploadPhotos" Multiple="false" DropArea=".control-fluid" AllowedExtensions=".jpg, .png, .jpeg" MinFileSize=1000 MaxFileSize=200000>
-            <UploaderEvents ValueChange="@UploadPhotoAsync"></UploaderEvents>
-        </SfUploader>
-        <br/>
-        <label className="text-danger">Maximum 200KB</label>
+                <div class="col-sm-3 mb-2">
+                    <div className="form-group">
+                        <label>Photo</label><br />
+                        <SfUploader ID="UploadPhotos" Multiple="false" DropArea=".control-fluid" AllowedExtensions=".jpg, .png, .jpeg" MinFileSize=1000 MaxFileSize=200000>
+                            <UploaderEvents ValueChange="@UploadPhotoAsync"></UploaderEvents>
+                        </SfUploader>
+                        <br />
+                        <label className="text-danger">Maximum 200KB</label>
+                    </div>
+                </div>
+                @if (IsFormSubmit == false || !string.IsNullOrEmpty(TempPhotoPath))
+                {
+                    <div class="col-sm-3 mb-2 text-center">
+                        <img src="upload/uploadku/TempStorage/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px" />
+                    </div>
+                }
+                else if (IsFormSubmit)
+                {
+                    <div class="col-sm-3 mb-2 text-center">
+                        <img src="upload/uploadku/Photos/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px" />
+                    </div>
+                }
+                else
+                {
+                    <div class="col-sm-3 mb-2 text-center">
+                        <img src="upload/uploadku/TempStorage/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px" />
+                    </div>
+                }
+
+                <div class="col-sm-3 mb-2">
+                    <div className="form-group">
+                        <label>Signature</label><br />
+                        <SfUploader ID="UploadSignature" Multiple="false" DropArea=".control-fluid" AllowedExtensions=".jpg, .png, .jpeg" MinFileSize=1000 MaxFileSize=200000>
+                            <UploaderEvents ValueChange="@UploadSignatureAsync"></UploaderEvents>
+                        </SfUploader><br />
+                        <label className="text-danger">Maximum 200KB</label>
+                    </div>
+                </div>
+                @if (IsFormSubmit == false || !string.IsNullOrEmpty(TempSIgnaturePath))
+                {
+                    <div class="col-sm-3 mb-2">
+                        <img src="upload/uploadku/TempStorage/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px" />
+                    </div>
+                }
+                else if (IsFormSubmit)
+                {
+                    <div class="col-sm-3 mb-2">
+                        <img src="upload/uploadku/Signature/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px" />
+                    </div>
+                }
+                else
+                {
+                    <div class="col-sm-3 mb-2">
+                        <img src="upload/uploadku/TempStorage/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px" />
+                    </div>
+                }
+
+
+                <div class="col-sm-12 mb-2 text-center">
+
+                    @if (IsFormSubmit == false)
+                    {
+                        <SfButton IsPrimary="true">
+                            <i class="fas fa-plus-circle"></i>&nbsp;Submit Application
+                        </SfButton>
+                    }
+                    &nbsp;
+                    <img src="Images/BlockLoader.gif" alt="Loader"
+                         style="height: 30px; width: 30px; display: @Loader" />
+                </div>
+
+                <div class="col-sm-12 mb-2 text-center">
+                    <ValidationSummary class="text-danger" />
+                </div>
+            </div>
+        </EditForm>
+        @if (IsFormSubmit && IsPaymentSubmit == false)
+        {
+            <div class="col-sm-12 mb-2 text-center">
+
+                <SfButton IsPrimary="true" OnClick="@UpdateRecordAsync">
+                    <i class="fas fa-plus-circle"></i>&nbsp;Update Application
+                </SfButton>
+                <SfButton IsPrimary="true" OnClick="@IsRegistrationConfirmAsync">
+                    <i class="fas fa-rupee-sign"></i>&nbsp;Final Submit & Make Payment
+                </SfButton>
+
+                &nbsp;
+                <img src="Images/BlockLoader.gif" alt="Loader"
+                     style="height: 30px; width: 30px; display: @UpdateLoader" />
+
+            </div>
+        }
+        else if (IsPaymentSubmit == true)
+        {
+            <div class="col-sm-12 mb-2 text-center">
+
+                <a href="Service/PrintFinalDownload/@model.RefNo" class="btn btn-primary">
+                    <i class="fas fa-plus-circle"></i>&nbsp;Print Application Form
+                </a>
+
+
+                &nbsp;
+                <img src="Images/BlockLoader.gif" alt="Loader"
+                     style="height: 30px; width: 30px; display: @UpdateLoader" />
+
+            </div>
+        }
     </div>
-</div>
-@if (IsFormSubmit == false || !string.IsNullOrEmpty(TempPhotoPath))
-{
-    <div class="col-sm-3 mb-2 text-center">
-        <img src="upload/uploadku/TempStorage/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px"/>
-    </div>
-}
-else if (IsFormSubmit)
-{
-    <div class="col-sm-3 mb-2 text-center">
-        <img src="upload/uploadku/Photos/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px"/>
-    </div>
-}
-else
-{
-    <div class="col-sm-3 mb-2 text-center">
-        <img src="upload/uploadku/TempStorage/@model.PhotoPath" alt="PhotoData" style="width: 100px; height: 100px"/>
-    </div>
-}
-
-<div class="col-sm-3 mb-2">
-    <div className="form-group">
-        <label>Signature</label><br/>
-        <SfUploader ID="UploadSignature" Multiple="false" DropArea=".control-fluid" AllowedExtensions=".jpg, .png, .jpeg" MinFileSize=1000 MaxFileSize=200000>
-            <UploaderEvents ValueChange="@UploadSignatureAsync"></UploaderEvents>
-        </SfUploader><br/>
-        <label className="text-danger">Maximum 200KB</label>
-    </div>
-</div>
-@if (IsFormSubmit == false || !string.IsNullOrEmpty(TempSIgnaturePath))
-{
-    <div class="col-sm-3 mb-2">
-        <img src="upload/uploadku/TempStorage/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px"/>
-    </div>
-}
-else if (IsFormSubmit)
-{
-    <div class="col-sm-3 mb-2">
-        <img src="upload/uploadku/Signature/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px"/>
-    </div>
-}
-else
-{
-    <div class="col-sm-3 mb-2">
-        <img src="upload/uploadku/TempStorage/@model.SignaturePath" alt="SignatureData" style="width: 180px; height: 100px"/>
-    </div>
-}
-
-
-<div class="col-sm-12 mb-2 text-center">
-
-    @if (IsFormSubmit == false)
-    {
-        <SfButton IsPrimary="true">
-            <i class="fas fa-plus-circle"></i>&nbsp;Submit Application
-        </SfButton>
-    }
-    &nbsp;
-    <img src="Images/BlockLoader.gif" alt="Loader"
-         style="height: 30px; width: 30px; display: @Loader"/>
-</div>
-
-<div class="col-sm-12 mb-2 text-center">
-    <ValidationSummary class="text-danger"/>
-</div>
-</div>
-</EditForm>
-@if (IsFormSubmit && IsPaymentSubmit == false)
-{
-    <div class="col-sm-12 mb-2 text-center">
-
-        <SfButton IsPrimary="true" OnClick="@UpdateRecordAsync">
-            <i class="fas fa-plus-circle"></i>&nbsp;Update Application
-        </SfButton>
-        <SfButton IsPrimary="true" OnClick="@IsRegistrationConfirmAsync">
-            <i class="fas fa-rupee-sign"></i>&nbsp;Final Submit & Make Payment
-        </SfButton>
-
-        &nbsp;
-        <img src="Images/BlockLoader.gif" alt="Loader"
-             style="height: 30px; width: 30px; display: @UpdateLoader"/>
-
-    </div>
-}
-else if (IsPaymentSubmit == true)
-{
-    <div class="col-sm-12 mb-2 text-center">
-
-        <a href="Service/PrintFinalDownload/@model.RefNo" class="btn btn-primary">
-            <i class="fas fa-plus-circle"></i>&nbsp;Print Application Form
-        </a>
-
-
-        &nbsp;
-        <img src="Images/BlockLoader.gif" alt="Loader"
-             style="height: 30px; width: 30px; display: @UpdateLoader"/>
-
-    </div>
-}
-</div>
 </div>
 
 <SfToast @ref="@ToastObjRegistration" ID="toast_type_registration">
@@ -540,7 +537,7 @@ else if (IsPaymentSubmit == true)
                 <a href="Payment/RegistrationPayment/@model.RefNo" class="btn btn-sm btn-primary"> <i class="fas fa-key"></i>&nbsp;Make Payment</a>
                 &nbsp;
                 <img src="Images/BlockLoader.gif" alt="Loader"
-                     style="height: 30px; width: 30px; display: @NewLoader"/>
+                     style="height: 30px; width: 30px; display: @NewLoader" />
             </div>
         </div>
     </div>
@@ -554,6 +551,9 @@ else if (IsPaymentSubmit == true)
 
     [Parameter]
     public string ShowOptions { get; set; }
+
+    public DateTime MinDate { get; set; } = new DateTime(1950, 01, 01);
+    public DateTime MaxDate { get; set; } = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
 
     List<string> liFilesList = new List<string>();
     public bool M_EdKuCondition { get; set; } = false;
@@ -701,13 +701,14 @@ else if (IsPaymentSubmit == true)
                 model.CourseName = "Master of Education";
                 IsM_Ed = true;
                 HeadingText = "M.Ed";
-    //PassingYearList.Remove("Appearing");
+                //PassingYearList.Remove("Appearing");
                 if (userRelatedForm.IsAppearing)
                 {
                     model.IsAppearing = userRelatedForm.IsAppearing;
                     isChecked = userRelatedForm.IsAppearing;
                     ShowKUOptions = true;
                     model.IsKumaunUniversity = userRelatedForm.IsKumaunUniversity;
+                    PassingYearList = GetPassingYears("Yes");
                 }
 
                 if (model.IsPhysicallyChallenged == "No")
@@ -763,9 +764,9 @@ else if (IsPaymentSubmit == true)
                 model.CourseName = "Master of Education";
                 IsM_Ed = true;
                 HeadingText = "M.Ed";
-    //PassingYearList.Remove("Appearing");
+                //PassingYearList.Remove("Appearing");
             }
-    // To get Email and Mobile Number from DB.
+            // To get Email and Mobile Number from DB.
             if (user != null)
             {
                 model.EmailAddress = user.Email;
@@ -957,14 +958,14 @@ else if (IsPaymentSubmit == true)
                             }
                             else
                             {
-    //await ToastObjRegistration.Show(new ToastModel
-    //{
-    //    Title = "Error!",
-    //    Content = "You are not eligible!",
-    //    CssClass = "e-toast-danger",
-    //    Icon = "e-error toast-icons"
-    //});
-    //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
+                                //await ToastObjRegistration.Show(new ToastModel
+                                //{
+                                //    Title = "Error!",
+                                //    Content = "You are not eligible!",
+                                //    CssClass = "e-toast-danger",
+                                //    Icon = "e-error toast-icons"
+                                //});
+                                //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
                             }
                         }
                         else
@@ -975,14 +976,14 @@ else if (IsPaymentSubmit == true)
                             }
                             else
                             {
-    //await ToastObjRegistration.Show(new ToastModel
-    //{
-    //    Title = "Error!",
-    //    Content = "You are not eligible!",
-    //    CssClass = "e-toast-danger",
-    //    Icon = "e-error toast-icons"
-    //});
-    //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
+                                //await ToastObjRegistration.Show(new ToastModel
+                                //{
+                                //    Title = "Error!",
+                                //    Content = "You are not eligible!",
+                                //    CssClass = "e-toast-danger",
+                                //    Icon = "e-error toast-icons"
+                                //});
+                                //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
                             }
                         }
                     }
@@ -1091,7 +1092,7 @@ else if (IsPaymentSubmit == true)
                 {
                     if (file.FileInfo.Size < 1000 || file.FileInfo.Size > 200000)
                     {
-                        await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                        await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                     }
                     else
                     {
@@ -1110,12 +1111,12 @@ else if (IsPaymentSubmit == true)
                 }
                 else
                 {
-                    await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                    await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                 }
             }
             catch (Exception ex)
             {
-                await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
             }
         }
     }
@@ -1131,7 +1132,7 @@ else if (IsPaymentSubmit == true)
                 {
                     if (file.FileInfo.Size < 1000 || file.FileInfo.Size > 200000)
                     {
-                        await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                        await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                     }
                     else
                     {
@@ -1140,7 +1141,7 @@ else if (IsPaymentSubmit == true)
                         {
                             CenterService.DeleteTempFiles(checkifFileHas);
                         }
-                        
+
                         string uniqueFileName = Guid.NewGuid().ToString() + "_" + file.FileInfo.Name;
                         await ProtectedSessionStorage.SetAsync("UniqueSignatureName", uniqueFileName);
                         model.SignatureFile = file;
@@ -1151,12 +1152,12 @@ else if (IsPaymentSubmit == true)
                 }
                 else
                 {
-                    await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                    await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                 }
             }
             catch (Exception ex)
             {
-                await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
             }
         }
     }
@@ -1398,7 +1399,7 @@ else if (IsPaymentSubmit == true)
                             {
                                 if (!string.IsNullOrEmpty(model.PGradutionPercentageMarks))
                                 {
-                                    if (int.Parse(model.PGradutionPercentageMarks) >= 50)
+                                    if (int.Parse(model.PGradutionPercentageMarks) >= 50 || model.PGradutionPassingYear == "Appearing")
                                     {
                                         IsEligible = true;
                                     }
@@ -1408,7 +1409,9 @@ else if (IsPaymentSubmit == true)
                                         await ToastObjRegistration.Show(new ToastModel
                                         {
                                             Title = "Error!",
-                                            Content = "You are not eligible, because your graduation or post graduation marks percentage is less than 50%!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                            Content = "You are not eligible, because your graduation or post graduation marks percentage is less than 50%!",
+                                            CssClass = "e-toast-danger",
+                                            Icon = "e-error toast-icons"
                                         });
                                     }
                                 }
@@ -1418,7 +1421,9 @@ else if (IsPaymentSubmit == true)
                                     await ToastObjRegistration.Show(new ToastModel
                                     {
                                         Title = "Error!",
-                                        Content = "You are not eligible, because your graduation marks percentage is less than 50%!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                        Content = "You are not eligible, because your graduation marks percentage is less than 50%!",
+                                        CssClass = "e-toast-danger",
+                                        Icon = "e-error toast-icons"
                                     });
                                 }
                             }
@@ -1443,7 +1448,9 @@ else if (IsPaymentSubmit == true)
                                         await ToastObjRegistration.Show(new ToastModel
                                         {
                                             Title = "Error!",
-                                            Content = "You are not eligible, because your graduation or post graduation marks percentage is less than 45%!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                            Content = "You are not eligible, because your graduation or post graduation marks percentage is less than 45%!",
+                                            CssClass = "e-toast-danger",
+                                            Icon = "e-error toast-icons"
                                         });
                                     }
                                 }
@@ -1453,7 +1460,9 @@ else if (IsPaymentSubmit == true)
                                     await ToastObjRegistration.Show(new ToastModel
                                     {
                                         Title = "Error!",
-                                        Content = "You are not eligible, because your graduation marks percentage is less than 45%!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                        Content = "You are not eligible, because your graduation marks percentage is less than 45%!",
+                                        CssClass = "e-toast-danger",
+                                        Icon = "e-error toast-icons"
                                     });
                                 }
                             }
@@ -1467,6 +1476,7 @@ else if (IsPaymentSubmit == true)
             }
             else
             {
+
                 IsEligible = true;
             }
         }
@@ -1477,7 +1487,9 @@ else if (IsPaymentSubmit == true)
                 await ToastObjRegistration.Show(new ToastModel
                 {
                     Title = "Error!",
-                    Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                    Content = ex.Message,
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
                 });
                 NavigationManager.NavigateTo("RegistrationForm/B_Ed", true);
             }
@@ -1486,7 +1498,9 @@ else if (IsPaymentSubmit == true)
                 await ToastObjRegistration.Show(new ToastModel
                 {
                     Title = "Error!",
-                    Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                    Content = ex.Message,
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
                 });
                 NavigationManager.NavigateTo("RegistrationForm/M_Ed", true);
             }
@@ -1512,7 +1526,7 @@ else if (IsPaymentSubmit == true)
         return uniqueFileName;
     }
 
-    void IsPysicallyChallenge(string value)
+    async Task IsPysicallyChallenge(string value)
     {
         if (value == "No")
         {
@@ -1520,10 +1534,21 @@ else if (IsPaymentSubmit == true)
             PhysicallyChallengesTypeList = PHTypeListOnlyNone();
             model.PhysicallyChallengedType = "None";
         }
-        else
+        else if (value == "Yes")
         {
             IsPhysically = false;
             PhysicallyChallengesTypeList = PHTypeListWithOutNone();
+        }
+        else
+        {
+            await ToastObjRegistration.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please Select Physically Challenged Option!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            await ProtectedSessionStorage.SetAsync("criminal_debarred", false);
         }
     }
 
@@ -1540,8 +1565,19 @@ else if (IsPaymentSubmit == true)
             });
             await ProtectedSessionStorage.SetAsync("criminal_debarred", false);
         }
-        else
+        else if (value == "No")
             await ProtectedSessionStorage.SetAsync("criminal_debarred", true);
+        else
+        {
+            await ToastObjRegistration.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "You are not eligible due to some litigation and punished by court!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
+            await ProtectedSessionStorage.SetAsync("criminal_debarred", false);
+        }
     }
 
     async Task M_EdMarksChangeEvent()
@@ -1623,7 +1659,7 @@ else if (IsPaymentSubmit == true)
             if (value == "Yes")
             {
                 PassingYearList = GetPassingYears("Yes");
-                model.GradutionUniversity = "Kumaun University";
+                model.GradutionUniversity = "";
             }
             else
             {
@@ -1641,7 +1677,7 @@ else if (IsPaymentSubmit == true)
                 model.PracticalExamMaxMarks = "0";
                 model.PracticalExamObtMarks = "0";
                 model.M_EdTotalPercentage = "0";
-                model.M_EdExamUniversity = "Kumaun University";
+                model.M_EdExamUniversity = "";
                 M_EdExamMarksRealonly = true;
                 M_EdQualifyingDetailsShowHide = true;
                 PassingYearList = GetPassingYears("Yes");
@@ -1653,7 +1689,7 @@ else if (IsPaymentSubmit == true)
                 M_EdQualifyingDetailsShowHide = false;
                 model.M_EdExamUniversity = "";
                 await ProtectedSessionStorage.SetAsync("IsValidInKuTerms", false);
-                await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "You are not eligible!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "You are not eligible!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
             }
         }
     }
@@ -1728,6 +1764,21 @@ else if (IsPaymentSubmit == true)
                 }
                 else
                 {
+                    if (model.IsAppearing && model.IsKumaunUniversity == "Yes")
+                    {
+                        if (model.M_EdExamPassingYear != "Appearing")
+                        {
+                            await ToastObjRegistration.Show(new ToastModel
+                            {
+                                Title = "Error!",
+                                Content = "Please select appearing option in passing year!",
+                                CssClass = "e-toast-danger",
+                                Icon = "e-error toast-icons"
+                            });
+                            value = false;
+                            return value;
+                        }
+                    }
                     value = true;
                 }
             }
@@ -1741,17 +1792,27 @@ else if (IsPaymentSubmit == true)
         if (value == "Yes")
         {
             CategoryList = CastCategoryWithoutUG();
-            model.Category = "Schedule Cast (SC)";
+            model.Category = "--Select--";
             await BindState();
             model.StateName = "Uttarakhand";
             IsStateEnabled = true;
         }
-        else
+        else if (value == "No")
         {
             CategoryList = CastCategoryWithUG();
             model.Category = "Unreserved General";
             await BindState();
             IsStateEnabled = false;
+        }
+        else
+        {
+            await ToastObjRegistration.Show(new ToastModel
+            {
+                Title = "Error!",
+                Content = "Please select domicile option!",
+                CssClass = "e-toast-danger",
+                Icon = "e-error toast-icons"
+            });
         }
     }
 
@@ -1916,7 +1977,9 @@ else if (IsPaymentSubmit == true)
                                         await ToastObjRegistration.Show(new ToastModel
                                         {
                                             Title = "Error!",
-                                            Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                            Content = ex.Message,
+                                            CssClass = "e-toast-danger",
+                                            Icon = "e-error toast-icons"
                                         });
                                         NavigationManager.NavigateTo("RegistrationForm/B_Ed", true);
                                     }
@@ -1925,7 +1988,9 @@ else if (IsPaymentSubmit == true)
                                         await ToastObjRegistration.Show(new ToastModel
                                         {
                                             Title = "Error!",
-                                            Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                                            Content = ex.Message,
+                                            CssClass = "e-toast-danger",
+                                            Icon = "e-error toast-icons"
                                         });
                                         NavigationManager.NavigateTo("RegistrationForm/M_Ed", true);
                                     }
@@ -2027,6 +2092,27 @@ else if (IsPaymentSubmit == true)
                 else
                 {
                     UpdateLoader = "none";
+                    if (model.IsDebarredByUniversity == "Yes")
+                    {
+                        await ToastObjRegistration.Show(new ToastModel
+                        {
+                            Title = "Error!",
+                            Content = "You are not eligible because you are debarred by university!",
+                            CssClass = "e-toast-danger",
+                            Icon = "e-error toast-icons"
+                        });
+                    }
+
+                    if (model.IsPunishedByCourt == "Yes")
+                    {
+                        await ToastObjRegistration.Show(new ToastModel
+                        {
+                            Title = "Error!",
+                            Content = "You are not eligible due to some litigation and punished by court!",
+                            CssClass = "e-toast-danger",
+                            Icon = "e-error toast-icons"
+                        });
+                    }
                 }
             }
             else
@@ -2050,7 +2136,9 @@ else if (IsPaymentSubmit == true)
                 await ToastObjRegistration.Show(new ToastModel
                 {
                     Title = "Error!",
-                    Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                    Content = ex.Message,
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
                 });
                 NavigationManager.NavigateTo("RegistrationForm/B_Ed", true);
             }
@@ -2059,7 +2147,9 @@ else if (IsPaymentSubmit == true)
                 await ToastObjRegistration.Show(new ToastModel
                 {
                     Title = "Error!",
-                    Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"
+                    Content = ex.Message,
+                    CssClass = "e-toast-danger",
+                    Icon = "e-error toast-icons"
                 });
                 NavigationManager.NavigateTo("RegistrationForm/M_Ed", true);
             }

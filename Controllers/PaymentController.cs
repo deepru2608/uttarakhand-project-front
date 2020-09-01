@@ -218,6 +218,14 @@ namespace uttarakhand_project_front.Controllers
                     ViewData["Message"] = "Status is successful. Hash value is matched";
                     ViewData["response"] = "success";
 
+                    var userDetails = await _dapperService.CustomFindByEmailAsync(emailAddress: email);
+                    Registration registrationDetails = new Registration();
+                    if (userDetails != null)
+                    {
+                        var allRegistrationDetails = await _dapperService.GetAllRegistrationDetailsAsync();
+                        registrationDetails = allRegistrationDetails.FirstOrDefault(f => f.UserId == userDetails.Id);
+                    }
+
                     _PaymentSuccessModel = new PaymentSuccessModel()
                     {
                         OrderId = order_id,
@@ -227,7 +235,9 @@ namespace uttarakhand_project_front.Controllers
                         PaymentStatus = "Success",
                         PaymentDate = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt"),
                         Amount = amount,
-                        BankName = "HDFC"
+                        BankName = "HDFC",
+                        REFNO = registrationDetails.RefNo,
+                        UserId = userDetails.Id
                     };
                     // Update in Payemnt  Master
 

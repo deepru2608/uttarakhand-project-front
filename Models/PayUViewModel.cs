@@ -33,6 +33,7 @@ namespace uttarakhand_project_front.Models
         public string BankName { get; set; }
 
         public string REFNO { get; set; }
+        public string UserId { get; set; }
 
     }
 
