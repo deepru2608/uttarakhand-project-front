@@ -1900,3 +1900,4 @@ D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\obj\Release\ne
 D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\obj\Release\netcoreapp3.1\win-x64\uttarakhand-project-front.dll
 D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\obj\Release\netcoreapp3.1\win-x64\uttarakhand-project-front.pdb
 D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\obj\Release\netcoreapp3.1\win-x64\uttarakhand-project-front.genruntimeconfig.cache
+D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\bin\Release\netcoreapp3.1\win-x64\BlazorInputFile.dll

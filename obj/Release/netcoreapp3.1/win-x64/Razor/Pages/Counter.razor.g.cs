@@ -163,91 +163,105 @@ using Microsoft.Extensions.Configuration;
 #line hidden
 #nullable disable
 #nullable restore
+#line 23 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
+using Newtonsoft.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 26 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 27 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.Charts;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
-#line 28 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.Calendars;
+using BlazorInputFile;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 29 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.Buttons;
+using Syncfusion.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 30 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.Grids;
+using Syncfusion.Blazor.Charts;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 31 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.Inputs;
+using Syncfusion.Blazor.Calendars;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 32 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.DropDowns;
+using Syncfusion.Blazor.Buttons;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 33 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.Navigations;
+using Syncfusion.Blazor.Grids;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 34 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.SplitButtons;
+using Syncfusion.Blazor.Inputs;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 35 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.Lists;
+using Syncfusion.Blazor.DropDowns;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 36 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.Notifications;
+using Syncfusion.Blazor.Navigations;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 37 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
-using Syncfusion.Blazor.PdfViewerServer;
+using Syncfusion.Blazor.SplitButtons;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 38 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
+using Syncfusion.Blazor.Lists;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 39 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
+using Syncfusion.Blazor.Notifications;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 40 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
+using Syncfusion.Blazor.PdfViewerServer;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 43 "D:\Deepanshu Projects\KuEntranceProject\uttarakhand-project-front\_Imports.razor"
 using MatBlazor;
 
 #line default

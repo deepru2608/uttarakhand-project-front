@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "uttarakhand-project-front/1.0.0": {
         "dependencies": {
+          "BlazorInputFile": "0.2.0",
           "Blazored.SessionStorage": "1.0.12",
           "Dapper": "2.0.35",
           "JWT": "7.2.1",
@@ -1606,6 +1607,15 @@
           "lib/netstandard2.0/Blazored.SessionStorage.dll": {}
         }
       },
+      "BlazorInputFile/0.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.4",
+          "Microsoft.AspNetCore.Components.Web": "3.1.4"
+        },
+        "compile": {
+          "lib/netstandard2.1/BlazorInputFile.dll": {}
+        }
+      },
       "Dapper/2.0.35": {
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0"
@@ -2841,6 +2851,7 @@
     ".NETCoreApp,Version=v3.1/win-x64": {
       "uttarakhand-project-front/1.0.0": {
         "dependencies": {
+          "BlazorInputFile": "0.2.0",
           "Blazored.SessionStorage": "1.0.12",
           "Dapper": "2.0.35",
           "JWT": "7.2.1",
@@ -4493,6 +4504,18 @@
           }
         }
       },
+      "BlazorInputFile/0.2.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "3.1.4",
+          "Microsoft.AspNetCore.Components.Web": "3.1.4"
+        },
+        "runtime": {
+          "lib/netstandard2.1/BlazorInputFile.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Dapper/2.0.35": {
         "dependencies": {
           "System.Reflection.Emit.Lightweight": "4.7.0"
@@ -5791,6 +5814,13 @@
       "sha512": "sha512-46Ecq7Ek5vjCHjuf9Yia6bIcsgF3gQUYzTvCshoXUj1E3Xg2VD+42PAtWwYEf8yedFZUNdTlaFazjwc5zPHEGw==",
       "path": "blazored.sessionstorage/1.0.12",
       "hashPath": "blazored.sessionstorage.1.0.12.nupkg.sha512"
+    },
+    "BlazorInputFile/0.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wsPTwoA9fkHOxjEh0W0brNeTaVBaMCFwfBLehbRhfW+RzlIrYtlJ5qFpT5f377Ej6ELk+xeoUrkDBx9c8JF7DQ==",
+      "path": "blazorinputfile/0.2.0",
+      "hashPath": "blazorinputfile.0.2.0.nupkg.sha512"
     },
     "Dapper/2.0.35": {
       "type": "package",

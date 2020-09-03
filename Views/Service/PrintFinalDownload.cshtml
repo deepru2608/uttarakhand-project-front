@@ -107,9 +107,19 @@
                     <strong>Self ex Defence Personal </strong>
                 </td>
                 <td>@Model.IsDefencePersonal</td>
-                <td colspan="2">
-                    <strong>Category - @Model.Category </strong>
-                </td>
+                @if (Model.Category == "Unreserved General")
+                {
+                    <td>
+                        <strong>Category - @Model.Category </strong>
+                    </td>
+                    <td><strong>Economically Weaker Sestion (EWS)</strong> - @Model.IsEconomicallyWeakerSection</td>
+                }
+                else
+                {
+                    <td colspan="2">
+                        <strong>Category - @Model.Category </strong>
+                    </td>
+                }
             </tr>
             <tr>
                 <td>

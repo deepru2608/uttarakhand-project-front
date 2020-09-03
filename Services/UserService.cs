@@ -155,18 +155,20 @@ namespace uttarakhand_project_front.Services
                     }
                     else
                     {
-                        userToken.Status = "Invalid Login Attempt";
+                        userToken.Status = "Invalid Login Credentials";
                     }
 
-                    if (result.IsLockedOut)
-                    {
-                        string message = "Your account is locked, please try again after sometime or you may reset your password.";
-                        userToken.Status = message;
-                    }
+                    //if (result.IsLockedOut)
+                    //{
+                    //    //string message = "Your account is locked, please try again after sometime or you may reset your password.";
+                    //    string message = "";
+                    //    userToken.Status = message;
+                    //}
                 }
                 catch (Exception e)
                 {
-                    userToken.Status = e.Message;
+                    userToken.Status = "Invalid Login";
+                   // userToken.Status = e.Message;
                 }
             }
             else
@@ -273,10 +275,11 @@ namespace uttarakhand_project_front.Services
             }
             catch (Exception e)
             {
-                return e.Message;
+                return "failure";
+                // return e.Message;
             }
 
-            return "failed";
+            return "failure";
         }
 
         public async Task<string> AssignRemoveUserInRoleAsync(AssignUserRoleViewModel model)

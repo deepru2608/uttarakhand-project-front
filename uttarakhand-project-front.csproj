@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\RegistrationEntranceFormBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="Pages\Account\AssignUserRoles.razor" />
     <None Include="Pages\Account\ChangePassword.razor" />
     <None Include="Pages\Account\Login.razor" />
@@ -27,6 +31,7 @@
 
   <ItemGroup>
     <PackageReference Include="Blazored.SessionStorage" Version="1.0.12" />
+    <PackageReference Include="BlazorInputFile" Version="0.2.0" />
     <PackageReference Include="Dapper" Version="2.0.35" />
     <PackageReference Include="JWT" Version="7.2.1" />
     <PackageReference Include="MatBlazor" Version="2.6.2" />

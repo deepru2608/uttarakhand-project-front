@@ -301,7 +301,8 @@ namespace uttarakhand_project_front.Services
                     }
                     catch (Exception e)
                     {
-                        resultStatus = e.Message;
+                        resultStatus = "failure";
+                        //  resultStatus = e.Message;
                         transaction.Rollback();
                     }
                 }
@@ -352,7 +353,8 @@ namespace uttarakhand_project_front.Services
                     catch (Exception e)
                     {
                         transaction.Rollback();
-                        returnValue = e.Message;
+                        returnValue = "failure";
+                        // returnValue = e.Message;
                     }
                 }
             }
@@ -397,7 +399,8 @@ namespace uttarakhand_project_front.Services
                     }
                     catch (Exception e)
                     {
-                        result = e.Message;
+                        result = "failure";
+                        // result = e.Message;
                         transaction.Rollback();
                     }
                 }

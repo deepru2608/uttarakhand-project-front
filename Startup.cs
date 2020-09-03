@@ -49,6 +49,7 @@ namespace uttarakhand_project_front
                 options.Password.RequireUppercase = true;
                 options.Password.RequireNonAlphanumeric = true;
                 options.Password.RequireDigit = true;
+                options.Lockout.AllowedForNewUsers = false;
             }).AddEntityFrameworkStores<FrontAppDbContext>()
                 .AddDefaultTokenProviders();
             services.AddRazorPages();

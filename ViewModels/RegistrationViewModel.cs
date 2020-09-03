@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using BlazorInputFile;
 using Syncfusion.Blazor.Inputs.Internal;
 using uttarakhand_project_front.Models;
 
@@ -63,6 +64,8 @@ namespace uttarakhand_project_front.ViewModels
         [Required]
         public string City { get; set; }
         [Required]
+        [MaxLength(6)]
+        [MinLength(6)]
         public string Pincode { get; set; }
         [NotMapped]
         public UploadFiles PhohoFile { get; set; }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "GQuBmgRpUpGn5KAfb1R9d1tpVQZ0duLpcm1EamPvmu9JBKwFTn6m0WPsmIYYr7LT+bfKJ0dFyU13SKZEvSxeHg==",
+  "dgSpecHash": "ODgJ+hYxGyMpiDBMeYBVJnFngieYjM+hLKVMjOVEQNujJ/Hfx6gnTVfJDZ040ZkO5842rqy3cPSgpon/vFnzrA==",
   "success": true,
   "projectFilePath": "D:\\Deepanshu Projects\\KuEntranceProject\\uttarakhand-project-front\\uttarakhand-project-front.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EWS Deepanshu\\.nuget\\packages\\blazored.sessionstorage\\1.0.12\\blazored.sessionstorage.1.0.12.nupkg.sha512",
+    "C:\\Users\\EWS Deepanshu\\.nuget\\packages\\blazorinputfile\\0.2.0\\blazorinputfile.0.2.0.nupkg.sha512",
     "C:\\Users\\EWS Deepanshu\\.nuget\\packages\\dapper\\2.0.35\\dapper.2.0.35.nupkg.sha512",
     "C:\\Users\\EWS Deepanshu\\.nuget\\packages\\jwt\\7.2.1\\jwt.7.2.1.nupkg.sha512",
     "C:\\Users\\EWS Deepanshu\\.nuget\\packages\\matblazor\\2.6.2\\matblazor.2.6.2.nupkg.sha512",

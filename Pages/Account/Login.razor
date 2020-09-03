@@ -145,13 +145,14 @@
             </div>
             <div class="modal-footer d-flex justify-content-center">
                 @*<SfButton IsPrimary="true" OnClick="@ResentOtpAsync">
-                    <i class="fas fa-window-restore"></i>&nbsp;Resend
-                </SfButton>
-                <SfButton IsPrimary="true" Disabled="@IsOtpEnabled" OnClick="@CheckOtpAsync">
-                    <i class="fas fa-sign-in-alt"></i>&nbsp;Submit
-                </SfButton>*@
+                        <i class="fas fa-window-restore"></i>&nbsp;Resend
+                    </SfButton>
+                    <SfButton IsPrimary="true" Disabled="@IsOtpEnabled" OnClick="@CheckOtpAsync">
+                        <i class="fas fa-sign-in-alt"></i>&nbsp;Submit
+                    </SfButton>*@
                 <button type="button" class="btn btn-secondary" @onclick="@ResentOtpAsync">
-                    <i class="fas fa-window-restore"></i>&nbsp;Resend</button>
+                    <i class="fas fa-window-restore"></i>&nbsp;Resend
+                </button>
                 <button type="button" class="btn btn-primary" @onclick="@CheckOtpAsync">
                     <i class="fas fa-sign-in-alt"></i>&nbsp;Submit
                 </button>
@@ -170,6 +171,7 @@
     public LoginViewModel LoginModel { get; set; }
     public string Loader { get; set; }
     public bool IsEnable { get; set; } = false;
+    //[System.ComponentModel.DataAnnotations.RegularExpression(@"/ ^\w + ([\.-] ?\w +)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/")]
     public string ForgotEmail { get; set; }
     public string UserOtp { get; set; }
     public bool IsOtpEnabled { get; set; }

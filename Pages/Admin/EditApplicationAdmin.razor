@@ -388,11 +388,12 @@ else
 
 <div class="col-sm-3 mb-2">
     <div className="form-group">
-        <label>Photo</label><br/>
+        <label>Photo</label><br />
         <SfUploader ID="UploadPhotos" DropArea=".control-fluid" AllowedExtensions=".jpg, .png, .jpeg" MinFileSize=1000 MaxFileSize=200000>
             <UploaderEvents ValueChange="@UploadPhotoAsync"></UploaderEvents>
         </SfUploader>
-        <br/>
+        @*<InputFile OnChange="HandlePhotoFileSelected" />*@
+        <br />
         <label className="text-danger">Maximum 200KB</label>
     </div>
 </div>
@@ -417,10 +418,12 @@ else
 
 <div class="col-sm-3 mb-2">
     <div className="form-group">
-        <label>Signature</label><br/>
+        <label>Signature</label><br />
         <SfUploader ID="UploadSignature" DropArea=".control-fluid" AllowedExtensions=".jpg, .png, .jpeg" MinFileSize=1000 MaxFileSize=200000>
             <UploaderEvents ValueChange="@UploadSignatureAsync"></UploaderEvents>
-        </SfUploader><br/>
+        </SfUploader>
+        @*<InputFile OnChange="HandleSignatureFileSelected" />*@
+        <br />
         <label className="text-danger">Maximum 200KB</label>
     </div>
 </div>
@@ -828,14 +831,14 @@ else
                             }
                             else
                             {
-    //await ToastObjRegistration.Show(new ToastModel
-    //{
-    //    Title = "Error!",
-    //    Content = "You are not eligible!",
-    //    CssClass = "e-toast-danger",
-    //    Icon = "e-error toast-icons"
-    //});
-    //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
+                                //await ToastObjRegistration.Show(new ToastModel
+                                //{
+                                //    Title = "Error!",
+                                //    Content = "You are not eligible!",
+                                //    CssClass = "e-toast-danger",
+                                //    Icon = "e-error toast-icons"
+                                //});
+                                //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
                             }
                         }
                         else
@@ -846,14 +849,14 @@ else
                             }
                             else
                             {
-    //await ToastObjRegistration.Show(new ToastModel
-    //{
-    //    Title = "Error!",
-    //    Content = "You are not eligible!",
-    //    CssClass = "e-toast-danger",
-    //    Icon = "e-error toast-icons"
-    //});
-    //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
+                                //await ToastObjRegistration.Show(new ToastModel
+                                //{
+                                //    Title = "Error!",
+                                //    Content = "You are not eligible!",
+                                //    CssClass = "e-toast-danger",
+                                //    Icon = "e-error toast-icons"
+                                //});
+                                //await ProtectedSessionStorage.SetAsync("gradu", false); // because i am checking on submit event
                             }
                         }
                     }
@@ -951,6 +954,87 @@ else
         }
     }
 
+    //async Task HandlePhotoFileSelected(IFileListEntry[] files)
+    //{
+    //    if (files.Any())
+    //    {
+    //        try
+    //        {
+    //            var file = files.FirstOrDefault();
+    //            if (file != null)
+    //            {
+    //                if (file.Size < 1000 || file.Size > 200000)
+    //                {
+    //                    await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
+    //                }
+    //                else
+    //                {
+    //                    var checkifFileHas = await ProtectedSessionStorage.GetAsync<string>("UniquePhotoName");
+    //                    if (!string.IsNullOrEmpty(checkifFileHas))
+    //                    {
+    //                        CenterService.DeleteTempFiles(checkifFileHas);
+    //                    }
+    //                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + file.Name;
+    //                    await ProtectedSessionStorage.SetAsync("UniquePhotoName", uniqueFileName);
+    //                    model.PhohoFile = file;
+    //                    model.PhotoPath = uniqueFileName;
+    //                    TempPhotoPath = uniqueFileName;
+    //                    await CenterService.UploadImagesInTempUsingInput(file, uniqueFileName);
+    //                }
+    //            }
+    //            else
+    //            {
+    //                await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
+    //            }
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Photo Image is corrutped", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
+    //        }
+    //    }
+    //}
+
+    //async Task HandleSignatureFileSelected(IFileListEntry[] files)
+    //{
+    //    if (files.Any())
+    //    {
+    //        try
+    //        {
+    //            var file = files.FirstOrDefault();
+    //            if (file != null)
+    //            {
+    //                if (file.Size < 1000 || file.Size > 200000)
+    //                {
+    //                    await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
+    //                }
+    //                else
+    //                {
+    //                    var checkifFileHas = await ProtectedSessionStorage.GetAsync<string>("UniqueSignatureName");
+    //                    if (!string.IsNullOrEmpty(checkifFileHas))
+    //                    {
+    //                        CenterService.DeleteTempFiles(checkifFileHas);
+    //                    }
+
+    //                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + file.Name;
+    //                    await ProtectedSessionStorage.SetAsync("UniqueSignatureName", uniqueFileName);
+    //                    model.SignatureFile = file;
+    //                    model.SignaturePath = uniqueFileName;
+    //                    TempSIgnaturePath = uniqueFileName;
+    //                    await CenterService.UploadImagesInTempUsingInput(file, uniqueFileName);
+    //                }
+    //            }
+    //            else
+    //            {
+    //                await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
+    //            }
+    //        }
+    //        catch (Exception ex)
+    //        {
+    //            await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Signature Image is corrutped", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
+    //        }
+    //    }
+    //}
+
     async Task UploadPhotoAsync(UploadChangeEventArgs args)
     {
         if (args.Files.Any())
@@ -962,7 +1046,7 @@ else
                 {
                     if (file.FileInfo.Size < 1000 || file.FileInfo.Size > 200000)
                     {
-                        await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                        await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                     }
                     else
                     {
@@ -978,18 +1062,18 @@ else
                         }
                         else
                         {
-                            await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Photo has already uploaded!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                            await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Photo has already uploaded!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                         }
                     }
                 }
                 else
                 {
-                    await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                    await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                 }
             }
             catch (Exception ex)
             {
-                await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
             }
         }
     }
@@ -1005,7 +1089,7 @@ else
                 {
                     if (file.FileInfo.Size < 1000 || file.FileInfo.Size > 200000)
                     {
-                        await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                        await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload file in betwen 1 kB to 200 KB!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                     }
                     else
                     {
@@ -1021,18 +1105,18 @@ else
                         }
                         else
                         {
-                            await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Signature file has already uploaded!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                            await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Signature file has already uploaded!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                         }
                     }
                 }
                 else
                 {
-                    await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                    await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = "Please upload the file!", CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
                 }
             }
             catch (Exception ex)
             {
-                await ToastObjRegistration.Show(new ToastModel {Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons"});
+                await ToastObjRegistration.Show(new ToastModel { Title = "Error!", Content = ex.Message, CssClass = "e-toast-danger", Icon = "e-error toast-icons" });
             }
         }
     }

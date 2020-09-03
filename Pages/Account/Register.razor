@@ -66,19 +66,16 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <SfTextBox CssClass="e-outline" Placeholder="Email Address"
-                                                   @bind-Value="registerModel.Email" OnChange="@(e => CheckEmailAsync(e.Value.ToString()))">
+                                                   @bind-Value="registerModel.Email">
                                         </SfTextBox>
                                         <ValidationMessage For="@(() => registerModel.Email)" style="color: red" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        @* <SfTextBox CssClass="e-outline" Placeholder="Mobile Number" *@
-                                        @*            @bind-Value="registerModel.MobileNo" OnChange="@(e => CheckMobileAsync(e.Value.ToString()))"> *@
-                                        @* </SfTextBox> *@
-                                        <InputText type="text" class="e-input e-outline" placeholder="Mobile Number" @bind-Value="registerModel.MobileNo"
-                                                   maxlength="10" onkeypress="return isNumber(event)" @onchange="@(e => CheckMobileAsync(e.Value.ToString()))">
-                                        </InputText>
+                                        <SfTextBox CssClass="e-outline" Placeholder="Mobile Number" maxlength="10" onkeypress="return isNumber(event)"
+                                                   @bind-Value="registerModel.MobileNo">
+                                        </SfTextBox>
                                         <ValidationMessage For="@(() => registerModel.MobileNo)" style="color: red" />
                                     </div>
                                 </div>
@@ -128,7 +125,7 @@
                 <EditForm Model="@UserOtp">
                     <div class="row">
                         <div class="col-sm-12 mb-2">
-                            <SfTextBox CssClass="e-outline" Placeholder="Enter Otp" FloatLabelType="@FloatLabelType.Auto"
+                            <SfTextBox CssClass="e-outline" Placeholder="Enter Otp" maxlength="8" FloatLabelType="@FloatLabelType.Auto"
                                        @bind-Value="@UserOtp">
                             </SfTextBox>
                         </div>
@@ -187,8 +184,20 @@
         Loader = "inline";
         IsOtpEnabled = true;
         StateHasChanged();
+        string mobile = await CenterService.CheckMobileDuplicacyAsync(registerModel.MobileNo);
+        if (mobile.ToLower() != "notfound")
+            UniqueMobile = false;
+        else
+            UniqueMobile = true;
+
         if (UniqueMobile)
         {
+            string email = await CenterService.CheckEmailDuplicacyAsync(registerModel.Email);
+            if (email.ToLower() != "notfound")
+                UniqueEmail = false;
+            else
+                UniqueEmail = true;
+
             if (UniqueEmail)
             {
                 if (!string.IsNullOrEmpty(UserOtp))
@@ -348,8 +357,20 @@
         OtpLoader = "inline";
         IsEnable = true;
         await InvokeAsync(StateHasChanged);
+        string mobile = await CenterService.CheckMobileDuplicacyAsync(registerModel.MobileNo);
+        if (mobile.ToLower() != "notfound")
+            UniqueMobile = false;
+        else
+            UniqueMobile = true;
+
         if (UniqueMobile)
         {
+            string email = await CenterService.CheckEmailDuplicacyAsync(registerModel.Email);
+            if (email.ToLower() != "notfound")
+                UniqueEmail = false;
+            else
+                UniqueEmail = true;
+
             if (UniqueEmail)
             {
                 var allOtpData = await dapperService.GetOtpDetailsAsync();
@@ -426,7 +447,6 @@
                 await Task.Delay(2000);
                 OtpLoader = "none";
                 IsEnable = false;
-                NavigationManager.NavigateTo("Register", true);
             }
         }
         else
@@ -441,7 +461,6 @@
             await Task.Delay(2000);
             OtpLoader = "none";
             IsEnable = false;
-            NavigationManager.NavigateTo("Register", true);
         }
     }
 

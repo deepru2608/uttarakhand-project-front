@@ -13,6 +13,8 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using System.Net;
 using System.Net.Http;
+using BlazorInputFile;
+using System.IO.Pipelines;
 
 namespace uttarakhand_project_front.Services
 {
@@ -103,6 +105,32 @@ namespace uttarakhand_project_front.Services
                 }
             }
         }
+        
+        public async Task UploadImageFilesUsingInput(IFileListEntry file, string FolderName, string UniqueFileName)
+        {
+            string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "upload", "uploadku", FolderName);
+            if (Directory.Exists(uploadsFolder))
+            {
+                string filePath = Path.Combine(uploadsFolder, UniqueFileName);
+                var ms = new MemoryStream();
+                file.Data.CopyTo(ms);
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    ms.WriteTo(fileStream);
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(uploadsFolder);
+                string filePath = Path.Combine(uploadsFolder, UniqueFileName);
+                var ms = new MemoryStream();
+                await file.Data.CopyToAsync(ms);
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    ms.WriteTo(fileStream);
+                }
+            }
+        }
 
         public async Task<string> GenerateUniqueRefNo(string courseName)
         {
@@ -133,7 +161,8 @@ namespace uttarakhand_project_front.Services
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return "";
+                //return ex.Message;
             }
             return refNo;
         }
@@ -311,7 +340,8 @@ namespace uttarakhand_project_front.Services
                     catch (Exception ex)
                     {
                         await transaction.RollbackAsync();
-                        return ex.Message;
+                        return "failure";
+                        //return ex.Message;
                     }
                 }
             }
@@ -578,7 +608,8 @@ namespace uttarakhand_project_front.Services
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                return "failure";
+                //  return ex.Message;
             }
 
             return "failure";
@@ -602,6 +633,32 @@ namespace uttarakhand_project_front.Services
                 using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
                 {
                     file.Stream.WriteTo(fileStream);
+                }
+            }
+        }
+
+        public async Task UploadImagesInTempUsingInput(IFileListEntry file, string UniqueFileName)
+        {
+            string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath, "upload", "uploadku", "TempStorage");
+            if (Directory.Exists(uploadsFolder))
+            {
+                string filePath = Path.Combine(uploadsFolder, UniqueFileName);
+                var ms = new MemoryStream();
+                await file.Data.CopyToAsync(ms);
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    ms.WriteTo(fileStream);
+                }
+            }
+            else
+            {
+                Directory.CreateDirectory(uploadsFolder);
+                string filePath = Path.Combine(uploadsFolder, UniqueFileName);
+                var ms = new MemoryStream();
+                await file.Data.CopyToAsync(ms);
+                using (FileStream fileStream = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                {
+                    ms.WriteTo(fileStream);
                 }
             }
         }
@@ -687,7 +744,9 @@ namespace uttarakhand_project_front.Services
             }
             catch (Exception e)
             {
-                returnValue = e.Message;
+
+                returnValue =  "failure";
+                //returnValue = e.Message;
             }
 
             return returnValue;
@@ -716,7 +775,8 @@ namespace uttarakhand_project_front.Services
             }
             catch (Exception ex)
             {
-                returnValue = ex.Message;
+                returnValue = "failure";
+              //  returnValue = ex.Message;
             }
 
             returnValue = "failure";

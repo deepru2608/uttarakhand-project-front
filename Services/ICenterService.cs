@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BlazorInputFile;
 using Syncfusion.Blazor.Inputs.Internal;
 using uttarakhand_project_front.Models;
 using uttarakhand_project_front.ViewModels;
@@ -37,5 +38,7 @@ namespace uttarakhand_project_front.Services
         Task<string> UpdateRegistrationDetailsAsync(RegistrationViewModel model, bool photoFlag, bool signatureFlag);
 
         Task<string> SendSmsAsync(string mobileNo, string msg);
+
+        Task UploadImagesInTempUsingInput(IFileListEntry file, string UniqueFileName);
     }
 }

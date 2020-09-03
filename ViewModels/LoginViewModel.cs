@@ -8,6 +8,7 @@ namespace uttarakhand_project_front.ViewModels
     public class LoginViewModel
     {
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
         [Required]
         [DataType(DataType.Password)]
